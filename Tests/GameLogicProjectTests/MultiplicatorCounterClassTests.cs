@@ -13,7 +13,7 @@ namespace MedGame.GameLogicProject
         {
             GameScoreCounter gameScoreCounter = new GameScoreCounter();
 
-            int days = gameScoreCounter.CalculateMissedDates(new DateTime(2019, 01, 14), new DateTime(2019, 01, 16));
+            var days = gameScoreCounter.CalculateMissedDates(new DateTime(2019, 01, 14), new DateTime(2019, 01, 16));
 
             Assert.AreEqual(2, days);
         }
@@ -23,7 +23,7 @@ namespace MedGame.GameLogicProject
         {
             GameScoreCounter gameScoreCounter = new GameScoreCounter();
 
-            int hours = gameScoreCounter.CalculateMissedHours(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
+            var hours = gameScoreCounter.CalculateMissedHours(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
 
             Assert.AreEqual(48, hours);
         }

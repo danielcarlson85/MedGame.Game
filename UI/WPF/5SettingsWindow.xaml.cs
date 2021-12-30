@@ -18,11 +18,11 @@ namespace MedGame.UI.WPF
         {
             InitializeComponent();
 
-            TextBoxFacebookFullName.Text = GamePlay.Player.FacebookFullName;
+            TextBoxFacebookFullName.Text = GamePlay.Player.Name;
             TextBoxFacebookEmail.Text = GamePlay.Player.Email;
-            TextBoxFacebookGender.Text = GamePlay.Player.FacebookGender;
+            TextBoxFacebookGender.Text = GamePlay.Player.Gender;
             TextBoxAddress.Text = GamePlay.Player.Address;
-            TextBoxFacebookDateOfBirth.Text = GamePlay.Player.FacebookDateOfBirth;
+            TextBoxFacebookDateOfBirth.Text = GamePlay.Player.Birthday;
         }
         private void IconPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -65,11 +65,11 @@ namespace MedGame.UI.WPF
 
         private async void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            GamePlay.Player.FacebookFullName = TextBoxFacebookFullName.Text;
+            GamePlay.Player.Name = TextBoxFacebookFullName.Text;
             GamePlay.Player.Email = TextBoxFacebookEmail.Text;
-            GamePlay.Player.FacebookGender = TextBoxFacebookGender.Text;
+            GamePlay.Player.Gender = TextBoxFacebookGender.Text;
             GamePlay.Player.Address = TextBoxAddress.Text;
-            GamePlay.Player.FacebookDateOfBirth = TextBoxFacebookDateOfBirth.Text;
+            GamePlay.Player.Birthday = TextBoxFacebookDateOfBirth.Text;
 
             await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email);
 

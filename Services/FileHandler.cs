@@ -18,7 +18,6 @@ namespace MedGame.Services
             {
                 try
                 {
-                    player.ListDatesInRowString = JsonConvert.SerializeObject(player.ListDatesInRow);
                     string json = JsonConvert.SerializeObject(player);
                     File.WriteAllText(fileName, json);
                 }
@@ -37,7 +36,6 @@ namespace MedGame.Services
                   {
                       string jsonPlayer = File.ReadAllText(fileName);
                       Player player = JsonConvert.DeserializeObject<Player>(jsonPlayer);
-                      player.ListDatesInRow = JsonConvert.DeserializeObject<List<DateTime>>(player.ListDatesInRowString);
 
                       return player;
                   }

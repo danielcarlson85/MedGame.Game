@@ -33,7 +33,6 @@ namespace MedGame.GameLogic
                 GamePlay.Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
             }
 
-           Player.TotalDaysMissed = 0;
            Player.TotalHoursMissed = 0;
         }
 

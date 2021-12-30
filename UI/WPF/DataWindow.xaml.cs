@@ -36,8 +36,12 @@ namespace MedGame.UI.WPF
                 "Password: " + GamePlay.Player.Password.ToString() + "\n" +
                 "Points: " + GamePlay.Player.Points.ToString() + "\n" +
                 "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
-                "TotalDaysMissed: " + GamePlay.Player.TotalDaysMissed.ToString() + "\n" +
                 "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString() + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
+                "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
                 "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed + "\n" +
                 "Email: " + GamePlay.Player.Email.ToString();
             }

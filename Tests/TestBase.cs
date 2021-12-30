@@ -15,12 +15,9 @@ namespace MedGame.Tests
             LastDateMeditated = DateTime.Now.AddDays(-1),
             Multiplicator = 1,
             TotalDaysMeditatedInRow = 1,
-            TotalDaysMissed = 0,
             TotalHoursMissed = 0,
             TotalMinutesMeditated = 100,
             TotalMinutesMeditatedToday = 1,
-            ListDatesInRowString = "",
-            ListDatesInRow = new List<DateTime>(),
         };
     }
 }
