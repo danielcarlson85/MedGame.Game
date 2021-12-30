@@ -59,7 +59,7 @@ namespace MedGame.UI.WPF
             CheckLogin(GamePlay.Player);
         }
 
-        private void CheckLogin(Player playerResult)
+        public void CheckLogin(Player playerResult)
         {
             if (playerResult.Email != null)
             {
@@ -78,7 +78,7 @@ namespace MedGame.UI.WPF
 
                     LoadingWindow.Close();
 
-                    this.Close();
+                    Close();
                 }
                 else
                 {

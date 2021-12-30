@@ -37,12 +37,11 @@ namespace MedGame.GameLogic
            Player.TotalHoursMissed = 0;
         }
 
-
-
         public static bool CheckSameDate(DateTime todaysDate)
         {
             if (Player.LastDateMeditated.Date == todaysDate)
             {
+                Player.PunishmentHasBeenMade = true;
                 return true;
             }
 

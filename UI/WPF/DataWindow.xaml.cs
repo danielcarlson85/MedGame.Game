@@ -1,15 +1,17 @@
 ﻿using MedGame.GameLogic;
-using MedGame.Models;
 using MedGame.Services;
 using System;
+
 using System.Windows;
 using System.Windows.Threading;
+
 
 namespace MedGame.UI.WPF
 {
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        GameScoreCounter gameScoreCounter = new GameScoreCounter();
 
         public MainWindow()
         {
@@ -40,6 +42,22 @@ namespace MedGame.UI.WPF
                 "Email: " + GamePlay.Player.Email.ToString();
             }
             catch (System.Exception) { }
+        }
+
+        private void dateback_Click(object sender, RoutedEventArgs e)
+        {
+            DateHandler.SetSystemDateTime(DateTime.Now.AddDays(-1));
+        }
+
+        private void dateforward_Click(object sender, RoutedEventArgs e)
+        {
+
+            DateHandler.SetSystemDateTime(DateTime.Now.AddDays(1));
+        }
+
+        private void calculate_Click(object sender, RoutedEventArgs e)
+        {
+            gameScoreCounter.CalculateSigninScore(GamePlay.Player);
         }
     }
 }

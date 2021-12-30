@@ -7,31 +7,31 @@ namespace MedGame.GameLogic
     {
         public Player CalculateSigninScore(Player player)
         {
-            player.TotalDaysMissed = CalculateMissedDates(player.LastDateMeditated, DateTime.Now);
+
             player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
-            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalDaysMissed, player.Multiplicator);      //Check punishment int/double
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
             player.Level = LevelCounter.CheckLevel(player.Points);
+            player.PunishmentHasBeenMade = true;
 
             return player;
         }
 
         public int CalculateMissedDates(DateTime LastDateMeditated, DateTime todaysDate)
         {
-            int totalDaysMissed = (todaysDate - LastDateMeditated).Days;
+            int totalDaysMissed = (todaysDate.Date - LastDateMeditated.Date).Days;
             if (totalDaysMissed <= 0) return 0;
 
             return totalDaysMissed;
         }
 
-        public int CalculateMissedHours(DateTime LastDateMeditated, DateTime currentHour)
+        public double CalculateMissedHours(DateTime lastDateMeditated, DateTime currentHour)
         {
-            int totalHoursMissed = (int)(currentHour - LastDateMeditated).TotalHours;
-            if (totalHoursMissed <= 0) return 0;
+            var totalHoursMissed = (lastDateMeditated - currentHour).TotalHours;
 
             return totalHoursMissed;
         }
 
-        public static Player CalculateMeditationScore(Player player, int totalMinutesMeditatedNow, double multiplicator)
+        public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
@@ -43,7 +43,7 @@ namespace MedGame.GameLogic
             return player;
         }
 
-        public static Player CalculateMeditationScoreOnSameDay(Player player, int TotalMinutesMeditatedNow)
+        public static Player CalculateMeditationScoreOnSameDay(Player player, double TotalMinutesMeditatedNow)
         {
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += TotalMinutesMeditatedNow;

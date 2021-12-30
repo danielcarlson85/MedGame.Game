@@ -22,20 +22,21 @@ namespace MedGame.Models
         public string Password { get; set; } = string.Empty;
         public Levels Level { get; set; } = Levels.Baby;
         public double Points { get; set; } = 0;
-        public int TotalMinutesMeditated { get; set; } = 0;
-        public int TotalMinutesMeditatedToday { get; set; } = 0;
-        public int Health { get; set; } = 72;
+        public double TotalMinutesMeditated { get; set; } = 0;
+        public double TotalMinutesMeditatedToday { get; set; } = 0;
+        public double Health { get; set; } = 72;
         public DateTime LastDateMeditated { get; set; } = DateTime.Now;
-        public int TotalDaysMeditatedInRow { get; set; } = 1;
-        public int TotalDaysMissed { get; set; } = 0;
-        public int TotalHoursMissed { get; set; } = 0;
+        public double TotalDaysMeditatedInRow { get; set; } = 1;
+        public double TotalDaysMissed { get; set; } = 0;
+        public double TotalHoursMissed { get; set; } = 0;
         public double Multiplicator { get; set; } = 1;
+        public bool PunishmentHasBeenMade { get; set; } = false;
         public string FacebookAccessToken { get; set; } = string.Empty;
         public string PlayerMessage { get; set; } = string.Empty;
         public string HttpResult { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
 
         [NotMapped]
-        public int TotalMinutesMeditatedNow { get; set; } = 0;
+        public double TotalMinutesMeditatedNow { get; set; } = 0;
     }
 }

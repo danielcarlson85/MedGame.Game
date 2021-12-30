@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
 
 namespace MedGame.UI.Mobile.Droid
 {
@@ -13,6 +14,7 @@ namespace MedGame.UI.Mobile.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            RequestWindowFeature(WindowFeatures.NoTitle);
 
             base.OnCreate(savedInstanceState);
 
