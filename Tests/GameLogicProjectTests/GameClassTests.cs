@@ -12,7 +12,7 @@ namespace MedGame.GameLogicProject
         public void StartMeditationShouldStartTimer()
         {
             GamePlay.StartMeditation();
-            Assert.IsTrue(GamePlay.MeditationTimer.IsEnabled);
+            Assert.IsTrue(GamePlay.MeditationTimer.Enabled);
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace MedGame.GameLogicProject
         {
             GamePlay.StartMeditation();
             GamePlay.StopMeditation();
-            Assert.IsFalse(GamePlay.MeditationTimer.IsEnabled);
+            Assert.IsFalse(GamePlay.MeditationTimer.Enabled);
         }
 
         [TestMethod]

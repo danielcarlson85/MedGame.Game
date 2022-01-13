@@ -84,9 +84,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
-    <AndroidResource Include="Resources\drawable\icon_about.png" />
-    <AndroidResource Include="Resources\drawable\icon_feed.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile\MedGame.UI.Mobile.csproj">
@@ -95,37 +92,58 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\birdandbabycropped.png" />
+    <EmbeddedResource Include="Resources\drawable\greenrectangle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buddhainyou.png" />
+    <EmbeddedResource Include="Resources\drawable\birdandbaby.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\givebirthtitle.png" />
+    <EmbeddedResource Include="Resources\drawable\yourpathtobecomebuddah.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\background.png" />
+    <EmbeddedResource Include="Resources\drawable\buddhainyou.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buddaicon.png" />
+    <EmbeddedResource Include="Resources\drawable\birdandbabycropped.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\loadingcircle.png" />
+    <EmbeddedResource Include="Resources\drawable\givebirthtitle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\playicon.png" />
+    <EmbeddedResource Include="Resources\drawable\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter.png" />
+    <EmbeddedResource Include="Resources\drawable\buddaicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\settingsicon.png" />
+    <EmbeddedResource Include="Resources\drawable\loadingcircle.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\shareicon.png" />
+    <EmbeddedResource Include="Resources\drawable\playicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\statisticsicon.png" />
+    <EmbeddedResource Include="Resources\drawable\processmeter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\settingsicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\shareicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\statisticsicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

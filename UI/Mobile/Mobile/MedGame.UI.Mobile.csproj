@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\GameLogic\MedGame.GameLogic.csproj" />
+    <ProjectReference Include="..\..\..\Models\MedGame.Models.csproj" />
+    <ProjectReference Include="..\..\..\Services\MedGame.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>

@@ -14,7 +14,7 @@ namespace MedGame.UI.Mobile.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            RequestWindowFeature(WindowFeatures.NoTitle);
+            RequestWindowFeature(WindowFeatures.ActionBar);
 
             base.OnCreate(savedInstanceState);
 

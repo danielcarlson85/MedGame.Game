@@ -1,6 +1,6 @@
 ﻿using MedGame.Models;
 using System;
-using System.Windows.Threading;
+using System.Timers;
 
 namespace MedGame.GameLogic
 {
@@ -9,14 +9,13 @@ namespace MedGame.GameLogic
         public static Player Player = new Player();
         public static int totalMinutesMeditatedNow = 0;
 
-
-        public static DispatcherTimer MeditationTimer { get; set; } = new DispatcherTimer();
+        public static Timer MeditationTimer { get; set; } = new Timer();
 
         public static void StartMeditation()
         {
-            MeditationTimer = new DispatcherTimer();
-            MeditationTimer.Interval = TimeSpan.FromSeconds(1);
-            MeditationTimer.Tick += (object sender, EventArgs e) => { Player.TotalMinutesMeditatedNow++;};
+            MeditationTimer = new Timer();
+            MeditationTimer.Interval = 1000;
+            MeditationTimer.Elapsed += (object sender, ElapsedEventArgs e) => { Player.TotalMinutesMeditatedNow++; };
             MeditationTimer.Start();
         }
 
@@ -33,14 +32,13 @@ namespace MedGame.GameLogic
                 GamePlay.Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
             }
 
-           Player.TotalHoursMissed = 0;
+            Player.TotalHoursMissed = 0;
         }
 
         public static bool CheckSameDate(DateTime todaysDate)
         {
             if (Player.LastDateMeditated.Date == todaysDate)
             {
-                Player.PunishmentHasBeenMade = true;
                 return true;
             }
 
