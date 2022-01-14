@@ -7,11 +7,14 @@ namespace MedGame.GameLogic
     {
         public Player CalculateSigninScore(Player player)
         {
-
             player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
-            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
-            player.Level = LevelCounter.CheckLevel(player.Points);
-            player.PunishmentHasBeenMade = true;
+            
+            if (!player.PunishmentHasBeenMade)
+            {
+                player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
+                player.Level = LevelCounter.CheckLevel(player.Points);
+                player.PunishmentHasBeenMade = true;
+            }
 
             return player;
         }

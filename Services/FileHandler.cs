@@ -77,7 +77,7 @@ namespace MedGame.Services
     {
         public static string MakeFullFileName(this string file)
         {
-            return $"{file}.txt";
+            return $"{file}.json";
         }
     }
 }
