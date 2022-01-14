@@ -92,58 +92,74 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\greenrectangle.png">
+    <AndroidResource Include="Resources\drawable\greenrectangle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\birdandbaby.png">
+    <AndroidResource Include="Resources\drawable\birdandbaby.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\yourpathtobecomebuddah.png">
+    <AndroidResource Include="Resources\drawable\yourpathtobecomebuddah.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\buddhainyou.png">
+    <AndroidResource Include="Resources\drawable\buddhainyou.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\birdandbabycropped.png">
+    <AndroidResource Include="Resources\drawable\birdandbabycropped.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\givebirthtitle.png">
+    <AndroidResource Include="Resources\drawable\givebirthtitle.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\background.png" />
+    <AndroidResource Include="Resources\drawable\background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\buddaicon.png" />
+    <AndroidResource Include="Resources\drawable\buddaicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\loadingcircle.png" />
+    <AndroidResource Include="Resources\drawable\loadingcircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\playicon.png" />
+    <AndroidResource Include="Resources\drawable\playicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\processmeter.png" />
+    <AndroidResource Include="Resources\drawable\processmeter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\settingsicon.png" />
+    <AndroidResource Include="Resources\drawable\settingsicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\shareicon.png" />
+    <AndroidResource Include="Resources\drawable\shareicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\statisticsicon.png" />
+    <AndroidResource Include="Resources\drawable\statisticsicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

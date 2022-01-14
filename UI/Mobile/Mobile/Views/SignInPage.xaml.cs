@@ -6,11 +6,11 @@ using Xamarin.Forms.Xaml;
 
 namespace MedGame.UI.Mobile.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class SignInPage : ContentPage
     {
         private readonly SignInViewModel vm;
 
-        public AboutPage()
+        public SignInPage()
         {
             InitializeComponent();
 
