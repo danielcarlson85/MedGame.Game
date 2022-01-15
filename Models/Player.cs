@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,6 +7,9 @@ namespace MedGame.Models
 {
     public class Player
     {
+        [PrimaryKey, AutoIncrement]
+        public string Id { get; set; }
+
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public Levels Level { get; set; } = Levels.Baby;

@@ -46,5 +46,15 @@ namespace MedGame.UI.Mobile.Views
         {
             App.Current.MainPage = new SignInPage();
         }
+
+        private void ButtonSignUp_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonSave_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

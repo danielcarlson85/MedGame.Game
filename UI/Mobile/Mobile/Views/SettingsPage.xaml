@@ -18,21 +18,44 @@
 
     <StackLayout>
 
-        <Grid Margin="0,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="settingsicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />
+            <Label Grid.Row="0" x:Name="LabelId" Text="{Binding Id}"/>
+
+            <Label Grid.Row="0" x:Name="LabelFirstName" Text="Firstname"/>
+            <Entry Grid.Row="1" x:Name="EntryFirstName" />
+
+            <Label Grid.Row="2" x:Name="LabelLastName" Text="Lastname"/>
+            <Entry Grid.Row="3" x:Name="EntryLastName" />
+
+            <Label Grid.Row="4" x:Name="LabelName" Text="Email"/>
+            <Entry Grid.Row="5" x:Name="EntryEmail" />
+
+            <Label Grid.Row="6" x:Name="LabelAddress" Text="Address"/>
+            <Entry Grid.Row="7" x:Name="EntryAdress" />
+
+            <Label Grid.Row="8" x:Name="LabelGender" Text="Gender"/>
+            <Entry Grid.Row="9" x:Name="EntryGender" />
+
+            <Label Grid.Row="10" x:Name="LabelBirthday" Text="Birthday"/>
+            <Entry Grid.Row="11" x:Name="EntryBirthday" />
+
+            <Button Grid.Row="14" x:Name="ButtonSave" Text="Save" FontSize="Micro" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
         </Grid>
 
         <Grid>

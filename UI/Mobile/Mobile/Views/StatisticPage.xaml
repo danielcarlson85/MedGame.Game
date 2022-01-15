@@ -32,6 +32,8 @@
 
             </Grid.RowDefinitions>
 
+
+            
             <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="statisticsicon.png" Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" />
         </Grid>
 
