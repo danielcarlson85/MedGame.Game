@@ -47,9 +47,22 @@ namespace MedGame.UI.Mobile.Views
             App.Current.MainPage = new SettingsPage();
         }
 
+        int procent = 0;
+
         private void ImgProgressBar_Clicked(object sender, EventArgs e)
         {
+            if (procent != 100)
+            {
+                procent += 25;
+            }
+            else
+            {
+                procent = 0;
+            }
 
+            string progressmeterImage = "processmeter" + procent + ".png";
+
+            ImgProgressBar.Source = progressmeterImage;
         }
 
         private void ImgTamagochi_Clicked(object sender, EventArgs e)
