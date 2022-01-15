@@ -20,6 +20,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
         {
+            vm.PlayOrStop();
         }
 
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
