@@ -1,4 +1,8 @@
-﻿using System;
+﻿using MedGame.GameLogic;
+using MedGame.Mobile.Services;
+using MedGame.Models;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -10,9 +14,32 @@ namespace MedGame.UI.Mobile.ViewModels
         public SignInViewModel()
         {
             Title = "test";
-            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
+            Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
         }
 
-        //public ICommand OpenWebCommand { get; }
+        public PlayerDatabase Database { get; }
+
+
+        public async Task<Player> SignUpPlayerAsync(string playerName)
+        {
+            var foundPlayer = await Database.GetPlayerByEmailAsync(playerName);
+
+            if (foundPlayer == null)
+            {
+                await Database.SaveItemAsync(Player.CreateNewPlayer(playerName));
+            }
+
+            GamePlay.Player = foundPlayer;
+
+            return foundPlayer;
+        }
+
+        internal async Task<Player> SignInPlayerByEmailAsync(string text)
+        {
+            var foundPlayer = await Database.GetPlayerByEmailAsync(text);
+
+            GamePlay.Player = foundPlayer;
+            return foundPlayer;
+        }
     }
 }

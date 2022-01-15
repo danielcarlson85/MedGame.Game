@@ -36,6 +36,7 @@ namespace MedGame.UI.Mobile.ViewModels
             backingStore = value;
             onChanged?.Invoke();
             OnPropertyChanged(propertyName);
+            
             return true;
         }
 

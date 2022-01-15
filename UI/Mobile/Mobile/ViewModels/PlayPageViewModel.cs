@@ -1,7 +1,9 @@
 ﻿using MedGame.GameLogic;
+using MedGame.Mobile.Services;
 using MedGame.Models;
 using MedGame.UI.Mobile.Interfaces;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -11,6 +13,8 @@ namespace MedGame.UI.Mobile.ViewModels
     public class PlayPageViewModel : BaseViewModel
     {
         private IAudioService _audioService;
+        public PlayerDatabase Database { get; }
+
 
         public bool IsPlaying { get; private set; }
 
@@ -28,6 +32,8 @@ namespace MedGame.UI.Mobile.ViewModels
             //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
 
             _audioService = DependencyService.Get<IAudioService>();
+            Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
+
         }
 
 
@@ -46,11 +52,11 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
 
-        public void StartMeditation(string levelAudioFile)
+        public async void StartMeditationAsync(string levelAudioFile)
         {
             if (IsPlaying == false)
             {
-                _audioService.PlayAudioFile(levelAudioFile);
+                await _audioService.PlayAudioFile(levelAudioFile);
                 IsPlaying = true;
 
                 GamePlay.StartMeditation();
@@ -60,6 +66,10 @@ namespace MedGame.UI.Mobile.ViewModels
                 IsPlaying = false;
                 _audioService.StopAudioFile();
                 GamePlay.StopMeditation();
+
+                await Database.SaveItemAsync(GamePlay.Player);
+
+
                 // await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
             }
         }

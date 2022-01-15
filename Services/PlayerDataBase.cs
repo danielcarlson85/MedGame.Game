@@ -15,18 +15,18 @@ namespace MedGame.Mobile.Services
     */
 
 
-    public class WordDatabase : IWordDatabase
+    public class PlayerDatabase : IPlayerDatabase
     {
         static SQLiteAsyncConnection Database;
 
-        public static readonly AsyncLazy<WordDatabase> Instance = new AsyncLazy<WordDatabase>(async () =>
+        public static readonly AsyncLazy<PlayerDatabase> Instance = new AsyncLazy<PlayerDatabase>(async () =>
         {
-            var instance = new WordDatabase();
+            var instance = new PlayerDatabase();
             CreateTableResult result = await Database.CreateTableAsync<Player>();
             return instance;
         });
 
-        public WordDatabase()
+        public PlayerDatabase()
         {
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
@@ -41,7 +41,12 @@ namespace MedGame.Mobile.Services
             return Database.QueryAsync<Player>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
-        public Task<Player> GetItemAsync(string id)
+        public Task<Player> GetPlayerByEmailAsync(string email)
+        {
+            return Database.Table<Player>().Where(i => i.Email == email).FirstOrDefaultAsync();
+        }
+
+        public Task<Player> GetPlayerByIdAsync(int id)
         {
             return Database.Table<Player>().Where(i => i.Id == id).FirstOrDefaultAsync();
         }

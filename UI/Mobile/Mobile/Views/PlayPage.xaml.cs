@@ -20,7 +20,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StartMeditation("Level1d1.mp3");
+            vm.StartMeditationAsync("Level1d1.mp3");
         }
 
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)

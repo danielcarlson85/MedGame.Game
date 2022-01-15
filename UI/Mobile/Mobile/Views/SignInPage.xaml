@@ -41,8 +41,8 @@
                 </Grid.RowDefinitions>
 
                     <!--<Label Text="Sign in or signup" HorizontalOptions="Center" FontSize="Small" FontFamily="French Script MT" FontAttributes= "Bold"/>-->
-                <Entry Grid.Column="1" Grid.Row="0" x:Name="TextBoxEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
-                <Entry Grid.Column="1" Grid.Row="1" IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="TextBoxPassword" TabIndex="1"/>
+                <Entry Grid.Column="1" Grid.Row="0" x:Name="EntryEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
+                <Entry Grid.Column="1" Grid.Row="1" x:Name="EntryPassword" IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TabIndex="1"/>
 
 
                 <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HeightRequest="15">

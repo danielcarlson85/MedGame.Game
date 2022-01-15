@@ -54,7 +54,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void ButtonSave_Clicked(object sender, EventArgs e)
         {
-
+            var player = vm.SavePlayer();
         }
     }
 }

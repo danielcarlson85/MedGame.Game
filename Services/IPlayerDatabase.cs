@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace MedGame.Mobile.Services
 {
-    public interface IWordDatabase
+    public interface IPlayerDatabase
     {
         Task<bool> DeleteAllItemsAsync();
         Task<int> DeleteItemAsync(Player item);
-        Task<Player> GetItemAsync(string id);
+        Task<Player> GetPlayerByEmailAsync(string id);
         Task<List<Player>> GetItemsAsync();
         Task<List<Player>> GetItemsNotDoneAsync();
         Task<int> SaveItemAsync(Player item);

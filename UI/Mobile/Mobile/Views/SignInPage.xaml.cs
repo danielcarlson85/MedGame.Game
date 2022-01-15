@@ -1,5 +1,8 @@
-﻿using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.Mobile.Services;
+using MedGame.Models;
+using MedGame.UI.Mobile.ViewModels;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.Views
@@ -15,18 +18,23 @@ namespace MedGame.UI.Mobile.Views
             BindingContext = vm = new SignInViewModel();
         }
 
-        private void ButtonSignIn_Clicked(object sender, EventArgs e)
+        private async void ButtonSignIn_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new MunkPage();
+            var player = await vm.SignInPlayerByEmailAsync(EntryEmail.Text);
+            if (player != null)
+            {
+                App.Current.MainPage = new MunkPage();
+            }
+            else
+            {
+                await DisplayAlert("No player found!", "No player found with that email.","cancel");
+
+            }
         }
 
         private void ButtonSignUp_Clicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void ButtonSignIn_Clicked_1(object sender, EventArgs e)
-        {
+            var player = vm.SignUpPlayerAsync(EntryEmail.Text);
 
         }
     }

@@ -8,7 +8,7 @@ namespace MedGame.Models
     public class Player
     {
         [PrimaryKey, AutoIncrement]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
@@ -21,6 +21,12 @@ namespace MedGame.Models
         public string HttpResult { get; set; } = string.Empty;
         public string PlayerMessage { get; set; } = string.Empty;
         public double TotalMinutesMeditated { get; set; } = 0;
+
+        public static Player CreateNewPlayer()
+        {
+            throw new NotImplementedException();
+        }
+
         public double TotalMinutesMeditatedToday { get; set; } = 0;
         public double TotalDaysMeditatedInRow { get; set; } = 1;
         public double TotalHoursMissed { get; set; } = 0;
@@ -29,5 +35,27 @@ namespace MedGame.Models
         public string Gender { get; set; }
         public string Address { get; set; }
         public string Birthday { get; set; }
+
+        public static Player CreateNewPlayer(string email)
+        {
+            return new Player()
+            {
+                Email = email,
+                Health = 72,
+                HttpResult = string.Empty,
+                LastDateMeditated = DateTime.Now,
+                Level = Levels.Baby,
+                Multiplicator = 1,
+                Password = string.Empty,
+                PlayerMessage = string.Empty,
+                Points = 1,
+                TotalDaysMeditatedInRow = 1,
+                TotalHoursMissed = 0,
+                TotalMinutesMeditated = 0,
+                TotalMinutesMeditatedToday = 0
+            };
+        }
     }
+
+ 
 }
