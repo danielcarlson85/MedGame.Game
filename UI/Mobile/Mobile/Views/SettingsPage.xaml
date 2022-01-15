@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MedGame.UI.Mobile.Views.SettingsPage"
+             xmlns:vm="clr-namespace:MedGame.UI.Mobile.ViewModels"
+             Title="{Binding Title}" BackgroundImageSource="background.png"
+             Shell.TabBarIsVisible="True"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:SettingsPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <Grid Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="settingsicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
+            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
+            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
+            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
+            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

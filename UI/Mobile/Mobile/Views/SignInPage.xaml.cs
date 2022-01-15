@@ -1,8 +1,6 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
 using System;
-using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace MedGame.UI.Mobile.Views
 {
@@ -19,10 +17,15 @@ namespace MedGame.UI.Mobile.Views
 
         private void ButtonSignIn_Clicked(object sender, EventArgs e)
         {
-
+            App.Current.MainPage = new MunkPage();
         }
 
         private void ButtonSignUp_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonSignIn_Clicked_1(object sender, EventArgs e)
         {
 
         }

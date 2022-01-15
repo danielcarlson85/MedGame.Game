@@ -4,9 +4,8 @@
              x:Class="MedGame.UI.Mobile.Views.SignInPage"
              xmlns:vm="clr-namespace:MedGame.UI.Mobile.ViewModels"
              Title="{Binding Title}" BackgroundImageSource="background.png"
-Shell.TabBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
              Shell.NavBarIsVisible="False">
-
 
     <ContentPage.BindingContext>
         <vm:SignInViewModel />
@@ -48,7 +47,7 @@ Shell.TabBarIsVisible="False"
                     <Entry x:Name="TextBoxEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
                     <Entry IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="TextBoxPassword" TabIndex="1"/>
                 </StackLayout>
-                
+
                 <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HeightRequest="30">
                     <Button x:Name="ButtonSignIn" Text="Sign in" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="2" Clicked="ButtonSignIn_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
                     <Button x:Name="ButtonSignUp" Text="Sign up" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="3" Clicked="ButtonSignUp_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>

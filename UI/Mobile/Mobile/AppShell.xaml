@@ -32,7 +32,7 @@
 
     <TabBar>
         <ShellContent Title="SignInPage" Icon="buddaicon.png" Route="SignInPage" ContentTemplate="{DataTemplate local:SignInPage}" />
-        <ShellContent Title="Browse" Icon="playicon.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Browse" Icon="play.png" ContentTemplate="{DataTemplate local:PlayPage}" />
         <ShellContent Title="SignInPage" Icon="statisticsicon.png" ContentTemplate="{DataTemplate local:SignInPage}" />
         <ShellContent Title="Browse" Icon="playicon.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
         <ShellContent Title="SignInPage" Icon="shareicon.png" ContentTemplate="{DataTemplate local:SignInPage}" />
