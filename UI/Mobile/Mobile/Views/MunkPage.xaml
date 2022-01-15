@@ -16,28 +16,33 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
 
-        <Grid Margin="0,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+            <ImageButton x:Name="ImgProgressBar" Source="processmeter.png" Aspect="Fill" Grid.ColumnSpan="6" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
+            <ImageButton x:Name="ImgTamagochi" Source="buddabig.png" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="4" BackgroundColor="Transparent" Clicked="ImgTamagochi_Clicked"/>
+            <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
+            </Grid>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-
-            </Grid.RowDefinitions>
-
-            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="buddaicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />
-        </Grid>
+            <Grid>
+                <Image  Source="healthmeter.png" />
+            </Grid>
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"  />
+                <RowDefinition Height="70"  />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>

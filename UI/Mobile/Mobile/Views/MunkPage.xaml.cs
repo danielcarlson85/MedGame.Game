@@ -46,5 +46,20 @@ namespace MedGame.UI.Mobile.Views
         {
             App.Current.MainPage = new SettingsPage();
         }
+
+        private void ImgProgressBar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImgTamagochi_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImgDailyEnergy_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

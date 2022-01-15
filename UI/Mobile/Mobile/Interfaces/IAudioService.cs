@@ -7,7 +7,7 @@ namespace MedGame.UI.Mobile.Interfaces
 {
     public interface IAudioService
     {
-        void PlayAudioFile(string fileName);
+        Task PlayAudioFile(string fileName);
         void StopAudioFile();
     }
 }
