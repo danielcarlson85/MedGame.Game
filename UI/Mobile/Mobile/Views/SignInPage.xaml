@@ -25,30 +25,27 @@
         </StackLayout>
 
         <StackLayout>
-            <Image Source="greenrectangle.png"/>
+            <!--<Image Source="greenrectangle.png"/>-->
 
-            <Grid Margin="0,-165,0,0">
+            <Grid Margin="0,10,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="*"/>
-
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
                 </Grid.RowDefinitions>
 
-                <StackLayout Grid.Column="1">
-                    <Label Text="Sign in or signup" HorizontalOptions="Center" FontSize="Small" FontFamily="French Script MT" FontAttributes= "Bold"/>
-                    <Entry x:Name="TextBoxEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
-                    <Entry IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="TextBoxPassword" TabIndex="1"/>
-                </StackLayout>
+                    <!--<Label Text="Sign in or signup" HorizontalOptions="Center" FontSize="Small" FontFamily="French Script MT" FontAttributes= "Bold"/>-->
+                <Entry Grid.Column="1" Grid.Row="0" x:Name="TextBoxEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
+                <Entry Grid.Column="1" Grid.Row="1" IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="TextBoxPassword" TabIndex="1"/>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HeightRequest="30">
+
+                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HeightRequest="15">
                     <Button x:Name="ButtonSignIn" Text="Sign in" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="2" Clicked="ButtonSignIn_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
                     <Button x:Name="ButtonSignUp" Text="Sign up" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="3" Clicked="ButtonSignUp_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
                 </StackLayout>
