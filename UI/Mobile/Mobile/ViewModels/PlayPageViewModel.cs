@@ -1,4 +1,6 @@
-﻿using MedGame.UI.Mobile.Interfaces;
+﻿using MedGame.GameLogic;
+using MedGame.Models;
+using MedGame.UI.Mobile.Interfaces;
 using System;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -10,6 +12,16 @@ namespace MedGame.UI.Mobile.ViewModels
     {
         private IAudioService _audioService;
 
+        public bool IsPlaying { get; private set; }
+
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
+
         public PlayPageViewModel()
         {
             Title = "test";
@@ -18,7 +30,6 @@ namespace MedGame.UI.Mobile.ViewModels
             _audioService = DependencyService.Get<IAudioService>();
         }
 
-        public bool IsPlaying { get; private set; }
 
         //public ICommand OpenWebCommand { get; }
 
@@ -26,13 +37,30 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             if (!IsPlaying)
             {
-                _audioService.PlayAudioFile("Level1d1.mp3");
                 IsPlaying = true;
             }
             else
             {
-                _audioService.StopAudioFile();
                 IsPlaying = false;
+            }
+        }
+
+
+        public void StartMeditation(string levelAudioFile)
+        {
+            if (IsPlaying == false)
+            {
+                _audioService.PlayAudioFile(levelAudioFile);
+                IsPlaying = true;
+
+                GamePlay.StartMeditation();
+            }
+            else
+            {
+                IsPlaying = false;
+                _audioService.StopAudioFile();
+                GamePlay.StopMeditation();
+                // await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
             }
         }
     }
