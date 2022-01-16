@@ -52,7 +52,7 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
 
-        public async void StartOrStopMeditationAsync(string levelAudioFile)
+        public async Task StartOrStopMeditationAsync(string levelAudioFile)
         {
             if (IsPlaying == false)
             {
@@ -71,7 +71,7 @@ namespace MedGame.UI.Mobile.ViewModels
             }
         }
 
-        public async void StopMeditationAsync()
+        public void StopMeditation()
         {
             if (IsPlaying)
             {
