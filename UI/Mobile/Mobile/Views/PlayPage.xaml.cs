@@ -16,35 +16,41 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new PlayPageViewModel();
+
         }
 
         private void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StartMeditationAsync("Level1d1.mp3");
+            vm.StartOrStopMeditationAsync("Level1d1.mp3");
         }
 
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
         {
+            vm.StopMeditationAsync();
             App.Current.MainPage = new MunkPage();
         }
 
         private void NavButtonPlayPage_ClickedAsync(object sender, EventArgs e)
         {
+            vm.StopMeditationAsync();
             App.Current.MainPage = new PlayPage();
         }
 
         private void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
         {
+            vm.StopMeditationAsync();
             App.Current.MainPage = new StatisticPage();
         }
 
         private void NavButtonSharePage_ClickedAsync(object sender, EventArgs e)
         {
+            vm.StopMeditationAsync();
             App.Current.MainPage = new SharePage();
         }
 
         private void NavButtonSettingsPage_ClickedAsync(object sender, EventArgs e)
         {
+            vm.StopMeditationAsync();
             App.Current.MainPage = new SettingsPage();
         }
     }

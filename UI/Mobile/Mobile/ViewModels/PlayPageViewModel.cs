@@ -52,7 +52,7 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
 
-        public async void StartMeditationAsync(string levelAudioFile)
+        public async void StartOrStopMeditationAsync(string levelAudioFile)
         {
             if (IsPlaying == false)
             {
@@ -68,7 +68,16 @@ namespace MedGame.UI.Mobile.ViewModels
                 GamePlay.StopMeditation();
 
                 await Database.UpdateItemAsync(GamePlay.Player);
-                // await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
+            }
+        }
+
+        public async void StopMeditationAsync()
+        {
+            if (IsPlaying)
+            {
+                IsPlaying = false;
+                _audioService.StopAudioFile();
+                GamePlay.StopMeditation();
             }
         }
     }

@@ -20,6 +20,7 @@ namespace WSAudioApp.Droid.Implementations
             };
             await _mediaPlayer.SetDataSourceAsync(fd.FileDescriptor, fd.StartOffset, fd.Length);
             _mediaPlayer.Prepare();
+
         }
 
         public void StopAudioFile()
