@@ -10,7 +10,7 @@ namespace MedGame.GameLogic
         public static int totalMinutesMeditatedNow = 0;
 
         public static Timer MeditationTimer { get; set; } = new Timer();
-
+         
         public static void StartMeditation()
         {
             MeditationTimer = new Timer();
