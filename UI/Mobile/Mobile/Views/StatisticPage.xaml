@@ -19,26 +19,26 @@
     <StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Password}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Address}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
-            <Button x:Name="ButtonUpdateUI" Text="Update data" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding Health}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding Points}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding Level}"/>
+            <Label FontSize="Micro" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Email}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Password}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Name}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Address}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Birthday}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding Gender}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
+            <Label FontSize="Micro" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
+            <Button x:Name="ButtonUpdateUI" HeightRequest="40" Text="Update data" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">

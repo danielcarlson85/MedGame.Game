@@ -18,19 +18,14 @@
 
     <StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
-            <Label Text="Email" FontSize="Medium"/>
-            <Label Text="{Binding Email}" FontSize="Medium"/>
-            <Label Text="Name" FontSize="Medium"/>
-            <Entry Text="{Binding Name}" FontSize="Medium" />
-            <Label Text="Address" FontSize="Medium"/>
-            <Entry Text="{Binding Address}" FontSize="Medium"/>
-            <Label Text="Gender" FontSize="Medium"/>
-            <Entry Text="{Binding Gender}" FontSize="Medium"/>
-            <Label  Text="Birthday" FontSize="Medium"/>
-            <Entry  Text="{Binding Birthday}" FontSize="Medium"/>
-            <Button x:Name="ButtonSave" Text="Save" FontSize="Medium" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-            <Button x:Name="ButtonDeleteAllPlayers" Text="Delete all players" FontSize="Medium" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-            <Button x:Name="ButtonShowAllPlayers" Text="Show all players" FontSize="Medium" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Entry Text="{Binding Email}" FontSize="Micro" IsEnabled="False" />
+            <Entry Placeholder="Name" Text="{Binding Name}" FontSize="Micro" HeightRequest="35"/>
+            <Entry Placeholder="Address" Text="{Binding Address}" FontSize="Micro" HeightRequest="35"/>
+            <Entry Placeholder="Gender" Text="{Binding Gender}" FontSize="Micro" HeightRequest="35"/>
+            <Entry Placeholder="Birthday" Text="{Binding Birthday}" FontSize="Micro" HeightRequest="35"/>
+            <Button x:Name="ButtonSave" HeightRequest="40" Text="Save" FontSize="Micro" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonDeleteAllPlayers" HeightRequest="40" Text="Delete all players" FontSize="Micro" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonShowAllPlayers" HeightRequest="40" Text="Show all players" FontSize="Micro" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
 
         </StackLayout>
 
