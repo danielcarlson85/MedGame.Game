@@ -23,9 +23,9 @@
             <Entry Placeholder="Address" Text="{Binding Address}" FontSize="Micro" HeightRequest="35"/>
             <Entry Placeholder="Gender" Text="{Binding Gender}" FontSize="Micro" HeightRequest="35"/>
             <Entry Placeholder="Birthday" Text="{Binding Birthday}" FontSize="Micro" HeightRequest="35"/>
-            <Button x:Name="ButtonSave" HeightRequest="40" Text="Save" FontSize="Micro" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-            <Button x:Name="ButtonDeleteAllPlayers" HeightRequest="40" Text="Delete all players" FontSize="Micro" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-            <Button x:Name="ButtonShowAllPlayers" HeightRequest="40" Text="Show all players" FontSize="Micro" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonSave" HeightRequest="40" Text="Save" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonDeleteAllPlayers" HeightRequest="40" Text="Delete all players" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonShowAllPlayers" HeightRequest="40" Text="Show all players" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
 
         </StackLayout>
 
