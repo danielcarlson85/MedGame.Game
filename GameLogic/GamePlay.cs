@@ -36,10 +36,10 @@ namespace MedGame.GameLogic
             Player.TotalHoursMissed = 0;
             Player.TotalMinutesMeditatedNow = 0;
             Player.Level = LevelCounter.CheckLevel(Player.Points);
-            Player.Punish1Day = false;
-            Player.Punish2Day = false;
-            Player.Punish3Day = false;
-            Player.Punish4Day = false;
+            Player.PunishDay1 = false;
+            Player.PunishDay2 = false;
+            Player.PunishDay3 = false;
+            Player.PunishDay4 = false;
         }
     }
 }

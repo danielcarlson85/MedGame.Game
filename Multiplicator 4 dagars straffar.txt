@@ -1,8 +1,21 @@
-120 - 96 1a dagen		*0.8
+							Logiskt problem
+							Om användaren inte mediterar men ändå går in på appen så blir 
+							användaren straffad olika än om användaren går in efter 3 dagar direkt:
 
-96-72 2a dagen			*0.6
 
-72-48 3 dagen 			*0.4
-48-24 4 dagen			*0.2
+
+							går in Varje dag		gå efter 3 dagar	
+
+120 - 96 1a dagen		*0.8			80				80
+
+96-72 2a dagen			*0.5			40				50
+
+72-48 3 dagen 			*0.10			4				10	
+
+
+
+				
+48-24 4 dagen			*0.005			
 
 0-24				= 1 
+

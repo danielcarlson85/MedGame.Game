@@ -28,10 +28,11 @@ namespace MedGame.Models
         public string Gender { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
         public string Birthday { get; set; } = string.Empty;
-        public bool Punish1Day { get; set; } = false;
-        public bool Punish2Day { get; set; } = false;
-        public bool Punish3Day { get; set; } = false;
-        public bool Punish4Day { get; set; } = false;
+        public bool PunishDay1 { get; set; } = false;
+        public bool PunishDay2 { get; set; } = false;
+        public bool PunishDay3 { get; set; } = false;
+        public bool PunishDay4 { get; set; } = false;
+        public bool PunishDay5 { get; set; } = false;
         public double TotalHoursMissed { get; set; }
 
         public static Player CreateNewPlayer(string email)

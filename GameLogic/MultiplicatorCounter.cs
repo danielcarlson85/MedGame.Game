@@ -33,33 +33,36 @@ namespace MedGame.GameLogic
 
         internal static double CalculateMultiplicatorFromHealth(Player player)
         {
-            if (player.Health <= 120 && player.Health >= 96 && (player.Punish1Day == false))
+            if (player.Health <= 120 && player.Health >= 96 && (player.PunishDay1 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.8;
-                player.Punish1Day = true;
+                //       x =             100                  * 0.9  = 90
+                player.Multiplicator = player.Multiplicator * 0.9;
+                player.PunishDay1 = true;
             }
 
-            if (player.Health < 96 && player.Health > 72 && (player.Punish2Day == false))
+            if (player.Health < 96 && player.Health > 72 && (player.PunishDay2 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.6;
-                player.Punish2Day = true;
+
+                player.Multiplicator = player.Multiplicator * 0.85;
+                player.PunishDay2 = true;
             }
 
-            if (player.Health < 72 && player.Health > 48 && (player.Punish3Day == false))
+            if (player.Health < 72 && player.Health > 48 && (player.PunishDay3 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.4;
-                player.Punish3Day = true;
+                player.Multiplicator = player.Multiplicator * 0.60;
+                player.PunishDay3 = true;
             }
 
-            if (player.Health < 48 && player.Health > 24 && (player.Punish4Day == false))
+            if (player.Health < 48 && player.Health > 24 && (player.PunishDay4 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.2;
-                player.Punish4Day = true;
+                player.Multiplicator = player.Multiplicator * 0.50;
+                player.PunishDay4 = true;
             }
 
-            if (player.Health < 24)
+            if (player.Health < 24 && (player.PunishDay5 == false))
             {
-                player.Multiplicator = 1;
+                player.Multiplicator = player.Multiplicator / 2;
+                player.PunishDay5 = true;
             }
 
             if (player.Multiplicator < 1)
