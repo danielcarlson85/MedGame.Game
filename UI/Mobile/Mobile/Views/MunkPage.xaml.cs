@@ -16,6 +16,8 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new MunkPageViewModel();
+
+            vm.UpdateUI();
         }
 
         private void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)

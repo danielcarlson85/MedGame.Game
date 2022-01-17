@@ -49,6 +49,15 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref birthday, value); }
         }
 
+        string health = string.Empty;
+
+
+        public string Health
+        {
+            get { return health; }
+            set { SetProperty(ref health, value); }
+        }
+
         string gender = string.Empty;
         public string Gender
         {
@@ -69,6 +78,7 @@ namespace MedGame.UI.Mobile.ViewModels
             Address = GamePlay.Player.Address;
             Gender = GamePlay.Player.Gender;
             Birthday = GamePlay.Player.Birthday;
+            Health = GamePlay.Player.Health.ToString();
         }
 
         internal async Task DeleteAllPlayers()
@@ -102,6 +112,7 @@ namespace MedGame.UI.Mobile.ViewModels
             playerToUpdate.Address = Address;
             playerToUpdate.Gender = Gender;
             playerToUpdate.Birthday = Birthday;
+            playerToUpdate.Health = double.Parse(Health);
             await Database.UpdateItemAsync(playerToUpdate);
             GamePlay.Player = playerToUpdate;
         }

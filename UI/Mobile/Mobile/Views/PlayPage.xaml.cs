@@ -16,7 +16,6 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new PlayPageViewModel();
-
         }
 
         private async void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)

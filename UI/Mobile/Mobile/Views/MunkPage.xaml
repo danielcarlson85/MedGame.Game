@@ -37,7 +37,7 @@
         </Grid>
 
         <Grid>
-            <Image  Source="healthmeter.png" />
+            <Image  Source="{Binding HealthMeterImage}" />
         </Grid>
 
 

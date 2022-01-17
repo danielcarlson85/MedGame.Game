@@ -15,16 +15,7 @@ namespace MedGame.UI.Mobile.ViewModels
         private IAudioService _audioService;
         public PlayerDatabase Database { get; }
 
-
         public bool IsPlaying { get; private set; }
-
-
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { SetProperty(ref name, value); }
-        }
 
         public PlayPageViewModel()
         {
@@ -79,6 +70,11 @@ namespace MedGame.UI.Mobile.ViewModels
                 _audioService.StopAudioFile();
                 GamePlay.StopMeditation();
             }
+        }
+
+        public void UpdateUI()
+        {
+            GameScoreCounter.CalculateSigninScore(GamePlay.Player);
         }
     }
 }
