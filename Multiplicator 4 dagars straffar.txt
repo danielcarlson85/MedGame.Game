@@ -1,10 +1,10 @@
 							Logiskt problem
 							Om användaren inte mediterar men ändå går in på appen så blir 
-							användaren straffad olika än om användaren går in efter 3 dagar direkt:
+							användaren straffad mer varje dag, än om användaren går in efter 3 dagar direkt:
 
 
 
-							går in Varje dag		gå efter 3 dagar	
+							Går in varje dag		gå efter 3 dagar	
 
 120 - 96 1a dagen		*0.8			80				80
 
