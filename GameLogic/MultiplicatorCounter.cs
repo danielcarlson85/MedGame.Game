@@ -28,10 +28,7 @@ namespace MedGame.GameLogic
                 multiplicatorTemp = currentMultiplicatorPoints;
             }
 
-            GamePlay.Player.MultiplicatorPunishmentHasBeenMade = true;
-            GamePlay.Player.LastTimeMultiplicatorPunishmentWasMade = DateTime.Now;
             return multiplicatorTemp;
-
         }
 
         internal static double CalculateMultiplicatorFromHealth(Player player)

@@ -13,10 +13,6 @@ namespace MedGame.Models
         public Levels Level { get; set; } = Levels.Baby;
         public double Points { get; set; } = 0;
         public DateTime LastDateMeditated { get; set; } = new DateTime();
-        public DateTime LastTimeHealthPunishmentWasMade { get; set; } = new DateTime();
-        public DateTime LastTimeMultiplicatorPunishmentWasMade { get; set; } = new DateTime();
-        public bool MultiplicatorPunishmentHasBeenMade { get; set; }
-
         public DateTime LastDateLoggedIn { get; set; } = new DateTime();
         public double Health { get; set; } = 144;
         public double Multiplicator { get; set; } = 1;
