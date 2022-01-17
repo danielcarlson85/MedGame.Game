@@ -10,8 +10,9 @@ namespace MedGame.GameLogic
             player.LastDateLoggedIn = DateTime.Now;
             player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
             player.TotalHoursMissed = CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
-            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalMinutesMissed, player.Multiplicator);      //Check punishment int/double
             player.Health = CalculateHealth(player);
+
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromHealth(player);      //Check punishment int/double
 
             return player;
         }
@@ -51,9 +52,8 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (totalMinutesMeditatedNow * multiplicator);
-            player.TotalMinutesMeditatedNow = 0;
             player.Multiplicator += 1;
-            player.Health = 72;
+            player.Health = 144;
 
             return player;
         }
@@ -63,10 +63,8 @@ namespace MedGame.GameLogic
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
-            player.TotalMinutesMeditatedNow = 0;
             player.Points += totalMinutesMeditatedNow;
-            player.Health = 72;
-
+            player.Health = 144;
 
             return player;
         }
@@ -75,7 +73,7 @@ namespace MedGame.GameLogic
         {
             var totalHoursSinceLastMeditation = (DateTime.Now-player.LastDateMeditated).TotalHours;
 
-            var totalHealth = (72 - totalHoursSinceLastMeditation);
+            var totalHealth = (144 - totalHoursSinceLastMeditation);
 
             return totalHealth;
         }

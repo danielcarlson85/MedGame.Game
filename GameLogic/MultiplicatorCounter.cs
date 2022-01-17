@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedGame.Models;
+using System;
 
 namespace MedGame.GameLogic
 {
@@ -31,6 +32,45 @@ namespace MedGame.GameLogic
             GamePlay.Player.LastTimeMultiplicatorPunishmentWasMade = DateTime.Now;
             return multiplicatorTemp;
 
+        }
+
+        internal static double CalculateMultiplicatorFromHealth(Player player)
+        {
+            if (player.Health <= 120 && player.Health >= 96 && (player.Punish1Day == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.8;
+                player.Punish1Day = true;
+            }
+
+            if (player.Health < 96 && player.Health > 72 && (player.Punish2Day == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.6;
+                player.Punish2Day = true;
+            }
+
+            if (player.Health < 72 && player.Health > 48 && (player.Punish3Day == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.4;
+                player.Punish3Day = true;
+            }
+
+            if (player.Health < 48 && player.Health > 24 && (player.Punish4Day == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.2;
+                player.Punish4Day = true;
+            }
+
+            if (player.Health < 24)
+            {
+                player.Multiplicator = 1;
+            }
+
+            if (player.Multiplicator < 1)
+            {
+                player.Multiplicator = 1;
+            }
+
+            return player.Multiplicator;
         }
     }
 }

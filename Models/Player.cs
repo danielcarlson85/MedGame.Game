@@ -18,8 +18,9 @@ namespace MedGame.Models
         public bool MultiplicatorPunishmentHasBeenMade { get; set; }
 
         public DateTime LastDateLoggedIn { get; set; } = new DateTime();
-        public double Health { get; set; } = 72;
+        public double Health { get; set; } = 144;
         public double Multiplicator { get; set; } = 1;
+
         public string HttpResult { get; set; } = string.Empty;
         public string PlayerMessage { get; set; } = string.Empty;
         public double TotalMinutesMeditated { get; set; } = 0;
@@ -31,7 +32,10 @@ namespace MedGame.Models
         public string Gender { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
         public string Birthday { get; set; } = string.Empty;
-        public bool HealthPunishmentHasBeenMade { get; set; }
+        public bool Punish1Day { get; set; } = false;
+        public bool Punish2Day { get; set; } = false;
+        public bool Punish3Day { get; set; } = false;
+        public bool Punish4Day { get; set; } = false;
         public double TotalHoursMissed { get; set; }
 
         public static Player CreateNewPlayer(string email)
@@ -39,7 +43,7 @@ namespace MedGame.Models
             return new Player()
             {
                 Email = email,
-                Health = 72,
+                Health = 144,
                 HttpResult = string.Empty,
                 LastDateMeditated = DateTime.Now,
                 Level = Levels.Baby,
