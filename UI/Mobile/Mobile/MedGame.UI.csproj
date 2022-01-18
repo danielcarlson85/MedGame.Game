@@ -1,39 +1,45 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Acr.UserDialogs" Version="7.2.0.562" />
+		<PackageReference Include="Plugin.FacebookClient" Version="4.0.1" />
+		<PackageReference Include="Plugin.GoogleClient" Version="2.1.12" />
+		<PackageReference Include="Refit" Version="6.1.15" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\GameLogic\MedGame.GameLogic.csproj" />
-    <ProjectReference Include="..\..\..\Models\MedGame.Models.csproj" />
-    <ProjectReference Include="..\..\..\Services\MedGame.Services.csproj" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Views\MunkPage.xaml.cs">
-      <DependentUpon>MunkPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\SharePage.xaml.cs">
-      <DependentUpon>SharePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\StatisticPage.xaml.cs">
-      <DependentUpon>StatisticPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\PlayPage.xaml.cs">
-      <DependentUpon>PlayPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\SignInPage.xaml.cs">
-      <DependentUpon>SignInPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\GameLogic\MedGame.GameLogic.csproj" />
+		<ProjectReference Include="..\..\..\Models\MedGame.Models.csproj" />
+		<ProjectReference Include="..\..\..\Services\MedGame.Services.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Views\MunkPage.xaml.cs">
+			<DependentUpon>MunkPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\SharePage.xaml.cs">
+			<DependentUpon>SharePage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\SettingsPage.xaml.cs">
+			<DependentUpon>SettingsPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\StatisticPage.xaml.cs">
+			<DependentUpon>StatisticPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\PlayPage.xaml.cs">
+			<DependentUpon>PlayPage.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\SignInPage.xaml.cs">
+			<DependentUpon>SignInPage.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
 </Project>

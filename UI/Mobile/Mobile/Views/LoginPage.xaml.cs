@@ -1,21 +1,14 @@
-﻿using MedGame.UI.Mobile.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SocialMediaAuthentication.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace MedGame.UI.Mobile.Views
+namespace SocialMediaAuthentication.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class SocialLoginPage : ContentPage
     {
-        public LoginPage()
+        public SocialLoginPage(IOAuth2Service oAuth2Service)
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            this.BindingContext = new SocialLoginPageViewModel(oAuth2Service);
         }
     }
 }
