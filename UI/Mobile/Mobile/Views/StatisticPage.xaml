@@ -7,7 +7,7 @@
              Shell.TabBarIsVisible="True"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
-        <vm:PlayPageViewModel />
+        <vm:StatisticPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
@@ -22,8 +22,10 @@
 
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
-                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMeditated}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditated}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>

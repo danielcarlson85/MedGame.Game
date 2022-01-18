@@ -11,7 +11,6 @@ namespace MedGame.GameLogic
             player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
             player.TotalHoursMissed = CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Health = CalculateHealth(player);
-
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromHealth(player);      //Check punishment int/double
 
             return player;
@@ -48,30 +47,27 @@ namespace MedGame.GameLogic
 
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
-            player.LastDateMeditated = DateTime.Now;
-            player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
-            player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (totalMinutesMeditatedNow * multiplicator);
+            player.TotalDaysMeditatedInRow = CalculateTotalDaysMeditatedInRow(player);
             player.Multiplicator += 1;
-            player.Health = 144;
+            player.TotalMinutesMeditatedToday = 0;
 
             return player;
         }
 
-        public static Player CalculateMeditationScoreOnSameDay(Player player, double totalMinutesMeditatedNow)
+        public static double CalculateTotalDaysMeditatedInRow(Player player)
         {
-            player.LastDateMeditated = DateTime.Now;
-            player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
-            player.TotalMinutesMeditated += totalMinutesMeditatedNow;
-            player.Points += totalMinutesMeditatedNow;
-            player.Health = 144;
+            if (DateTime.Now.Date == (player.LastDateMeditated.Date.AddDays(1)))
+            {
+                player.TotalDaysMeditatedInRow++;
+            }
 
-            return player;
+            return player.TotalDaysMeditatedInRow;
         }
 
         public static double CalculateHealth(Player player)
         {
-            var totalHoursSinceLastMeditation = (DateTime.Now-player.LastDateMeditated).TotalHours;
+            var totalHoursSinceLastMeditation = (DateTime.Now - player.LastDateMeditated).TotalHours;
 
             var totalHealth = (144 - totalHoursSinceLastMeditation);
 

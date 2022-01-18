@@ -16,6 +16,13 @@ namespace MedGame.UI.Mobile.ViewModels
             get { return id; }
             set { SetProperty(ref id, value); }
         }
+        
+        string totalDaysMeditated = string.Empty;
+        public string TotalDaysMeditated
+        {
+            get { return totalDaysMeditated; }
+            set { SetProperty(ref totalDaysMeditated, value); }
+        }
 
         string email = string.Empty;
         public string Email
@@ -89,6 +96,7 @@ namespace MedGame.UI.Mobile.ViewModels
             Birthday = GamePlay.Player.Birthday;
             Health = GamePlay.Player.Health.ToString();
             Points = GamePlay.Player.Points.ToString();
+            TotalDaysMeditated = GamePlay.Player.TotalDaysMeditated.ToString();
         }
 
         internal async Task DeleteAllPlayers()

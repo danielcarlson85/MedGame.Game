@@ -7,10 +7,9 @@ namespace MedGame.GameLogic
     public class GamePlay
     {
         public static Player Player = new Player();
-        public static int totalMinutesMeditatedNow = 0;
 
         public static Timer MeditationTimer { get; set; } = new Timer();
-         
+
         public static void StartMeditation()
         {
             MeditationTimer = new Timer();
@@ -25,16 +24,24 @@ namespace MedGame.GameLogic
 
             if (GameScoreCounter.CheckSameDate(Player))
             {
-                Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
+                Player.Points += Player.TotalMinutesMeditatedNow;
             }
             else
             {
                 Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
             }
 
+            Player.TotalMinutesMeditatedToday += Player.TotalMinutesMeditatedNow;
+            Player.TotalMinutesMeditated += Player.TotalMinutesMeditatedNow;
+            Player.TotalDaysMeditated = (Player.TotalMinutesMeditated / 1440);
+            Player.TotalHoursMeditated = (Player.TotalMinutesMeditated / 60);
+
             Player.TotalMinutesMissed = 0;
+            Player.Health = 144;
+
             Player.TotalHoursMissed = 0;
             Player.TotalMinutesMeditatedNow = 0;
+            Player.LastDateMeditated = DateTime.Now;
             Player.Level = LevelCounter.CheckLevel(Player.Points);
             Player.PunishDay1 = false;
             Player.PunishDay2 = false;

@@ -36,6 +36,22 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref totalMinutesMeditated, value); }
         }
 
+        string totalHoursMeditated = string.Empty;
+
+        public string TotalHoursMeditated
+        {
+            get { return totalHoursMeditated; }
+            set { SetProperty(ref totalHoursMeditated, value); }
+        }
+
+
+        string totalDaysMeditated = string.Empty;
+        public string TotalDaysMeditated
+        {
+            get { return totalDaysMeditated; }
+            set { SetProperty(ref totalDaysMeditated, value); }
+        }
+
         string totalHoursMissed = string.Empty;
         public string TotalHoursMissed
         {
@@ -157,12 +173,18 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             GameScoreCounter.CalculateSigninScore(GamePlay.Player);
 
-            TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
             TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
             TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
+            
+            TotalHoursMeditated = "TotalHoursMeditated: " + GamePlay.Player.TotalHoursMeditated.ToString();
+            TotalDaysMeditated = "TotalDaysMeditated: " + GamePlay.Player.TotalDaysMeditated.ToString();
             TotalMinutesMeditated = "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString();
+
             TotalMinutesMeditatedNow = "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
             TotalMinutesMeditatedToday = "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
+            TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
+
+
             Points = "Points: " + GamePlay.Player.Points.ToString();
             Health = "Health: " + GamePlay.Player.Health.ToString();
             Email = "Email: " + GamePlay.Player.Email.ToString();
