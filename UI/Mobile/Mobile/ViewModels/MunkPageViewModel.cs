@@ -15,6 +15,13 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref healthMeterImage, value); }
         }
 
+        private string progressMeterImage;
+        public string ProgressMeterImage
+        {
+            get { return progressMeterImage; }
+            set { SetProperty(ref progressMeterImage, value); }
+        }
+
         public MunkPageViewModel()
         {
             Title = "test";
@@ -25,6 +32,8 @@ namespace MedGame.UI.Mobile.ViewModels
         public void UpdateUI()
         {
             HealthMeterImage = GameImageHandler.GetHealthMeter(GamePlay.Player);
+            ProgressMeterImage = GameImageHandler.GetProgressMeter(GamePlay.Player);
+
         }
 
         //public ICommand OpenWebCommand { get; }

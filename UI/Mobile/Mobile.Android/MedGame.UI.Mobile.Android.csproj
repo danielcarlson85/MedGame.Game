@@ -217,12 +217,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter50.png">
+    <AndroidResource Include="Resources\drawable\progressmeter50.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter0.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter0.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\buddaicon.png">
@@ -260,28 +260,28 @@
     <AndroidResource Include="Resources\drawable\healthmeterzen.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter10.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter10.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter20.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter20.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter30.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter30.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter40.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter40.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter60.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter60.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter70.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter70.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter80.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter80.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\processmeter90.png" />
+    <AndroidResource Include="Resources\drawable\progressmeter90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

@@ -59,10 +59,19 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
         string gender = string.Empty;
+
         public string Gender
         {
             get { return gender; }
             set { SetProperty(ref gender, value); }
+        }
+
+        private string points;
+        
+        public string Points
+        {
+            get { return points; }
+            set { SetProperty(ref points, value); }
         }
 
         public PlayerDatabase Database { get; }
@@ -79,6 +88,7 @@ namespace MedGame.UI.Mobile.ViewModels
             Gender = GamePlay.Player.Gender;
             Birthday = GamePlay.Player.Birthday;
             Health = GamePlay.Player.Health.ToString();
+            Points = GamePlay.Player.Points.ToString();
         }
 
         internal async Task DeleteAllPlayers()
@@ -113,6 +123,7 @@ namespace MedGame.UI.Mobile.ViewModels
             playerToUpdate.Gender = Gender;
             playerToUpdate.Birthday = Birthday;
             playerToUpdate.Health = double.Parse(Health);
+            playerToUpdate.Points = double.Parse(Points);
             await Database.UpdateItemAsync(playerToUpdate);
             GamePlay.Player = playerToUpdate;
         }

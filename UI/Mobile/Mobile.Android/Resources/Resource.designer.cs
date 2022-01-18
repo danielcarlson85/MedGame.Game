@@ -16709,34 +16709,34 @@ namespace MedGame.UI.Mobile.Droid
 			public const int preference_list_divider_material = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int processmeter0 = 2131165343;
+			public const int progressmeter0 = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int processmeter10 = 2131165344;
+			public const int progressmeter10 = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int processmeter20 = 2131165345;
+			public const int progressmeter20 = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int processmeter30 = 2131165346;
+			public const int progressmeter30 = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int processmeter40 = 2131165347;
+			public const int progressmeter40 = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int processmeter50 = 2131165348;
+			public const int progressmeter50 = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int processmeter60 = 2131165349;
+			public const int progressmeter60 = 2131165349;
 			
 			// aapt resource value: 0x7F0700A6
-			public const int processmeter70 = 2131165350;
+			public const int progressmeter70 = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int processmeter80 = 2131165351;
+			public const int progressmeter80 = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int processmeter90 = 2131165352;
+			public const int progressmeter90 = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
 			public const int settingsicon = 2131165353;
