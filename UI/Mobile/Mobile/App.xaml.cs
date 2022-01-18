@@ -1,8 +1,4 @@
-﻿using MedGame.UI.Mobile.Services;
-using MedGame.UI.Mobile.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile
 {
@@ -13,7 +9,7 @@ namespace MedGame.UI.Mobile
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 

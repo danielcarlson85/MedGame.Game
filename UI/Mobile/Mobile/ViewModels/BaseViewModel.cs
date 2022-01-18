@@ -1,17 +1,12 @@
-﻿using MedGame.UI.Mobile.Models;
-using MedGame.UI.Mobile.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         bool isBusy = false;
         public bool IsBusy
         {
@@ -36,7 +31,7 @@ namespace MedGame.UI.Mobile.ViewModels
             backingStore = value;
             onChanged?.Invoke();
             OnPropertyChanged(propertyName);
-            
+
             return true;
         }
 
