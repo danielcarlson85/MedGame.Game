@@ -19,24 +19,25 @@
     <StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Health}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Points}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Level}"/>
-            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Password}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Address}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Birthday}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Gender}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
-            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Email}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Password}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Address}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">

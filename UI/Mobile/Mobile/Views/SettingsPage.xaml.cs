@@ -65,7 +65,7 @@ namespace MedGame.UI.Mobile.Views
             {
                 await vm.DeleteAllPlayers();
                 await DisplayAlert("All players deleted!", "All players is now deleted.", "ok");
-
+                App.Current.MainPage = new SignInPage();
             }
         }
     }

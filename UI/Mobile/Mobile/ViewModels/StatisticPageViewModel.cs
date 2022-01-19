@@ -132,6 +132,13 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref email, value); }
         }
 
+        string name = string.Empty;
+        public string Name
+        {
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
+
         public StatisticPageViewModel()
         {
             Title = "test";
@@ -158,6 +165,8 @@ namespace MedGame.UI.Mobile.ViewModels
             Multiplicator = "Multiplicator: " + GamePlay.Player.Multiplicator.ToString();
             LastDateMeditated = "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString();
             Level = "Level: " + GamePlay.Player.Level.ToString();
+            Name = "Name: " + GamePlay.Player.Name.ToString();
+
         }
     }
 }
