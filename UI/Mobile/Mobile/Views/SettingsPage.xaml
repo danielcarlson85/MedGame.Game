@@ -17,56 +17,42 @@
     </ContentPage.Resources>
 
     <StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="Start">
+            <Label Text="Email" FontSize="Medium"/>
+            <Label Text="{Binding Email}" FontSize="Medium"/>
+            <Label Text="Name" FontSize="Medium"/>
+            <Entry Text="{Binding Name}" FontSize="Medium" />
+            <Label Text="Address" FontSize="Medium"/>
+            <Entry Text="{Binding Address}" FontSize="Medium"/>
+            <Label Text="Gender" FontSize="Medium"/>
+            <Entry Text="{Binding Gender}" FontSize="Medium"/>
+            <Label  Text="Birthday" FontSize="Medium"/>
+            <Entry  Text="{Binding Birthday}" FontSize="Medium"/>
+            <Button x:Name="ButtonSave" Text="Save" FontSize="Medium" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonDeleteAllPlayers" Text="Delete all players" FontSize="Medium" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        </StackLayout>
 
-            <Label Grid.Row="0" x:Name="LabelName" Text="Name" FontSize="Default"/>
-            <Entry Grid.Row="1" x:Name="EntryName" Text="{Binding Name}" FontSize="Default" />
+        <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
 
-            <Label Grid.Row="2" x:Name="LabelEmail" Text="Email" FontSize="Default"/>
-            <Entry Grid.Row="3" x:Name="EntryEmail" Text="{Binding Email}" FontSize="Default"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="4" x:Name="LabelAddress" Text="Address" FontSize="Default"/>
-            <Entry Grid.Row="5" x:Name="EntryAdress" Text="{Binding Address}" FontSize="Default"/>
-
-            <Label Grid.Row="6" x:Name="LabelGender" Text="Gender" FontSize="Default"/>
-            <Entry Grid.Row="7" x:Name="EntryGender" Text="{Binding Gender}" FontSize="Default"/>
-
-            <Label Grid.Row="8" x:Name="LabelBirthday" Text="Birthday" FontSize="Default"/>
-            <Entry Grid.Row="9" x:Name="EntryBirthday" Text="{Binding Birthday}" FontSize="Default"/>
-
-            <Button Grid.Row="10" x:Name="ButtonSave" Text="Save" FontSize="Default" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-        </Grid>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
-        </Grid>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

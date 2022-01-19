@@ -16,48 +16,51 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-        <StackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
 
             <ImageButton x:Name="ImgProgressBar" Source="processmeter0.png" Aspect="Fill" Grid.ColumnSpan="6" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
             <ImageButton x:Name="ImgTamagochi" Source="buddabig.png" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="4" BackgroundColor="Transparent" Clicked="ImgTamagochi_Clicked"/>
             <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
-            </Grid>
-
-            <Grid>
-                <Image  Source="healthmeter.png" />
-            </Grid>
+        </Grid>
 
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"  />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
-            <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
+            <Image  Source="healthmeter.png" />
         </Grid>
+
+
+        <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

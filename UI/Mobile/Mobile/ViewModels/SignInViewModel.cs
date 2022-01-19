@@ -34,17 +34,11 @@ namespace MedGame.UI.Mobile.ViewModels
                 await Database.SaveItemAsync(Player.CreateNewPlayer(playerName));
             }
 
-            await CheckLoginAsync(foundPlayer);
-
             return foundPlayer;
         }
 
         internal async Task<Player> SignInPlayerByEmailAsync(string text)
         {
-            //await Database.DeleteAllItemsAsync();
-
-
-
             var foundPlayer = await Database.GetPlayerByEmailAsync(text);
 
             await CheckLoginAsync(foundPlayer);

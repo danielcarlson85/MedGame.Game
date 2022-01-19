@@ -1,5 +1,6 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Mobile.Services;
+using System;
 using System.Threading.Tasks;
 
 namespace MedGame.UI.Mobile.ViewModels
@@ -26,16 +27,16 @@ namespace MedGame.UI.Mobile.ViewModels
             get { return name; }
             set { SetProperty(ref name, value); }
         }
-        
-        
-        
+
+
+
         string address = string.Empty;
         public string Address
         {
             get { return address; }
             set { SetProperty(ref address, value); }
-        }        
-        
+        }
+
         string birthday = string.Empty;
 
 
@@ -44,7 +45,7 @@ namespace MedGame.UI.Mobile.ViewModels
             get { return birthday; }
             set { SetProperty(ref birthday, value); }
         }
-        
+
         string gender = string.Empty;
         public string Gender
         {
@@ -68,15 +69,27 @@ namespace MedGame.UI.Mobile.ViewModels
 
         }
 
+        internal async Task DeleteAllPlayers()
+        {
+            await Database.DeleteAllItemsAsync();
+        }
+
         public async Task SavePlayer()
         {
-            GamePlay.Player.Email = Email;
-            GamePlay.Player.Name = Name;
-            GamePlay.Player.Address = Address;
-            GamePlay.Player.Gender = Gender;
-            GamePlay.Player.Birthday = Birthday;
+            var playsers = await Database.GetItemsAsync();
 
-            await Database.SaveItemAsync(GamePlay.Player);
+
+            var playerToUpdate = await Database.GetPlayerByEmailAsync(GamePlay.Player.Email);
+
+
+
+            playerToUpdate.Name = Name;
+            playerToUpdate.Address = Address;
+            playerToUpdate.Gender = Gender;
+            playerToUpdate.Birthday = Birthday;
+
+            await Database.UpdateItemAsync(playerToUpdate);
+            GamePlay.Player = playerToUpdate;
         }
     }
 }

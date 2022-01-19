@@ -27,14 +27,22 @@ namespace MedGame.UI.Mobile.Views
             }
             else
             {
-                await DisplayAlert("No player found!", "No player found with that email.","cancel");
+                await DisplayAlert("No player found!", "No player found with that email.","ok");
             }
         }
 
-        private void ButtonSignUp_Clicked(object sender, EventArgs e)
+        private async void ButtonSignUp_Clicked(object sender, EventArgs e)
         {
-            var player = vm.SignUpPlayerAsync(EntryEmail.Text);
+            var player = await vm.SignUpPlayerAsync(EntryEmail.Text);
 
+            if (player != null)
+            {
+                await DisplayAlert("Player exist!", "The player already exists.\nPlease use another username", "ok");
+            }
+            else
+            {
+                await DisplayAlert("Player created!", "The player is created.\nPlease sign in and update your information under settings.", "ok");
+            }
         }
     }
 }

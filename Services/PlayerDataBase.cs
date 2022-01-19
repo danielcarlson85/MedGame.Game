@@ -31,34 +31,41 @@ namespace MedGame.Mobile.Services
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<Player>> GetItemsAsync()
+        public async Task<List<Player>> GetItemsAsync()
         {
-            return Database.Table<Player>().ToListAsync();
+            return await Database.Table<Player>().ToListAsync();
         }
 
-        public Task<List<Player>> GetItemsNotDoneAsync()
+        public async Task<List<Player>> GetItemsNotDoneAsync()
         {
-            return Database.QueryAsync<Player>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return await Database.QueryAsync<Player>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
-        public Task<Player> GetPlayerByEmailAsync(string email)
+        public async Task<Player> GetPlayerByEmailAsync(string email)
         {
-            return Database.Table<Player>().Where(i => i.Email == email).FirstOrDefaultAsync();
+            var player = await Database.Table<Player>().Where(i => i.Email == email).FirstOrDefaultAsync();
+
+            return player;
         }
 
-        public Task<Player> GetPlayerByIdAsync(int id)
+        public async Task<Player> GetPlayerByIdAsync(int id)
         {
-            return Database.Table<Player>().Where(i => i.Id == id).FirstOrDefaultAsync();
+            return await Database.Table<Player>().Where(i => i.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(Player item)
+        public async Task<int> UpdateItemAsync(Player item)
         {
-            return Database.InsertOrReplaceAsync(item);
+            return await Database.UpdateAsync(item);
         }
 
-        public Task<int> DeleteItemAsync(Player item)
+        public async Task<int> SaveItemAsync(Player item)
         {
-            return Database.DeleteAsync(item);
+            return await Database.InsertAsync(item);
+        }
+
+        public async Task<int> DeleteItemAsync(Player item)
+        {
+            return await Database.DeleteAsync(item);
         }
 
         public async Task<bool> DeleteAllItemsAsync()
