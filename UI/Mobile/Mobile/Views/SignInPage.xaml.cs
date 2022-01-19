@@ -16,6 +16,7 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new SignInViewModel();
+            GameLogic.GamePlay.Player = null;
         }
 
         private async void ButtonSignIn_Clicked(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace MedGame.UI.Mobile.Views
             }
             else
             {
-                await DisplayAlert("No player found!", "No player found with that email.","ok");
+                await DisplayAlert("No player found!", "No player found with that email.", "ok");
             }
         }
 

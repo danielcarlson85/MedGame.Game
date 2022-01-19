@@ -55,11 +55,18 @@ namespace MedGame.UI.Mobile.Views
         private async void ButtonSave_Clicked(object sender, EventArgs e)
         {
             await vm.UpdatePlayer();
+            await DisplayAlert("Player updated", "The player is now updated.", "ok");
         }
 
         private async void ButtonDeleteAllPlayers_Clicked(object sender, EventArgs e)
         {
-            await vm.DeleteAllPlayers();
+            var result = await DisplayAlert("Warning!", "Do you really want to delete the whole database of questions? \n\nThe database can not be restored.", "Yes", "No");
+            if (result)
+            {
+                await vm.DeleteAllPlayers();
+                await DisplayAlert("All players deleted!", "All players is now deleted.", "ok");
+
+            }
         }
     }
 }
