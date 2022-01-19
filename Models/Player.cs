@@ -34,6 +34,7 @@ namespace MedGame.Models
         public bool PunishDay4 { get; set; } = false;
         public bool PunishDay5 { get; set; } = false;
         public double TotalHoursMissed { get; set; }
+        public int MaxTotalDaysMeditatedInRow { get; set; } = 0;
 
         public static Player CreateNewPlayer(string email)
         {
@@ -57,7 +58,9 @@ namespace MedGame.Models
                 Name = string.Empty,
                 Gender = string.Empty,
                 LastDateLoggedIn = DateTime.Now,
-                TotalMinutesMeditatedNow = 0
+                TotalMinutesMeditatedNow = 0,
+                MaxTotalDaysMeditatedInRow = 0,
+                TotalHoursMissed = 0
             };
         }
     }
