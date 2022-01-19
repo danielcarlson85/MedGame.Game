@@ -3,6 +3,7 @@ using Android.Media;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using MedGame.UI.Mobile.Interfaces;
+using MedGame.GameLogic;
 
 [assembly: Dependency(typeof(AudioServiceImplementation))]
 namespace WSAudioApp.Droid.Implementations
@@ -18,9 +19,16 @@ namespace WSAudioApp.Droid.Implementations
             {
                 _mediaPlayer.Start();
             };
+            
+            _mediaPlayer.Completion += _mediaPlayer_Completion;
             await _mediaPlayer.SetDataSourceAsync(fd.FileDescriptor, fd.StartOffset, fd.Length);
             _mediaPlayer.Prepare();
 
+        }
+
+        private void _mediaPlayer_Completion(object sender, System.EventArgs e)
+        {
+            GamePlay.StopMeditation();
         }
 
         public void StopAudioFile()

@@ -103,6 +103,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\GameLogic\MedGame.GameLogic.csproj">
+      <Project>{DFF7B781-3792-4F70-B7E7-51EE7256B6FB}</Project>
+      <Name>MedGame.GameLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mobile\MedGame.UI.csproj">
       <Project>{e62b83c5-fe5d-4b5d-876c-6cb04fe9dc9f}</Project>
       <Name>MedGame.UI</Name>
@@ -294,6 +298,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\progressmeter90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\short.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

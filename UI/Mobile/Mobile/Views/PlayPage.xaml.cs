@@ -20,7 +20,7 @@ namespace MedGame.UI.Mobile.Views
 
         private async void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StartOrStopMeditationAsync("Level1d1.mp3");
+            await vm.StartOrStopMeditationAsync("short.mp3");
         }
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            //vm.StopMeditation();
             App.Current.MainPage = new StatisticPage();
         }
 
