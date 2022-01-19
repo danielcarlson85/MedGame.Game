@@ -43,11 +43,13 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
 
-        public async Task StartOrStopMeditationAsync(string levelAudioFile)
+        public async Task StartOrStopMeditationAsync()
         {
             if (IsPlaying == false)
             {
-                await _audioService.PlayAudioFile(levelAudioFile);
+                var currentAudioFile = GameAudioHandler.GetCurrentAudioFile(GamePlay.Player);
+
+                await _audioService.PlayAudioFile(currentAudioFile);
                 IsPlaying = true;
 
                 GamePlay.StartMeditation();
