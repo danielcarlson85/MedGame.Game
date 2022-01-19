@@ -18,48 +18,27 @@
 
     <StackLayout>
 
-        <Grid Margin="0,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <StackLayout Margin="0,0,0,0" HeightRequest="2000">
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Health}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Points}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Level}"/>
+            <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Password}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Address}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Birthday}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Gender}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
+            <Label FontSize="Medium" FontAttributes="Bold"  Text="{Binding Email}"/>
 
-
-            <Label Grid.Row="1" Text="{Binding TotalMinutesMeditatedNow}"/>
-            <Label Grid.Row="2" Text="{Binding TotalMinutesMeditatedToday}"/>
-            <Label Grid.Row="3" Text="{Binding TotalDaysMeditatedInRow}"/>
-            <Label Grid.Row="4" Text="{Binding TotalMinutesMeditated}"/>
-            <Label Grid.Row="5" Text="{Binding TotalHoursMissed}"/>
-            <Label Grid.Row="6" Text="{Binding Health}"/>
-            <Label Grid.Row="7" Text="{Binding Points}"/>
-            <Label Grid.Row="8" Text="{Binding Level}"/>
-            <Label Grid.Row="9" Text="{Binding LastDateMeditated}"/>
-            <Label Grid.Row="10" Text="{Binding Multiplicator}"/>
-            <Label Grid.Row="11" Text="{Binding Password}"/>
-            <Label Grid.Row="12" Text="{Binding PlayerMessage}"/>
-            <Label Grid.Row="13" Text="{Binding Address}"/>
-            <Label Grid.Row="14" Text="{Binding Birthday}"/>
-            <Label Grid.Row="15" Text="{Binding Gender}"/>
-            <Label Grid.Row="16" Text="{Binding HttpResult}"/>
-            <Label Grid.Row="17" Text="{Binding Email}"/>
-
-        </Grid>
+        </StackLayout>
 
         <Grid>
             <Grid.RowDefinitions>
