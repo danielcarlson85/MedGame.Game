@@ -9,15 +9,15 @@ namespace MedGame.ServicesProjectTest
     public class RestClientTEST
     {
         [TestMethod]
-        public async Task SignInTEST()
+        public void SignInTEST()
         {
-        //    RESTClient RESTClient = new RESTClient();
-        //    Models.Player playerSignInResult = await RESTClient.SignIn("daniel", "daniel");
-        //    Assert.AreNotEqual(null, playerSignInResult);
+            //    RESTClient RESTClient = new RESTClient();
+            //    Models.Player playerSignInResult = await RESTClient.SignIn("daniel", "daniel");
+            //    Assert.AreNotEqual(null, playerSignInResult);
         }
 
         [TestMethod]
-        public async Task SignUpTEST()
+        public void SignUpTEST()
         {
             //RESTClient RESTClient = new RESTClient();
 
