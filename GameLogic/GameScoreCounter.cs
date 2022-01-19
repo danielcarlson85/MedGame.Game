@@ -48,6 +48,7 @@ namespace MedGame.GameLogic
 
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
+            player.TotalDaysMeditatedInRow = GetTotalDaysInRow(player);
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
@@ -71,9 +72,14 @@ namespace MedGame.GameLogic
 
         public static double CalculateHealth(Player player)
         {
-            var totalHoursSinceLastMeditation = (DateTime.Now-player.LastDateMeditated).TotalHours;
+            var totalHoursSinceLastMeditation = (DateTime.Now - player.LastDateMeditated).TotalHours;
 
             var totalHealth = (144 - totalHoursSinceLastMeditation);
+
+            if (totalHealth <= 0)
+            {
+                totalHealth = 0;
+            }
 
             return totalHealth;
         }
@@ -86,6 +92,16 @@ namespace MedGame.GameLogic
             }
 
             return false;
+        }
+
+        public static int GetTotalDaysInRow(Player player)
+        {
+            if (player.LastDateMeditated.Date == DateTime.Now.Date.AddDays(-1))
+            {
+                player.TotalDaysMeditatedInRow++;
+            }
+
+            return player.TotalDaysMeditatedInRow;
         }
 
         public static bool CheckIfPunishmentHasBeenMade(Player player)

@@ -21,7 +21,7 @@ namespace MedGame.Models
         public string PlayerMessage { get; set; } = string.Empty;
         public double TotalMinutesMeditated { get; set; } = 0;
         public double TotalMinutesMeditatedToday { get; set; } = 0;
-        public double TotalDaysMeditatedInRow { get; set; } = 1;
+        public int TotalDaysMeditatedInRow { get; set; } = 1;
         public double TotalMinutesMissed { get; set; } = 0;
         public double TotalMinutesMeditatedNow { get; set; } = 0;
         public string Name { get; set; } = string.Empty;
