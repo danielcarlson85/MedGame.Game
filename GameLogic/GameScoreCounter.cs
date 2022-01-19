@@ -7,22 +7,15 @@ namespace MedGame.GameLogic
     {
         public Player CalculateSigninScore(Player player)
         {
-            player.TotalHoursMissed = CalculateMissedHours(DateTime.Now, player.LastDateMeditated);
+            player.LastDateLoggedIn = DateTime.Now;
+            player.TotalHoursMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
 
-            //if (!player.PunishmentHasBeenMade)
-            //{
-            // player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
             player.Level = LevelCounter.CheckLevel(player.Points);
-            //player.PunishmentHasBeenMade = true;
-            //}
-            //else
-            //{
-            //    player.Level = LevelCounter.CheckLevel(player.Points);
-            //    player.PunishmentHasBeenMade = true;
-            //}
 
             return player;
         }
+
 
         public int CalculateMissedDates(DateTime LastDateMeditated, DateTime todaysDate)
         {
@@ -32,11 +25,10 @@ namespace MedGame.GameLogic
             return totalDaysMissed;
         }
 
-        public double CalculateMissedHours(DateTime lastDateMeditated, DateTime currentHour)
+        public double CalculateMissedMinutes(DateTime lastDateMeditated, DateTime currentHour)
         {
-            var totalHoursMissed = (lastDateMeditated - currentHour).TotalHours;
-
-            return totalHoursMissed;
+            var totalMinutesMissed = (currentHour - lastDateMeditated).TotalMinutes;
+            return totalMinutesMissed;
         }
 
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
@@ -60,6 +52,26 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditatedNow = 0;
 
             return player;
+        }
+
+        public static bool CheckSameDate(Player player)
+        {
+            if (player.LastDateMeditated.Date == DateTime.Now.Date)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        public static bool CheckIfPunishmentHasBeenMade(Player player)
+        {
+            if (player.LastDateLoggedIn.Date == DateTime.Now.Date)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

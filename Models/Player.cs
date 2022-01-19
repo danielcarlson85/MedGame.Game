@@ -14,10 +14,10 @@ namespace MedGame.Models
         public string Password { get; set; } = string.Empty;
         public Levels Level { get; set; } = Levels.Baby;
         public double Points { get; set; } = 0;
-        public DateTime LastDateMeditated { get; set; } = DateTime.Now;
+        public DateTime LastDateMeditated { get; set; } = new DateTime();
+        public DateTime LastDateLoggedIn { get; set; } = new DateTime();
         public double Health { get; set; } = 72;
         public double Multiplicator { get; set; } = 1;
-        public bool PunishmentHasBeenMade { get; set; } = false;
         public string HttpResult { get; set; } = string.Empty;
         public string PlayerMessage { get; set; } = string.Empty;
         public double TotalMinutesMeditated { get; set; } = 0;
@@ -57,5 +57,5 @@ namespace MedGame.Models
         }
     }
 
- 
+
 }

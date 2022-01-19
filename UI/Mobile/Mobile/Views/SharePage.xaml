@@ -18,7 +18,7 @@
 
     <StackLayout>
 
-        <Grid Margin="0,0,0,0">
+        <!--<Grid Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="200"/>
@@ -30,10 +30,14 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
 
-            </Grid.RowDefinitions>
+            </Grid.RowDefinitions>-->
 
-            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="shareicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />
-        </Grid>
+        <Label x:Name="LabelPlayerInfo" Text="{Binding LabelPlayerInfo}"/>
+            
+            
+
+            <!--<ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="shareicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />-->
+        <!--</Grid>-->
 
         <Grid>
             <Grid.RowDefinitions>

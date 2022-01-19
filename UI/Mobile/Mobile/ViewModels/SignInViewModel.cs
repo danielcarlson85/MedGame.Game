@@ -15,9 +15,14 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             Title = "test";
             Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
+            
+            
+            GameScoreCounter = new GameScoreCounter();
         }
 
         public PlayerDatabase Database { get; }
+        public GameScoreCounter GameScoreCounter { get; }
+
 
 
         public async Task<Player> SignUpPlayerAsync(string playerName)
@@ -29,17 +34,39 @@ namespace MedGame.UI.Mobile.ViewModels
                 await Database.SaveItemAsync(Player.CreateNewPlayer(playerName));
             }
 
-            GamePlay.Player = foundPlayer;
+            await CheckLoginAsync(foundPlayer);
 
             return foundPlayer;
         }
 
         internal async Task<Player> SignInPlayerByEmailAsync(string text)
         {
+            //await Database.DeleteAllItemsAsync();
+
+
+
             var foundPlayer = await Database.GetPlayerByEmailAsync(text);
 
-            GamePlay.Player = foundPlayer;
+            await CheckLoginAsync(foundPlayer);
+
             return foundPlayer;
+        }
+
+        public async Task CheckLoginAsync(Player playerResult)
+        {
+            if (playerResult != null)
+            {
+                GamePlay.Player = playerResult;
+
+                if (GamePlay.Player.Email != null)
+                {
+                    if (!GameScoreCounter.CheckIfPunishmentHasBeenMade(GamePlay.Player))
+                    {
+                        GameScoreCounter.CalculateSigninScore(GamePlay.Player);
+                        await Database.SaveItemAsync(GamePlay.Player);
+                    }
+                }
+            }
         }
     }
 }

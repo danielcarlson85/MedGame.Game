@@ -42,7 +42,6 @@ namespace MedGame.UI.WPF
                 "Name: " + GamePlay.Player.Name + "\n" +
                 "Password: " + GamePlay.Player.Password + "\n" +
                 "PlayerMessage: " + GamePlay.Player.PlayerMessage + "\n" +
-                "PunishmentHasBeenMade: " + GamePlay.Player.PunishmentHasBeenMade + "\n" +
                 "Address: " + GamePlay.Player.Address + "\n" +
                 "Birthday: " + GamePlay.Player.Birthday + "\n" +
                 "Gender: " + GamePlay.Player.Gender + "\n" +
@@ -67,7 +66,6 @@ namespace MedGame.UI.WPF
         private void calculate_Click(object sender, RoutedEventArgs e)
         {
             gameScoreCounter.CalculateSigninScore(GamePlay.Player);
-            GamePlay.Player.PunishmentHasBeenMade = false;
         }
     }
 }

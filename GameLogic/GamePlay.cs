@@ -23,7 +23,7 @@ namespace MedGame.GameLogic
         {
             MeditationTimer.Stop();
 
-            if (CheckSameDate(DateTime.Now.Date))
+            if (GameScoreCounter.CheckSameDate(Player))
             {
                 GamePlay.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
             }
@@ -35,14 +35,6 @@ namespace MedGame.GameLogic
             Player.TotalHoursMissed = 0;
         }
 
-        public static bool CheckSameDate(DateTime todaysDate)
-        {
-            if (Player.LastDateMeditated.Date == todaysDate)
-            {
-                return true;
-            }
-
-            return false;
-        }
+     
     }
 }

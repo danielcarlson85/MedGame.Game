@@ -28,7 +28,6 @@ namespace MedGame.UI.Mobile.Views
             else
             {
                 await DisplayAlert("No player found!", "No player found with that email.","cancel");
-
             }
         }
 

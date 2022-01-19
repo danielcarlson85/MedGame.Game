@@ -22,21 +22,5 @@ namespace MedGame.GameLogicProject
             GamePlay.StopMeditation();
             Assert.IsFalse(GamePlay.MeditationTimer.Enabled);
         }
-
-        [TestMethod]
-        public void CheckSameDateShouldReturnTrue()
-        {
-            player.LastDateMeditated = DateTime.Now.Date;
-            var isSameDate = GamePlay.CheckSameDate(DateTime.Now.Date);
-            Assert.IsTrue(isSameDate);
-        }
-
-        [TestMethod]
-        public void CheckSameDateShouldReturnFalse()
-        {
-            player.LastDateMeditated = DateTime.Now.Date.AddDays(1);
-            var isSameDate = GamePlay.CheckSameDate(player.LastDateMeditated);
-            Assert.IsFalse(isSameDate);
-        }
     }
 }
