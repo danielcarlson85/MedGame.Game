@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedGame.Models
 {
@@ -14,9 +13,6 @@ namespace MedGame.Models
         public string FacebookLastName { get; set; } = "0";
         public string FacebookFirstName { get; set; } = "0";
         public string FacebookEmail { get; set; } = "0";
-
-        [NotMapped]
-        public List<DateTime> ListDatesInRow { get; set; } = new List<DateTime>();
 
         public string ListDatesInRowString { get; set; } = "0";
         public string Password { get; set; } = "0";

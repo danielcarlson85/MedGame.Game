@@ -19,17 +19,45 @@
     <StackLayout>
 
         <Grid Margin="0,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
-
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" x:Name="LabelPlayerInfo" Text="{Binding LabelPlayerInfo}"/>
+
+            <Label Grid.Row="1" Text="{Binding TotalMinutesMeditatedNow}"/>
+            <Label Grid.Row="2" Text="{Binding TotalMinutesMeditatedToday}"/>
+            <Label Grid.Row="3" Text="{Binding TotalDaysMeditatedInRow}"/>
+            <Label Grid.Row="4" Text="{Binding TotalMinutesMeditated}"/>
+            <Label Grid.Row="5" Text="{Binding TotalHoursMissed}"/>
+            <Label Grid.Row="6" Text="{Binding Health}"/>
+            <Label Grid.Row="7" Text="{Binding Points}"/>
+            <Label Grid.Row="8" Text="{Binding Level}"/>
+            <Label Grid.Row="9" Text="{Binding LastDateMeditated}"/>
+            <Label Grid.Row="10" Text="{Binding Multiplicator}"/>
+            <Label Grid.Row="11" Text="{Binding Password}"/>
+            <Label Grid.Row="12" Text="{Binding PlayerMessage}"/>
+            <Label Grid.Row="13" Text="{Binding Address}"/>
+            <Label Grid.Row="14" Text="{Binding Birthday}"/>
+            <Label Grid.Row="15" Text="{Binding Gender}"/>
+            <Label Grid.Row="16" Text="{Binding HttpResult}"/>
+            <Label Grid.Row="17" Text="{Binding Email}"/>
 
         </Grid>
 

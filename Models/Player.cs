@@ -1,7 +1,5 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedGame.Models
 {
@@ -31,10 +29,10 @@ namespace MedGame.Models
         public double TotalDaysMeditatedInRow { get; set; } = 1;
         public double TotalHoursMissed { get; set; } = 0;
         public double TotalMinutesMeditatedNow { get; set; } = 0;
-        public string Name { get; set; }
-        public string Gender { get; set; }
-        public string Address { get; set; }
-        public string Birthday { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Gender { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
+        public string Birthday { get; set; } = string.Empty;
 
         public static Player CreateNewPlayer(string email)
         {
@@ -52,7 +50,13 @@ namespace MedGame.Models
                 TotalDaysMeditatedInRow = 1,
                 TotalHoursMissed = 0,
                 TotalMinutesMeditated = 0,
-                TotalMinutesMeditatedToday = 0
+                TotalMinutesMeditatedToday = 0,
+                Address = string.Empty,
+                Birthday = string.Empty,
+                Name = string.Empty,
+                Gender = string.Empty,
+                LastDateLoggedIn = DateTime.Now,
+                TotalMinutesMeditatedNow = 0
             };
         }
     }
