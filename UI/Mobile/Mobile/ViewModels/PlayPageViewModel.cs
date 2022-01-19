@@ -67,9 +67,7 @@ namespace MedGame.UI.Mobile.ViewModels
                 _audioService.StopAudioFile();
                 GamePlay.StopMeditation();
 
-                await Database.SaveItemAsync(GamePlay.Player);
-
-
+                await Database.UpdateItemAsync(GamePlay.Player);
                 // await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
             }
         }

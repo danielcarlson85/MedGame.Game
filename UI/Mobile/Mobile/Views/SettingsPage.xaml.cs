@@ -54,13 +54,12 @@ namespace MedGame.UI.Mobile.Views
 
         private async void ButtonSave_Clicked(object sender, EventArgs e)
         {
-            await vm.SavePlayer();
+            await vm.UpdatePlayer();
         }
 
         private async void ButtonDeleteAllPlayers_Clicked(object sender, EventArgs e)
         {
             await vm.DeleteAllPlayers();
-
         }
     }
 }

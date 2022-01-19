@@ -136,6 +136,11 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             Title = "test";
 
+            UpdateUI();
+        }
+
+        public void UpdateUI()
+        {
             TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
             TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
             TotalMinutesMeditated = "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString();
@@ -154,7 +159,5 @@ namespace MedGame.UI.Mobile.ViewModels
             LastDateMeditated = "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString();
             Level = "Level: " + GamePlay.Player.Level.ToString();
         }
-
-
     }
 }

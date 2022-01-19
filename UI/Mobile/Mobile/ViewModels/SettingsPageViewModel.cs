@@ -66,7 +66,6 @@ namespace MedGame.UI.Mobile.ViewModels
             Address = GamePlay.Player.Address;
             Gender = GamePlay.Player.Gender;
             Birthday = GamePlay.Player.Birthday;
-
         }
 
         internal async Task DeleteAllPlayers()
@@ -74,20 +73,16 @@ namespace MedGame.UI.Mobile.ViewModels
             await Database.DeleteAllItemsAsync();
         }
 
-        public async Task SavePlayer()
+        public async Task UpdatePlayer()
         {
             var playsers = await Database.GetItemsAsync();
 
-
             var playerToUpdate = await Database.GetPlayerByEmailAsync(GamePlay.Player.Email);
-
-
 
             playerToUpdate.Name = Name;
             playerToUpdate.Address = Address;
             playerToUpdate.Gender = Gender;
             playerToUpdate.Birthday = Birthday;
-
             await Database.UpdateItemAsync(playerToUpdate);
             GamePlay.Player = playerToUpdate;
         }
