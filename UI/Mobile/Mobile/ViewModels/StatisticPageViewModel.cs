@@ -21,6 +21,13 @@ namespace MedGame.UI.Mobile.ViewModels
             get { return totalMinutesMeditatedToday; }
             set { SetProperty(ref totalMinutesMeditatedToday, value); }
         }
+        
+        string maxTotalDaysMeditatedInRow = string.Empty;
+        public string MaxTotalDaysMeditatedInRow
+        {
+            get { return maxTotalDaysMeditatedInRow; }
+            set { SetProperty(ref maxTotalDaysMeditatedInRow, value); }
+        }
 
         string totalDaysMeditatedInRow = string.Empty;
         public string TotalDaysMeditatedInRow
@@ -157,6 +164,7 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             GameScoreCounter.CalculateSigninScore(GamePlay.Player);
 
+            MaxTotalDaysMeditatedInRow = "MaxTotalDaysMeditatedInRow: " + GamePlay.Player.MaxTotalDaysMeditatedInRow.ToString();
             TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
             TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
             TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
