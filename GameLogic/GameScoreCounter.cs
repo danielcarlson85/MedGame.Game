@@ -12,7 +12,7 @@ namespace MedGame.GameLogic
             player.TotalHoursMissed = CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Health = CalculateHealth(player);
 
-            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromHealth(player);      //Check punishment int/double
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromDates(player);      //Check punishment int/double
 
             return player;
         }
@@ -48,8 +48,6 @@ namespace MedGame.GameLogic
 
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
-            player.TotalDaysMeditatedInRow = GetTotalDaysInRow(player);
-            player.MaxTotalDaysMeditatedInRow = GetMaxTotalDaysMeditatedInRow(player);
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
@@ -60,7 +58,7 @@ namespace MedGame.GameLogic
             return player;
         }
 
-        private static int GetMaxTotalDaysMeditatedInRow(Player player)
+        public static int GetMaxTotalDaysMeditatedInRow(Player player)
         {
             if (player.TotalDaysMeditatedInRow > player.MaxTotalDaysMeditatedInRow)
             {

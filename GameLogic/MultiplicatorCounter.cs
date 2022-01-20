@@ -73,7 +73,7 @@ namespace MedGame.GameLogic
             return player.Multiplicator;
         }
 
-        internal static double CalculateMultiplicatorFrom(Player player)
+        internal static double CalculateMultiplicatorFromDays(Player player)
         {
             if (player.Health <= 120 && player.Health >= 96 && (player.PunishDay1 == false))
             {
@@ -114,5 +114,32 @@ namespace MedGame.GameLogic
 
             return player.Multiplicator;
         }
+
+        public static double CalculateMultiplicatorFromDates(Player player)
+        {
+            var oneDayMiss = DateTime.Now.AddDays(-1).Date;
+            var towDayMiss = DateTime.Now.AddDays(-2).Date;
+            var treeDayMiss = DateTime.Now.AddDays(-3).Date;
+
+
+            if (player.LastDateMeditated.Date == oneDayMiss && (player.PunishDay1 == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.8;
+            }
+
+            else if (player.LastDateMeditated.Date == towDayMiss && (player.PunishDay2 == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.6;
+            }
+
+            else if (player.LastDateMeditated.Date == treeDayMiss && (player.PunishDay3 == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.4;
+            }
+
+            return player.Multiplicator;
+
+        }
     }
+
 }
