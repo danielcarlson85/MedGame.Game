@@ -15,7 +15,7 @@ namespace MedGame.GameLogic
             }
             else
             {
-                player.TotalDaysMeditatedInRow = 0;
+                player.TotalDaysMeditatedInRow = 1;
             }
 
             return player.TotalDaysMeditatedInRow;

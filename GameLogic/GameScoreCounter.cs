@@ -30,12 +30,11 @@ namespace MedGame.GameLogic
 
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
-            player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (totalMinutesMeditatedNow * multiplicator);
             player.Multiplicator += 1;
-            player.Health = 144;
+            
 
             return player;
         }
@@ -44,11 +43,9 @@ namespace MedGame.GameLogic
 
         public static Player CalculateMeditationScoreOnSameDay(Player player, double totalMinutesMeditatedNow)
         {
-            player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += totalMinutesMeditatedNow;
-            player.Health = 144;
 
             return player;
         }

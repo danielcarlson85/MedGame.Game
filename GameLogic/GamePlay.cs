@@ -34,6 +34,9 @@ namespace MedGame.GameLogic
 
             Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(Player);
             Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(Player);
+
+            Player.LastDateMeditated = DateTime.Now;
+            Player.Health = 144;
             Player.TotalMinutesMissed = 0;
             Player.TotalHoursMissed = 0;
             Player.TotalMinutesMeditatedNow = 0;
