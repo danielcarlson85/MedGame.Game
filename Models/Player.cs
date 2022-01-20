@@ -32,6 +32,7 @@ namespace MedGame.Models
         public string Address { get; set; } = string.Empty;
         public string Birthday { get; set; } = string.Empty;
         public bool HealthPunishmentHasBeenMade { get; set; }
+        public double TotalHoursMissed { get; set; }
 
         public static Player CreateNewPlayer(string email)
         {

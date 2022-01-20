@@ -43,6 +43,13 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref totalHoursMissed, value); }
         }
 
+        string totalMinutesMissed = string.Empty;
+        public string TotalMinutesMissed
+        {
+            get { return totalMinutesMissed; }
+            set { SetProperty(ref totalMinutesMissed, value); }
+        }
+
         string health = string.Empty;
         public string Health
         {
@@ -149,7 +156,8 @@ namespace MedGame.UI.Mobile.ViewModels
         public void UpdateUI()
         {
             TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
-            TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
+            TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
+            TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
             TotalMinutesMeditated = "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString();
             TotalMinutesMeditatedNow = "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
             TotalMinutesMeditatedToday = "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
@@ -166,7 +174,6 @@ namespace MedGame.UI.Mobile.ViewModels
             LastDateMeditated = "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString();
             Level = "Level: " + GamePlay.Player.Level.ToString();
             Name = "Name: " + GamePlay.Player.Name.ToString();
-
         }
     }
 }

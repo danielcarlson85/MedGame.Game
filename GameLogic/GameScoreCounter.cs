@@ -9,6 +9,7 @@ namespace MedGame.GameLogic
         {
             player.LastDateLoggedIn = DateTime.Now;
             player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.TotalHoursMissed = CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalMinutesMissed, player.Multiplicator);      //Check punishment int/double
             player.Health = CalculateHealth(player);
 
@@ -38,6 +39,12 @@ namespace MedGame.GameLogic
             return totalMinutesMissed;
         }
 
+        public double CalculateMissedHours(DateTime lastDateMeditated, DateTime currentHour)
+        {
+            var totalHoursMissed = (currentHour - lastDateMeditated).TotalHours;
+            return (int)totalHoursMissed;
+        }
+
         public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
         {
             player.LastDateMeditated = DateTime.Now;
@@ -64,11 +71,11 @@ namespace MedGame.GameLogic
 
         public static double CalculateHealth(Player player)
         {
-            var totalMinutesSinceLasPunishment = (player.LastTimeHealthPunishmentWasMade - DateTime.Now).TotalMinutes;
+            var totalHoursSinceLastMeditation = (DateTime.Now-player.LastDateMeditated).TotalHours;
 
-            player.LastTimeHealthPunishmentWasMade = DateTime.Now;
+            var totalHealth = (72 - totalHoursSinceLastMeditation);
 
-            return 0;
+            return totalHealth;
         }
 
         public static bool CheckSameDate(Player player)

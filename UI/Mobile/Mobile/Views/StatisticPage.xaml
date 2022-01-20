@@ -20,10 +20,10 @@
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedNow}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
+            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
