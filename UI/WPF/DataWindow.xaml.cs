@@ -65,7 +65,7 @@ namespace MedGame.UI.WPF
 
         private void calculate_Click(object sender, RoutedEventArgs e)
         {
-            gameScoreCounter.CalculateSigninScore(GamePlay.Player);
+            //gameScoreCounter.CalculateSigninScore(GamePlay.Player);
         }
     }
 }

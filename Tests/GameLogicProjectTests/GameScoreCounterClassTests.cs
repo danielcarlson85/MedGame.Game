@@ -12,7 +12,7 @@ namespace MedGame.GameLogicProject
         public void CalculateSigninScoreShouldUpdatePlayer()
         {
             GameScoreCounter gameScoreCounter = new GameScoreCounter();
-            var player = gameScoreCounter.CalculateSigninScore(TestBase.player);
+            //var player = gameScoreCounter.CalculateSigninScore(TestBase.player);
             Assert.IsNotNull(player);
         }
 
