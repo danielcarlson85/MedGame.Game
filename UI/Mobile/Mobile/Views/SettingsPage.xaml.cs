@@ -68,5 +68,14 @@ namespace MedGame.UI.Mobile.Views
                 App.Current.MainPage = new SignInPage();
             }
         }
+
+        private async void ButtonShowAllPlayers_Clicked(object sender, EventArgs e)
+        {
+            var players = await vm.GetAllPlayersNameAndId();
+
+            string playersAsString = string.Empty;
+
+            await DisplayAlert("All players!", players, "ok");
+        }
     }
 }

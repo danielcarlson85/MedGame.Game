@@ -1,6 +1,9 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Mobile.Services;
+using MedGame.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MedGame.UI.Mobile.ViewModels
@@ -71,6 +74,22 @@ namespace MedGame.UI.Mobile.ViewModels
         internal async Task DeleteAllPlayers()
         {
             await Database.DeleteAllItemsAsync();
+        }
+
+        internal async Task<string> GetAllPlayersNameAndId()
+        {
+            var players = await Database.GetItemsAsync();
+
+            var playersNameAndId = new List<string>();
+
+            foreach (var player in players)
+            {
+                playersNameAndId.Add($"{player.Id}:{player.Email}");
+            }
+
+            var fullPlayersListString = string.Join("\n", playersNameAndId);
+
+            return fullPlayersListString;
         }
 
         public async Task UpdatePlayer()

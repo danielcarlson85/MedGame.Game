@@ -13,21 +13,19 @@ namespace MedGame.Models
         public Levels Level { get; set; } = Levels.Baby;
         public double Points { get; set; } = 0;
         public DateTime LastDateMeditated { get; set; } = new DateTime();
+        public DateTime LastTimeHelthPunishmentWasMade { get; set; } = new DateTime();
+        public DateTime LastTimeMultiplicatorPunishmentWasMade { get; set; } = new DateTime();
+        public bool MultiplicatorPunishmentHasBeenMade { get; set; }
+
         public DateTime LastDateLoggedIn { get; set; } = new DateTime();
         public double Health { get; set; } = 72;
         public double Multiplicator { get; set; } = 1;
         public string HttpResult { get; set; } = string.Empty;
         public string PlayerMessage { get; set; } = string.Empty;
         public double TotalMinutesMeditated { get; set; } = 0;
-
-        public static Player CreateNewPlayer()
-        {
-            throw new NotImplementedException();
-        }
-
         public double TotalMinutesMeditatedToday { get; set; } = 0;
         public double TotalDaysMeditatedInRow { get; set; } = 1;
-        public double TotalHoursMissed { get; set; } = 0;
+        public double TotalMinutesMissed { get; set; } = 0;
         public double TotalMinutesMeditatedNow { get; set; } = 0;
         public string Name { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
@@ -48,7 +46,7 @@ namespace MedGame.Models
                 PlayerMessage = string.Empty,
                 Points = 1,
                 TotalDaysMeditatedInRow = 1,
-                TotalHoursMissed = 0,
+                TotalMinutesMissed = 0,
                 TotalMinutesMeditated = 0,
                 TotalMinutesMeditatedToday = 0,
                 Address = string.Empty,

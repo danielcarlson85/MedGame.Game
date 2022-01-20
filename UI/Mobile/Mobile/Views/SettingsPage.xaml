@@ -30,6 +30,7 @@
             <Entry  Text="{Binding Birthday}" FontSize="Medium"/>
             <Button x:Name="ButtonSave" Text="Save" FontSize="Medium" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
             <Button x:Name="ButtonDeleteAllPlayers" Text="Delete all players" FontSize="Medium" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+            <Button x:Name="ButtonShowAllPlayers" Text="Show all players" FontSize="Medium" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
 
         </StackLayout>
 

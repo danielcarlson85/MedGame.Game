@@ -15,8 +15,8 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             Title = "test";
             Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
-            
-            
+
+
             GameScoreCounter = new GameScoreCounter();
         }
 
@@ -56,9 +56,14 @@ namespace MedGame.UI.Mobile.ViewModels
                 {
                     if (!GameScoreCounter.CheckIfPunishmentHasBeenMade(GamePlay.Player))
                     {
-                        GameScoreCounter.CalculateSigninScore(GamePlay.Player);
-                        await Database.SaveItemAsync(GamePlay.Player);
+                        GameScoreCounter.CalculateSigninScoreWithPunishment(GamePlay.Player);
                     }
+                    else
+                    {
+                        GameScoreCounter.CalculateSigninScoreWithoutPunishment(GamePlay.Player);
+
+                    }
+                    await Database.UpdateItemAsync(GamePlay.Player);
                 }
             }
         }

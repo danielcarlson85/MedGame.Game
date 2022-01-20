@@ -5,13 +5,19 @@ namespace MedGame.GameLogic
 {
     public class GameScoreCounter
     {
-        public Player CalculateSigninScore(Player player)
+        public Player CalculateSigninScoreWithPunishment(Player player)
         {
             player.LastDateLoggedIn = DateTime.Now;
-            player.TotalHoursMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalMinutesMissed, player.Multiplicator);      //Check punishment int/double
 
-            player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalHoursMissed, player.Multiplicator);      //Check punishment int/double
-            player.Level = LevelCounter.CheckLevel(player.Points);
+            return player;
+        }
+
+        public Player CalculateSigninScoreWithoutPunishment(Player player)
+        {
+            player.LastDateLoggedIn = DateTime.Now;
+            player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
 
             return player;
         }
@@ -39,6 +45,7 @@ namespace MedGame.GameLogic
             player.Points += (totalMinutesMeditatedNow * multiplicator);
             player.TotalMinutesMeditatedNow = 0;
             player.Multiplicator += 1;
+            player.Health = 72;
 
             return player;
         }
@@ -48,10 +55,19 @@ namespace MedGame.GameLogic
             player.LastDateMeditated = DateTime.Now;
             player.TotalMinutesMeditatedToday += TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += TotalMinutesMeditatedNow;
-            player.Points += TotalMinutesMeditatedNow;
             player.TotalMinutesMeditatedNow = 0;
+            player.Health = 72;
 
             return player;
+        }
+
+        public static double CalculateHealth(Player player)
+        {
+
+
+
+            var minutesToHours = (int)player.TotalMinutesMissed / 60;
+            return minutesToHours;
         }
 
         public static bool CheckSameDate(Player player)
@@ -63,7 +79,7 @@ namespace MedGame.GameLogic
 
             return false;
         }
-        
+
         public static bool CheckIfPunishmentHasBeenMade(Player player)
         {
             if (player.LastDateLoggedIn.Date == DateTime.Now.Date)

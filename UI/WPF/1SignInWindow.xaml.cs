@@ -101,7 +101,7 @@ namespace MedGame.UI.WPF
                 PlayerMessage = string.Empty,
                 Points = 1,
                 TotalDaysMeditatedInRow = 1,
-                TotalHoursMissed = 0,
+                TotalMinutesMissed = 0,
                 TotalMinutesMeditated = 0,
                 TotalMinutesMeditatedToday = 0
             };

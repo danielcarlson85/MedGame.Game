@@ -25,16 +25,16 @@ namespace MedGame.GameLogic
 
             if (GameScoreCounter.CheckSameDate(Player))
             {
-                GamePlay.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
+                Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
             }
             else
             {
-                GamePlay.Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
+                Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
             }
 
-            Player.TotalHoursMissed = 0;
+            Player.TotalMinutesMissed = 0;
+            Player.MultiplicatorPunishmentHasBeenMade = false;
+            Player.Level = LevelCounter.CheckLevel(Player.Points);
         }
-
-     
     }
 }

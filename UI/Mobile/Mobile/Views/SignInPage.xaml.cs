@@ -1,8 +1,5 @@
-﻿using MedGame.Mobile.Services;
-using MedGame.Models;
-using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.UI.Mobile.ViewModels;
 using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.Views
