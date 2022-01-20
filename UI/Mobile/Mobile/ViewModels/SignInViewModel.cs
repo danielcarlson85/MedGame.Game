@@ -54,15 +54,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
                 if (GamePlay.Player.Email != null)
                 {
-                    if (!GameScoreCounter.CheckIfPunishmentHasBeenMade(GamePlay.Player))
-                    {
-                        GameScoreCounter.CalculateSigninScoreWithPunishment(GamePlay.Player);
-                    }
-                    else
-                    {
-                        GameScoreCounter.CalculateSigninScoreWithoutPunishment(GamePlay.Player);
-
-                    }
+                    GameScoreCounter.CalculateSigninScore(GamePlay.Player);
                     await Database.UpdateItemAsync(GamePlay.Player);
                 }
             }

@@ -5,11 +5,12 @@ namespace MedGame.GameLogic
 {
     public class GameScoreCounter
     {
-        public Player CalculateSigninScoreWithPunishment(Player player)
+        public Player CalculateSigninScore(Player player)
         {
             player.LastDateLoggedIn = DateTime.Now;
             player.TotalMinutesMissed = CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicator(player.TotalMinutesMissed, player.Multiplicator);      //Check punishment int/double
+            player.Health = CalculateHealth(player);
 
             return player;
         }
@@ -63,11 +64,11 @@ namespace MedGame.GameLogic
 
         public static double CalculateHealth(Player player)
         {
+            var totalMinutesSinceLasPunishment = (player.LastTimeHealthPunishmentWasMade - DateTime.Now).TotalMinutes;
 
+            player.LastTimeHealthPunishmentWasMade = DateTime.Now;
 
-
-            var minutesToHours = (int)player.TotalMinutesMissed / 60;
-            return minutesToHours;
+            return 0;
         }
 
         public static bool CheckSameDate(Player player)
