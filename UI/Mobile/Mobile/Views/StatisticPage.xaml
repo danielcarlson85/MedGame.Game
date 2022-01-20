@@ -29,15 +29,15 @@
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
             <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Password}"/>
-            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Address}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
+            <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
             <Button x:Name="ButtonUpdateUI" Text="Update data" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
         </StackLayout>
 
