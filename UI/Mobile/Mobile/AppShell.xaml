@@ -30,7 +30,7 @@
         </ResourceDictionary>
     </Shell.Resources>-->
 
-    <TabBar>
+    <!--<TabBar>
         <ShellContent Title="SignInPage" Icon="buddaicon.png" Route="SignInPage" ContentTemplate="{DataTemplate local:SignInPage}" />
         <ShellContent Title="Browse" Icon="play.png" ContentTemplate="{DataTemplate local:PlayPage}" />
         <ShellContent Title="SignInPage" Icon="statisticsicon.png" ContentTemplate="{DataTemplate local:SignInPage}" />
@@ -40,15 +40,15 @@
 
 
 
-        <!--<Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png" PreviewMouseLeftButtonUp="IconMunk_PreviewMouseLeftButtonUp"  />
+        --><!--<Image x:Name="IconMunk" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/buddaicon.png" PreviewMouseLeftButtonUp="IconMunk_PreviewMouseLeftButtonUp"  />
         <Image x:Name="IconPlay" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/playicon.png" PreviewMouseLeftButtonUp="IconPlay_PreviewMouseLeftButtonUp" />
         <Image x:Name="IconStatistics" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/statisticsicon.png" PreviewMouseLeftButtonUp="IconStatistics_PreviewMouseLeftButtonUp" />
         <Image x:Name="IconShare" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/shareicon.png" PreviewMouseLeftButtonUp="IconShare_PreviewMouseLeftButtonUp" />
         <Image x:Name="IconSettings" Grid.Column="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Source="Images/common/settingsicon.png" PreviewMouseLeftButtonUp="IconSettings_PreviewMouseLeftButtonUp" />
-        </Grid>-->
+        </Grid>--><!--
 
 
-    </TabBar>
+    </TabBar>-->
 
     <!--
         If you would like to navigate to this content you can do so by calling

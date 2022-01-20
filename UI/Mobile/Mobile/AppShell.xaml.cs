@@ -1,7 +1,4 @@
-﻿using MedGame.UI.Mobile.ViewModels;
-using MedGame.UI.Mobile.Views;
-using System;
-using System.Collections.Generic;
+﻿using MedGame.UI.Mobile.Views;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile
@@ -11,8 +8,6 @@ namespace MedGame.UI.Mobile
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(PlayPage), typeof(PlayPage));
         }
 

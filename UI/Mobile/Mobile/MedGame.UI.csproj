@@ -35,8 +35,5 @@
     <Compile Update="Views\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\BrowsePage.xaml.cs">
-      <DependentUpon>BrowsePage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>
