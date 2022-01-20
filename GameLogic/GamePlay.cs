@@ -23,7 +23,7 @@ namespace MedGame.GameLogic
         {
             MeditationTimer.Stop();
 
-            if (GameScoreCounter.CheckSameDate(Player))
+            if (DateCounters.CheckSameDate(Player))
             {
                 Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
             }
@@ -32,8 +32,8 @@ namespace MedGame.GameLogic
                 Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
             }
 
-            Player.TotalDaysMeditatedInRow = GameScoreCounter.GetTotalDaysInRow(Player);
-            Player.MaxTotalDaysMeditatedInRow = GameScoreCounter.GetMaxTotalDaysMeditatedInRow(Player);
+            Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(Player);
+            Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(Player);
             Player.TotalMinutesMissed = 0;
             Player.TotalHoursMissed = 0;
             Player.TotalMinutesMeditatedNow = 0;
