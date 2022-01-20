@@ -38,6 +38,7 @@
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
             <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
+            <Button x:Name="ButtonUpdateUI" Text="Update data" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
         </StackLayout>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">

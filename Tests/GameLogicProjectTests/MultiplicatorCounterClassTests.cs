@@ -11,9 +11,7 @@ namespace MedGame.GameLogicProject
         [TestMethod]
         public void CalculateMissedDatesShouldReturn2()
         {
-            GameScoreCounter gameScoreCounter = new GameScoreCounter();
-
-            var days = gameScoreCounter.CalculateMissedDates(new DateTime(2019, 01, 14), new DateTime(2019, 01, 16));
+            var days = GameScoreCounter.CalculateMissedDates(new DateTime(2019, 01, 14), new DateTime(2019, 01, 16));
 
             Assert.AreEqual(2, days);
         }
@@ -21,9 +19,7 @@ namespace MedGame.GameLogicProject
         [TestMethod]
         public void CalculateMissedHoursShouldReturn48()
         {
-            GameScoreCounter gameScoreCounter = new GameScoreCounter();
-
-            var hours = gameScoreCounter.CalculateMissedMinutes(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
+            var hours = GameScoreCounter.CalculateMissedMinutes(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
 
             Assert.AreEqual(48, hours);
         }

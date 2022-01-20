@@ -33,6 +33,7 @@ namespace MedGame.GameLogic
             }
 
             Player.TotalMinutesMissed = 0;
+            Player.TotalHoursMissed = 0;
             Player.MultiplicatorPunishmentHasBeenMade = false;
             Player.Level = LevelCounter.CheckLevel(Player.Points);
         }

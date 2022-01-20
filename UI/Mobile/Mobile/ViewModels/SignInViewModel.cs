@@ -15,13 +15,9 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             Title = "test";
             Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
-
-
-            GameScoreCounter = new GameScoreCounter();
         }
 
         public PlayerDatabase Database { get; }
-        public GameScoreCounter GameScoreCounter { get; }
 
 
 

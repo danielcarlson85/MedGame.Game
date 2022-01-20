@@ -73,9 +73,6 @@ namespace MedGame.UI.WPF
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
 
-                    GameScoreCounter gameScoreCounter = new GameScoreCounter();
-                    //gameScoreCounter.CalculateSigninScore(GamePlay.Player);
-
                     LoadingWindow.Close();
 
                     Close();

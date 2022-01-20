@@ -155,6 +155,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
+            GameScoreCounter.CalculateSigninScore(GamePlay.Player);
+
             TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
             TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
             TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
