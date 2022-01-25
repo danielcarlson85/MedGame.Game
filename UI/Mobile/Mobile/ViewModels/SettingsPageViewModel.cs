@@ -114,8 +114,6 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task UpdatePlayer()
         {
-            var playsers = await Database.GetItemsAsync();
-
             var playerToUpdate = await Database.GetPlayerByEmailAsync(GamePlay.Player.Email);
 
             playerToUpdate.Name = Name;
