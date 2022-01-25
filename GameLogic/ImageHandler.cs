@@ -2,7 +2,7 @@
 
 namespace MedGame.GameLogic
 {
-    public class GameImageHandler
+    public class ImageHandler
     {
         public static string GetHealthMeter(Player player)
         {

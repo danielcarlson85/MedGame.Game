@@ -120,25 +120,45 @@ namespace MedGame.GameLogic
             var oneDayMiss = DateTime.Now.AddDays(-1).Date;
             var towDayMiss = DateTime.Now.AddDays(-2).Date;
             var treeDayMiss = DateTime.Now.AddDays(-3).Date;
+            var fourDayMiss = DateTime.Now.AddDays(-4).Date;
+            var fiveDayMiss = DateTime.Now.AddDays(-5).Date;
 
 
             if (player.LastDateMeditated.Date == oneDayMiss && (player.PunishDay1 == false))
             {
                 player.Multiplicator = player.Multiplicator * 0.8;
+                player.PunishDay1 = true;
             }
 
             else if (player.LastDateMeditated.Date == towDayMiss && (player.PunishDay2 == false))
             {
                 player.Multiplicator = player.Multiplicator * 0.6;
+                player.PunishDay2 = true;
             }
 
             else if (player.LastDateMeditated.Date == treeDayMiss && (player.PunishDay3 == false))
             {
                 player.Multiplicator = player.Multiplicator * 0.4;
+                player.PunishDay3 = true;
+            }
+
+            else if (player.LastDateMeditated.Date == fourDayMiss && (player.PunishDay4 == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.2;
+                player.PunishDay4 = true;
+            }
+            else if (player.LastDateMeditated.Date == fiveDayMiss && (player.PunishDay5 == false))
+            {
+                player.Multiplicator = player.Multiplicator * 0.1;
+                player.PunishDay4 = true;
+            }
+
+            if (player.Multiplicator < 1)
+            {
+                player.Multiplicator = 1;
             }
 
             return player.Multiplicator;
-
         }
     }
 

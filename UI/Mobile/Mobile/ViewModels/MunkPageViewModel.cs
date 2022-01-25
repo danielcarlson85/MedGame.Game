@@ -31,8 +31,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
-            HealthMeterImage = GameImageHandler.GetHealthMeter(GamePlay.Player);
-            ProgressMeterImage = GameImageHandler.GetProgressMeter(GamePlay.Player);
+            HealthMeterImage = ImageHandler.GetHealthMeter(GamePlay.Player);
+            ProgressMeterImage = ImageHandler.GetProgressMeter(GamePlay.Player);
 
         }
 

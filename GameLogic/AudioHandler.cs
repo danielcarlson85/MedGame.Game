@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MedGame.GameLogic
 {
-    public class GameAudioHandler
+    public class AudioHandler
     {
         public static string GetCurrentAudioFile(Player player)
         {

@@ -47,7 +47,7 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             if (IsPlaying == false)
             {
-                var currentAudioFile = GameAudioHandler.GetCurrentAudioFile(GamePlay.Player);
+                var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
 
                 await _audioService.PlayAudioFile(currentAudioFile);
                 IsPlaying = true;
