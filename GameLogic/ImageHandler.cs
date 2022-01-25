@@ -65,52 +65,52 @@ namespace MedGame.GameLogic
                 progressMeterImage = "progressMeter0.png";
             }
 
-            if (player.Points < points20Procent && player.Points >= points10Procent)
+            else if (player.Points < points20Procent && player.Points >= points10Procent)
             {
                 progressMeterImage = "progressMeter10.png";
             }
 
-            if (player.Points < points30Procent && player.Points >= points20Procent)
+            else if (player.Points < points30Procent && player.Points >= points20Procent)
             {
                 progressMeterImage = "progressmeter20.png";
             }
 
-            if (player.Points < points40Procent && player.Points >= points30Procent)
+            else if (player.Points < points40Procent && player.Points >= points30Procent)
             {
                 progressMeterImage = "progressMeter30.png";
             }
 
-            if (player.Points < points50Procent && player.Points >= points40Procent)
+            else if (player.Points < points50Procent && player.Points >= points40Procent)
             {
                 progressMeterImage = "progressMeter40.png";
             }
 
-            if (player.Points < points60Procent && player.Points >= points50Procent)
+            else if (player.Points < points60Procent && player.Points >= points50Procent)
             {
                 progressMeterImage = "progressMeter50.png";
             }
 
-            if (player.Points < points70Procent && player.Points >= points60Procent)
+            else if (player.Points < points70Procent && player.Points >= points60Procent)
             {
                 progressMeterImage = "progressMeter60.png";
             }
 
-            if (player.Points < points80Procent && player.Points >= points70Procent)
+            else if (player.Points < points80Procent && player.Points >= points70Procent)
             {
                 progressMeterImage = "progressMeter70.png";
             }
 
-            if (player.Points < points90Procent && player.Points >= points80Procent)
+            else if (player.Points < points90Procent && player.Points >= points80Procent)
             {
                 progressMeterImage = "progressMeter80.png";
             }
 
-            if (player.Points < points100Procent && player.Points >= points90Procent)
+            else if (player.Points < points100Procent && player.Points >= points90Procent)
             {
                 progressMeterImage = "progressMeter90.png";
             }
 
-            if (player.Points >= points100Procent)
+            else
             {
                 progressMeterImage = "progressMeter100.png";
             }
