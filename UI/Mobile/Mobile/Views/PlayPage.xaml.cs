@@ -20,6 +20,16 @@ namespace MedGame.UI.Mobile.Views
 
         private async void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
         {
+
+            if (vm.IsPlaying)
+            {
+                ImageButtonPlay.Source = "PlayButtonNew.png";
+            }
+            else
+            {
+                ImageButtonPlay.Source = "pausebutton.png";
+            }
+
             await vm.StartOrStopMeditationAsync();
         }
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)

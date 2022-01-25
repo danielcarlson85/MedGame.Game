@@ -19415,67 +19415,76 @@ namespace MedGame.UI.Mobile.Droid
 			public const int notify_panel_notification_icon_bg = 2131165393;
 			
 			// aapt resource value: 0x7F0700D2
-			public const int playbutton = 2131165394;
+			public const int pausebutton = 2131165394;
 			
 			// aapt resource value: 0x7F0700D3
-			public const int playicon = 2131165395;
+			public const int playbutton = 2131165395;
 			
 			// aapt resource value: 0x7F0700D4
-			public const int preference_list_divider_material = 2131165396;
+			public const int PlayButtonNew = 2131165396;
 			
 			// aapt resource value: 0x7F0700D5
-			public const int progressmeter0 = 2131165397;
+			public const int playicon = 2131165397;
 			
 			// aapt resource value: 0x7F0700D6
-			public const int progressmeter10 = 2131165398;
+			public const int preference_list_divider_material = 2131165398;
 			
 			// aapt resource value: 0x7F0700D7
-			public const int progressmeter20 = 2131165399;
+			public const int progressmeter0 = 2131165399;
 			
 			// aapt resource value: 0x7F0700D8
-			public const int progressmeter30 = 2131165400;
+			public const int progressmeter10 = 2131165400;
 			
 			// aapt resource value: 0x7F0700D9
-			public const int progressmeter40 = 2131165401;
+			public const int progressmeter100 = 2131165401;
 			
 			// aapt resource value: 0x7F0700DA
-			public const int progressmeter50 = 2131165402;
+			public const int progressmeter20 = 2131165402;
 			
 			// aapt resource value: 0x7F0700DB
-			public const int progressmeter60 = 2131165403;
+			public const int progressmeter30 = 2131165403;
 			
 			// aapt resource value: 0x7F0700DC
-			public const int progressmeter70 = 2131165404;
+			public const int progressmeter40 = 2131165404;
 			
 			// aapt resource value: 0x7F0700DD
-			public const int progressmeter80 = 2131165405;
+			public const int progressmeter50 = 2131165405;
 			
 			// aapt resource value: 0x7F0700DE
-			public const int progressmeter90 = 2131165406;
+			public const int progressmeter60 = 2131165406;
 			
 			// aapt resource value: 0x7F0700DF
-			public const int settingsicon = 2131165407;
+			public const int progressmeter70 = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int shareicon = 2131165408;
+			public const int progressmeter80 = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int statisticsicon = 2131165409;
+			public const int progressmeter90 = 2131165409;
 			
 			// aapt resource value: 0x7F0700E2
-			public const int test_custom_background = 2131165410;
+			public const int settingsicon = 2131165410;
 			
 			// aapt resource value: 0x7F0700E3
-			public const int thinkingbubble = 2131165411;
+			public const int shareicon = 2131165411;
 			
 			// aapt resource value: 0x7F0700E4
-			public const int tooltip_frame_dark = 2131165412;
+			public const int statisticsicon = 2131165412;
 			
 			// aapt resource value: 0x7F0700E5
-			public const int tooltip_frame_light = 2131165413;
+			public const int test_custom_background = 2131165413;
 			
 			// aapt resource value: 0x7F0700E6
-			public const int yourpathtobecomebuddah = 2131165414;
+			public const int thinkingbubble = 2131165414;
+			
+			// aapt resource value: 0x7F0700E7
+			public const int tooltip_frame_dark = 2131165415;
+			
+			// aapt resource value: 0x7F0700E8
+			public const int tooltip_frame_light = 2131165416;
+			
+			// aapt resource value: 0x7F0700E9
+			public const int yourpathtobecomebuddah = 2131165417;
 			
 			static Drawable()
 			{
