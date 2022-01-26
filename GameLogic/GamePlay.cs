@@ -13,8 +13,10 @@ namespace MedGame.GameLogic
          
         public static void StartMeditation()
         {
-            MeditationTimer = new Timer();
-            MeditationTimer.Interval = 1000;
+            MeditationTimer = new Timer
+            {
+                Interval = 1000
+            };
             MeditationTimer.Elapsed += (object sender, ElapsedEventArgs e) => { Player.TotalMinutesMeditatedNow++; };
             MeditationTimer.Start();
         }

@@ -7,7 +7,7 @@ namespace MedGame.GameLogic
     {
         public static double CalculateMultiplicator(double totalMinutesMissed, double currentMultiplicatorPoints)
         {
-            double multiplicatorTemp = 0;
+            double multiplicatorTemp;
 
             //Point punishment by reduced multiplicator
             if (totalMinutesMissed >= 1440 && totalMinutesMissed <= 2880)
@@ -36,32 +36,32 @@ namespace MedGame.GameLogic
             if (player.Health <= 120 && player.Health >= 96 && (player.PunishDay1 == false))
             {
                 //       x =             100                  * 0.9  = 90
-                player.Multiplicator = player.Multiplicator * 0.9;
+                player.Multiplicator *= 0.9;
                 player.PunishDay1 = true;
             }
 
             if (player.Health < 96 && player.Health > 72 && (player.PunishDay2 == false))
             {
 
-                player.Multiplicator = player.Multiplicator * 0.85;
+                player.Multiplicator *= 0.85;
                 player.PunishDay2 = true;
             }
 
             if (player.Health < 72 && player.Health > 48 && (player.PunishDay3 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.60;
+                player.Multiplicator *= 0.60;
                 player.PunishDay3 = true;
             }
 
             if (player.Health < 48 && player.Health > 24 && (player.PunishDay4 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.50;
+                player.Multiplicator *= 0.50;
                 player.PunishDay4 = true;
             }
 
             if (player.Health < 24 && (player.PunishDay5 == false))
             {
-                player.Multiplicator = player.Multiplicator / 2;
+                player.Multiplicator /= 2;
                 player.PunishDay5 = true;
             }
 
@@ -78,32 +78,32 @@ namespace MedGame.GameLogic
             if (player.Health <= 120 && player.Health >= 96 && (player.PunishDay1 == false))
             {
                 //       x =             100                  * 0.9  = 90
-                player.Multiplicator = player.Multiplicator * 0.9;
+                player.Multiplicator *= 0.9;
                 player.PunishDay1 = true;
             }
 
             if (player.Health < 96 && player.Health > 72 && (player.PunishDay2 == false))
             {
 
-                player.Multiplicator = player.Multiplicator * 0.85;
+                player.Multiplicator *= 0.85;
                 player.PunishDay2 = true;
             }
 
             if (player.Health < 72 && player.Health > 48 && (player.PunishDay3 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.60;
+                player.Multiplicator *= 0.60;
                 player.PunishDay3 = true;
             }
 
             if (player.Health < 48 && player.Health > 24 && (player.PunishDay4 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.50;
+                player.Multiplicator *= 0.50;
                 player.PunishDay4 = true;
             }
 
             if (player.Health < 24 && (player.PunishDay5 == false))
             {
-                player.Multiplicator = player.Multiplicator / 2;
+                player.Multiplicator /= 2;
                 player.PunishDay5 = true;
             }
 
@@ -126,30 +126,30 @@ namespace MedGame.GameLogic
 
             if (player.LastDateMeditated.Date == oneDayMiss && (player.PunishDay1 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.8;
+                player.Multiplicator *= 0.8;
                 player.PunishDay1 = true;
             }
 
             else if (player.LastDateMeditated.Date == towDayMiss && (player.PunishDay2 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.6;
+                player.Multiplicator *= 0.6;
                 player.PunishDay2 = true;
             }
 
             else if (player.LastDateMeditated.Date == treeDayMiss && (player.PunishDay3 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.4;
+                player.Multiplicator *= 0.4;
                 player.PunishDay3 = true;
             }
 
             else if (player.LastDateMeditated.Date == fourDayMiss && (player.PunishDay4 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.2;
+                player.Multiplicator *= 0.2;
                 player.PunishDay4 = true;
             }
             else if (player.LastDateMeditated.Date == fiveDayMiss && (player.PunishDay5 == false))
             {
-                player.Multiplicator = player.Multiplicator * 0.1;
+                player.Multiplicator *= 0.1;
                 player.PunishDay4 = true;
             }
 

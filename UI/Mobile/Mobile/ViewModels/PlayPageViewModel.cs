@@ -12,18 +12,17 @@ namespace MedGame.UI.Mobile.ViewModels
 {
     public class PlayPageViewModel : BaseViewModel
     {
-        private IAudioService _audioService;
-        public PlayerDatabase Database { get; }
+        private readonly IAudioService _audioService;
+        public readonly PlayerDatabase _database;
 
         public bool IsPlaying { get; private set; }
 
         public PlayPageViewModel()
         {
             Title = "test";
-            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
 
             _audioService = DependencyService.Get<IAudioService>();
-            Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
+            _database = PlayerDatabase.Instance.GetAwaiter().GetResult();
 
         }
 
@@ -60,7 +59,7 @@ namespace MedGame.UI.Mobile.ViewModels
                 _audioService.StopAudioFile();
                 GamePlay.StopMeditation();
 
-                await Database.UpdateItemAsync(GamePlay.Player);
+                await _database.UpdateItemAsync(GamePlay.Player);
             }
         }
 
