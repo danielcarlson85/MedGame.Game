@@ -75,10 +75,79 @@ namespace MedGame.GameLogic
 
         private static bool CheckBetweenNumbers(Player player, double number1, double number2)
         {
-            if (player.Points >= number1 && player.Points < number2)
+            switch (player.Level)
             {
-                return true;
+                case Levels.Baby:
+                    if ((player.Points) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Child:
+                    if ((player.Points + (int)Levels.Baby) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Teenager:
+                    if ((player.Points + (int)Levels.Child) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Pupil:
+                    if ((player.Points + (int)Levels.Teenager) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.YoungAdult:
+                    if ((player.Points + (int)Levels.Pupil) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Adult:
+                    if ((player.Points + (int)Levels.YoungAdult) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.OldAdult:
+                    if ((player.Points + (int)Levels.Adult) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Old:
+                    if ((player.Points + (int)Levels.OldAdult) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Master:
+                    if ((player.Points + (int)Levels.Old) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.Munk:
+                    if ((player.Points + (int)Levels.Master) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                case Levels.God:
+                    if ((player.Points + (int)Levels.Munk) >= number1 && player.Points < number2)
+                    {
+                        return true;
+                    }
+                    break;
+                default:
+                    break;
             }
+
+
 
             return false;
         }
