@@ -11,6 +11,7 @@ namespace MedGame.GameLogic
             player.TotalMinutesMissed = DateCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
             player.TotalHoursMissed = DateCounters.CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Health = CalculateHealth(player);
+            player.Level = LevelCounter.CheckLevel(player.Points);
 
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromDates(player);      //Check punishment int/double
 

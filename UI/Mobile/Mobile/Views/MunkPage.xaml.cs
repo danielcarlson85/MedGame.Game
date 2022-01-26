@@ -13,7 +13,6 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new MunkPageViewModel();
-
             vm.UpdateUI();
         }
 
