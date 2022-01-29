@@ -9,7 +9,6 @@ namespace MedGame.UI.Mobile
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(PlayPage), typeof(PlayPage));
-            Routing.RegisterRoute(nameof(StepCounterPage), typeof(StepCounterPage));
         }
 
     }

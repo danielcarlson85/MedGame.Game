@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MedGame.UI.Mobile.Views.StepCounterPage"
+             x:Class="MedGame.UI.Mobile.Views.NotificationPage"
              xmlns:vm="clr-namespace:MedGame.UI.Mobile.ViewModels"
              Title="{Binding Title}" BackgroundImageSource="background.png"
              Shell.TabBarIsVisible="True"
@@ -34,7 +34,7 @@
 
             <!--<ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="PlayButtonNew.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />-->
 
-            <Label Text="{Binding StepCounterLabel}" Grid.Row="1" Grid.Column="1" /> 
+            <Button x:Name="ButtonNotification" Text="Notification" Clicked="ButtonNotification_Clicked" />
 
         </Grid>
 

@@ -1,33 +1,23 @@
-﻿using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.UI.Interfaces;
+using MedGame.UI.Mobile.ViewModels;
 using System;
-using System.ComponentModel;
-using System.Timers;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.Views
 {
-    public interface IStepCounter
-    {
-        int Steps { get; set; }
-
-        void InitSensorService();
-
-        void StopSensorService();
-    }
-
-
-
-    public partial class StepCounterPage : ContentPage
+    public partial class NotificationPage : ContentPage
     {
         private readonly StepCounterViewModel vm;
+        readonly ICustomNotification notification;
 
-        public StepCounterPage()
+        public NotificationPage()
         {
             InitializeComponent();
 
             BindingContext = vm = new StepCounterViewModel();
 
-
+            notification = DependencyService.Get<ICustomNotification>();
         }
 
 
@@ -59,6 +49,18 @@ namespace MedGame.UI.Mobile.Views
         {
             vm.StopMeditation();
             App.Current.MainPage = new SettingsPage();
+        }
+
+        private void ButtonNotification_Clicked(object sender, EventArgs e)
+        {
+
+            var t = Task.Run(async delegate
+            {
+                await Task.Delay(2000);
+                notification.Send("hej", "joho");
+            });
+
+            t.Wait();
         }
     }
 }

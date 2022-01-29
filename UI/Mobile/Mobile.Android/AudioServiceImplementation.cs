@@ -20,13 +20,13 @@ namespace WSAudioApp.Droid.Implementations
                 _mediaPlayer.Start();
             };
             
-            _mediaPlayer.Completion += _mediaPlayer_Completion;
+            _mediaPlayer.Completion += MediaPlayer_Completion;
             await _mediaPlayer.SetDataSourceAsync(fd.FileDescriptor, fd.StartOffset, fd.Length);
             _mediaPlayer.Prepare();
 
         }
 
-        private void _mediaPlayer_Completion(object sender, System.EventArgs e)
+        private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
             GamePlay.StopMeditation();
         }
