@@ -26,8 +26,6 @@
                 <Entry Placeholder="Birthday" Text="{Binding Birthday}" FontSize="Small" HeightRequest="35"/>
                 <Entry Placeholder="Health" Text="{Binding Health, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
                 <Entry Placeholder="Points" Text="{Binding Points, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
-                <Entry Placeholder="Points" Text="{Binding Points, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
-                <Entry Placeholder="LevelPoints" Text="{Binding LevelPoints, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
 
             </StackLayout>
         </ScrollView>
