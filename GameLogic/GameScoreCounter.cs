@@ -35,7 +35,9 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (totalMinutesMeditatedNow * multiplicator);
             player.Multiplicator += 1;
-            
+
+            if (player.Level == Levels.Baby) player.LevelBabyPoints += (totalMinutesMeditatedNow * multiplicator); 
+            if (player.Level == Levels.Child) player.LevelChildPoints += (totalMinutesMeditatedNow * multiplicator);
 
             return player;
         }
@@ -47,6 +49,9 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += totalMinutesMeditatedNow;
+
+            if (player.Level == Levels.Baby) player.LevelBabyPoints += totalMinutesMeditatedNow;
+            if (player.Level == Levels.Child) player.LevelChildPoints += totalMinutesMeditatedNow;
 
             return player;
         }

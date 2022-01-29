@@ -1,11 +1,7 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Mobile.Services;
 using MedGame.Models;
-using System;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.ViewModels
 {
