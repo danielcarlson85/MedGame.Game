@@ -63,6 +63,46 @@ namespace MedGame.GameLogic
 
                     progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelTeenagerPoints);
                     break;
+
+                case Levels.Pupil:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelPupilPoints);
+                    break;
+
+                case Levels.YoungAdult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelYoungAdultPoints);
+                    break;
+
+                case Levels.Adult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelAdultPoints);
+                    break;
+
+                case Levels.OldAdult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldAdultPoints);
+                    break;
+
+                case Levels.Old:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldPoints);
+                    break;
+
+                case Levels.Master:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMasterPoints);
+                    break;
+
+                case Levels.Munk:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMunkPoints);
+                    break;
+
+                case Levels.God:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelGodPoints);
+                    break;
             }
 
             return progressMeterImage;
