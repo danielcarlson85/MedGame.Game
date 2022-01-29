@@ -20,6 +20,9 @@
     <Compile Update="Views\MunkPage.xaml.cs">
       <DependentUpon>MunkPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\StepCounterPage.xaml.cs">
+      <DependentUpon>StepCounterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\SharePage.xaml.cs">
       <DependentUpon>SharePage.xaml</DependentUpon>
     </Compile>
