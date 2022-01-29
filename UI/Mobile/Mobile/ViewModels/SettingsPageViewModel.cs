@@ -74,8 +74,15 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref points, value); }
         }
 
-        public PlayerDatabase Database { get; }
+        private string levelPoints;
+        
+        public string LevelPoints
+        {
+            get { return levelPoints; }
+            set { SetProperty(ref levelPoints, value); }
+        }
 
+        public PlayerDatabase Database { get; }
 
         public SettingsPageViewModel()
         {

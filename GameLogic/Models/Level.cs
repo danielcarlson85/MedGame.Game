@@ -3,7 +3,7 @@
     public enum Levels
     {
         Zero = 0,
-        Baby = 50,
+        Baby = 280,
         Child = 1155,
         Teenager = 2520,
         Pupil = 4375,
