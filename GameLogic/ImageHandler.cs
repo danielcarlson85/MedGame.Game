@@ -58,6 +58,11 @@ namespace MedGame.GameLogic
 
                     progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelChildPoints);
                     break;
+
+                case Levels.Teenager:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelTeenagerPoints);
+                    break;
             }
 
             return progressMeterImage;

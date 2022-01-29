@@ -41,6 +41,20 @@ namespace MedGame.Models
         public double LevelBabyPoints { get; set; } = 0;
         public double LevelChildPoints { get; set; } = 0;
 
+        public double LevelTeenagerPoints { get; set; } = 0;
+        public double LevelPupilPoints { get; set; } = 0;
+
+
+        public double LevelYoungAdultPoints { get; set; } = 0;
+        public double LevelAdultPoints { get; set; } = 0;
+
+        public double LevelOldAdultPoints { get; set; } = 0;
+        public double LevelOldPoints { get; set; } = 0;
+
+        public double LevelMasterPoints { get; set; } = 0;
+        public double LevelMunkPoints { get; set; } = 0;
+        public double LevelGodPoints { get; set; } = 0;
+
         public static Player CreateNewPlayer(string email)
         {
             return new Player()
@@ -72,7 +86,16 @@ namespace MedGame.Models
                 PunishDay4 = false,
                 PunishDay5 = false,
                 LevelBabyPoints = 0,
-                LevelChildPoints = 0
+                LevelChildPoints = 0,
+                LevelAdultPoints = 0,
+                LevelGodPoints = 0,
+                LevelMasterPoints = 0,
+                LevelMunkPoints = 0,
+                LevelOldAdultPoints = 0,
+                LevelOldPoints = 0,
+                LevelPupilPoints = 0,
+                LevelTeenagerPoints = 0,
+                LevelYoungAdultPoints = 0
             };
         }
     }
