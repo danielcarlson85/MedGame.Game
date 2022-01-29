@@ -22,6 +22,7 @@ namespace MedGame.GameLogic
                 Player.TotalMinutesMeditatedNow++;
             };
             MeditationTimer.Start();
+
         }
 
         public static void StopMeditation()

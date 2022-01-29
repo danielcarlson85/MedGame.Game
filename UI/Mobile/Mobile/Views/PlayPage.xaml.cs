@@ -46,7 +46,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
         {
-            //vm.StopMeditation();
+            vm.StopMeditation();
             App.Current.MainPage = new StatisticPage();
         }
 

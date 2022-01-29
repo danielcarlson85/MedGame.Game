@@ -1,4 +1,5 @@
-﻿using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.UI.Interfaces;
+using MedGame.UI.Mobile.ViewModels;
 using System;
 using Xamarin.Forms;
 

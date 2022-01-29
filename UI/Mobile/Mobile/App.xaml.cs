@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MedGame.UI.Interfaces;
+using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile
 {
@@ -9,7 +10,8 @@ namespace MedGame.UI.Mobile
         {
             InitializeComponent();
 
-            //DependencyService.Register<MockDataStore>();
+            DependencyService.Get<INotification>().Send("App.xaml.cs", "Welcome to MediGotchi :-D");
+
             MainPage = new AppShell();
         }
 
