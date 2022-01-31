@@ -13,8 +13,7 @@ namespace MedGame.UI.Mobile
             InitializeComponent();
 
             Barrel.ApplicationId = AppInfo.PackageName;
-
-            DependencyService.Get<INotification>().Send("App.xaml.cs", "Welcome to MediGotchi :-D");
+            //DependencyService.Get<INotification>().Send("App.xaml.cs", "Welcome to MediGotchi :-D");
 
             MainPage = new AppShell();
         }
