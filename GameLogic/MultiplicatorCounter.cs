@@ -117,11 +117,11 @@ namespace MedGame.GameLogic
 
         public static double CalculateMultiplicatorFromDates(Player player)
         {
-            var oneDayMiss = DateTime.Now.AddDays(-1).Date;
-            var towDayMiss = DateTime.Now.AddDays(-2).Date;
-            var treeDayMiss = DateTime.Now.AddDays(-3).Date;
-            var fourDayMiss = DateTime.Now.AddDays(-4).Date;
-            var fiveDayMiss = DateTime.Now.AddDays(-5).Date;
+            var oneDayMiss = DateTime.Now.AddDays(-2).Date;
+            var towDayMiss = DateTime.Now.AddDays(-3).Date;
+            var treeDayMiss = DateTime.Now.AddDays(-4).Date;
+            var fourDayMiss = DateTime.Now.AddDays(-5).Date;
+            var fiveDayMiss = DateTime.Now.AddDays(-6).Date;
 
 
             if (player.LastDateMeditated.Date == oneDayMiss && (player.PunishDay1 == false))
