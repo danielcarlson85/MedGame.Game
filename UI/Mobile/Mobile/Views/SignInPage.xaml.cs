@@ -1,4 +1,5 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
+using MonkeyCache.FileStore;
 using System;
 using Xamarin.Forms;
 
@@ -14,10 +15,13 @@ namespace MedGame.UI.Mobile.Views
 
             BindingContext = vm = new SignInViewModel();
             GameLogic.GamePlay.Player = null;
+            EntryEmail.Text = Barrel.Current.Get<string>("userName");
         }
 
         private async void ButtonSignIn_Clicked(object sender, EventArgs e)
         {
+            Barrel.Current.Add("userName", EntryEmail.Text, TimeSpan.FromDays(30));
+
             var player = await vm.SignInPlayerByEmailAsync(EntryEmail.Text);
             if (player != null)
             {
@@ -31,6 +35,7 @@ namespace MedGame.UI.Mobile.Views
 
         private async void ButtonSignUp_Clicked(object sender, EventArgs e)
         {
+            Barrel.Current.Add("userName", EntryEmail.Text, TimeSpan.FromDays(30));
             var player = await vm.SignUpPlayerAsync(EntryEmail.Text);
 
             if (player != null)
