@@ -19,7 +19,7 @@ namespace MedGame.GameLogicProject
         [TestMethod]
         public void CalculateMissedHoursShouldReturn48()
         {
-            var hours = DateCounters.CalculateMissedMinutes(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
+            var hours = TimeCounters.CalculateMissedMinutes(new DateTime(2019, 01, 12), new DateTime(2019, 01, 14));
 
             Assert.AreEqual(48, hours);
         }

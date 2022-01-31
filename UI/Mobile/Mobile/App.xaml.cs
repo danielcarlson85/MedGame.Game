@@ -1,5 +1,4 @@
-﻿using MedGame.UI.Interfaces;
-using MonkeyCache.FileStore;
+﻿using MonkeyCache.FileStore;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 

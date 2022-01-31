@@ -1,9 +1,6 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
 using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace MedGame.UI.Mobile.Views
 {
@@ -18,7 +15,7 @@ namespace MedGame.UI.Mobile.Views
             BindingContext = vm = new PlayPageViewModel();
         }
 
-        private async void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
+        private void ImageButtonPlay_Clicked(object sender, EventArgs e)
         {
 
             if (vm.IsPlaying)
@@ -30,7 +27,7 @@ namespace MedGame.UI.Mobile.Views
                 ImageButtonPlay.Source = "pausebutton.png";
             }
 
-            await vm.StartOrStopMeditationAsync();
+            vm.StartOrStopMeditationAsync();
         }
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
         {

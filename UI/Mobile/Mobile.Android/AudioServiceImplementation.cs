@@ -20,13 +20,13 @@ namespace WSAudioApp.Droid.Implementations
                 _mediaPlayer.Start();
             };
             
-            _mediaPlayer.Completion += _mediaPlayer_Completion;
+            _mediaPlayer.Completion += MediaPlayer_Completion;
             await _mediaPlayer.SetDataSourceAsync(fd.FileDescriptor, fd.StartOffset, fd.Length);
             _mediaPlayer.Prepare();
 
         }
 
-        private void _mediaPlayer_Completion(object sender, System.EventArgs e)
+        private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
             GamePlay.StopMeditation();
         }
@@ -34,6 +34,16 @@ namespace WSAudioApp.Droid.Implementations
         public void StopAudioFile()
         {
             _mediaPlayer.Stop();
+        }
+
+        public  int GetCurrentTimeStamp()
+        {
+            return (_mediaPlayer.CurrentPosition / 1000);
+        }
+
+        public int GetFileDurationTime()
+        {
+            return (_mediaPlayer.Duration / 1000);
         }
     }
 }

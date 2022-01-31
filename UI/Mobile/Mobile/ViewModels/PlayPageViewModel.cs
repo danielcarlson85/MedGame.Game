@@ -26,52 +26,44 @@ namespace MedGame.UI.Mobile.ViewModels
 
         }
 
-
-        //public ICommand OpenWebCommand { get; }
-
-        public void PlayOrStop()
-        {
-            if (!IsPlaying)
-            {
-                IsPlaying = true;
-            }
-            else
-            {
-                IsPlaying = false;
-            }
-        }
-
-
-        public async Task StartOrStopMeditationAsync()
+        public async void StartOrStopMeditationAsync()
         {
             if (IsPlaying == false)
             {
-                var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
-
-                await _audioService.PlayAudioFile(currentAudioFile);
                 IsPlaying = true;
-
-                GamePlay.StartMeditation();
+                await StartMeditation();
             }
             else
             {
+                StopMeditation();
                 IsPlaying = false;
-                _audioService.StopAudioFile();
-                GamePlay.StopMeditation();
-
-                await _database.UpdateItemAsync(GamePlay.Player);
             }
         }
 
-        public void StopMeditation()
+        private async Task StartMeditation()
         {
-            if (IsPlaying)
-            {
-                IsPlaying = false;
-                _audioService.StopAudioFile();
-                GamePlay.StopMeditation();
-            }
+            var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
+            await _audioService.PlayAudioFile(currentAudioFile);
+
+            GamePlay.StartMeditation();
         }
+
+        public async void StopMeditation()
+        {
+            var timestamp = _audioService.GetCurrentTimeStamp();
+            var filelength = _audioService.GetFileDurationTime();
+
+            var hasMeditatedEnugh = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
+
+            //Show dialogbox of question if they want to cancel the meditation with/without points
+
+
+            _audioService.StopAudioFile();
+            GamePlay.StopMeditation();
+            await _database.UpdateItemAsync(GamePlay.Player);
+        }
+
+       
 
         public void UpdateUI()
         {

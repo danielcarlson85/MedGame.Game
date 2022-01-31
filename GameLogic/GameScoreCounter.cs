@@ -8,8 +8,8 @@ namespace MedGame.GameLogic
         public static Player CalculateSigninScore(Player player)
         {
             player.LastDateLoggedIn = DateTime.Now;
-            player.TotalMinutesMissed = DateCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
-            player.TotalHoursMissed = DateCounters.CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
+            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.TotalHoursMissed = TimeCounters.CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Health = CalculateHealth(player);
             player.Level = LevelCounter.CheckLevel(player.Points);
 
@@ -21,7 +21,7 @@ namespace MedGame.GameLogic
         public static Player CalculateSigninScoreWithoutPunishment(Player player)
         {
             player.LastDateLoggedIn = DateTime.Now;
-            player.TotalMinutesMissed = DateCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
 
             return player;
         }
