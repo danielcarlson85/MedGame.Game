@@ -1,4 +1,6 @@
-﻿using MonkeyCache.FileStore;
+﻿using MedGame.Services;
+using MedGame.UI.Interfaces;
+using MonkeyCache.FileStore;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -10,7 +12,6 @@ namespace MedGame.UI.Mobile
         public App()
         {
             InitializeComponent();
-
             Barrel.ApplicationId = AppInfo.PackageName;
             //DependencyService.Get<INotification>().Send("App.xaml.cs", "Welcome to MediGotchi :-D");
 

@@ -1,11 +1,7 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Mobile.Services;
-using MedGame.Models;
 using MedGame.UI.Mobile.Interfaces;
-using System;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.ViewModels
@@ -23,7 +19,6 @@ namespace MedGame.UI.Mobile.ViewModels
 
             _audioService = DependencyService.Get<IAudioService>();
             _database = PlayerDatabase.Instance.GetAwaiter().GetResult();
-
         }
 
         public async void StartOrStopMeditationAsync()
@@ -55,7 +50,9 @@ namespace MedGame.UI.Mobile.ViewModels
 
             var hasMeditatedEnugh = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
 
-            //Show dialogbox of question if they want to cancel the meditation with/without points
+            var result =  await Application.Current.MainPage.DisplayAlert("Warning!", "Do you really want to stop the meditation? \n\nYou are not getting any points for this.", "Yes", "No");
+
+         // Add logic to get/not get points
 
 
             _audioService.StopAudioFile();
@@ -63,7 +60,7 @@ namespace MedGame.UI.Mobile.ViewModels
             await _database.UpdateItemAsync(GamePlay.Player);
         }
 
-       
+
 
         public void UpdateUI()
         {

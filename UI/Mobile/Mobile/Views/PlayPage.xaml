@@ -7,7 +7,7 @@
              Shell.TabBarIsVisible="True"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
-        <vm:PlayPageViewModel />
+        <vm:PlayPageViewModel/>
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
