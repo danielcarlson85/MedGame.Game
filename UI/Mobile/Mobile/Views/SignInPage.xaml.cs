@@ -20,16 +20,23 @@ namespace MedGame.UI.Mobile.Views
 
         private async void ButtonSignIn_Clicked(object sender, EventArgs e)
         {
-            Barrel.Current.Add("userName", EntryEmail.Text, TimeSpan.FromDays(30));
-
-            var player = await vm.SignInPlayerByEmailAsync(EntryEmail.Text);
-            if (player != null)
+            if (string.IsNullOrEmpty(EntryEmail.Text))
             {
-                App.Current.MainPage = new MunkPage();
+                await Application.Current.MainPage.DisplayAlert("Missing username", "Please write your username.", "Ok");
             }
             else
             {
-                await DisplayAlert("No player found!", "No player found with that email.", "ok");
+                Barrel.Current.Add("userName", EntryEmail.Text, TimeSpan.FromDays(30));
+                
+                var player = await vm.SignInPlayerByEmailAsync(EntryEmail.Text);
+                if (player != null)
+                {
+                    App.Current.MainPage = new MunkPage();
+                }
+                else
+                {
+                    await DisplayAlert("No player found!", "No player found with that email.", "ok");
+                }
             }
         }
 

@@ -28,7 +28,7 @@ namespace WSAudioApp.Droid.Implementations
 
         private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
-            GamePlay.StopMeditation();
+            GamePlay.StopMeditation(true);
         }
 
         public void StopAudioFile()

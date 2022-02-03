@@ -25,17 +25,20 @@ namespace MedGame.GameLogic
 
         }
 
-        public static void StopMeditation()
+        public static void StopMeditation(bool hasMeditatedEnough)
         {
             MeditationTimer.Stop();
 
-            if (DateCounters.CheckSameDate(Player))
+            if (hasMeditatedEnough)
             {
-                Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
-            }
-            else
-            {
-                Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
+                if (DateCounters.CheckSameDate(Player))
+                {
+                    Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(Player, Player.TotalMinutesMeditatedNow);
+                }
+                else
+                {
+                    Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
+                }
             }
 
             Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(Player);

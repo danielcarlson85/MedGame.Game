@@ -48,15 +48,30 @@ namespace MedGame.UI.Mobile.ViewModels
             var timestamp = _audioService.GetCurrentTimeStamp();
             var filelength = _audioService.GetFileDurationTime();
 
-            var hasMeditatedEnugh = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
+            var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
 
-            var result =  await Application.Current.MainPage.DisplayAlert("Warning!", "Do you really want to stop the meditation? \n\nYou are not getting any points for this.", "Yes", "No");
+            var result = false;
 
-         // Add logic to get/not get points
+            if (hasMeditatedEnough)
+            {
+                result = await Application.Current.MainPage.DisplayAlert("Not meditated enough", "You have not meditated enough to get any points? \nDo you want to quit?", "Yes", "No", FlowDirection.LeftToRight);
 
+                if (result)
+                {
+                    _audioService.StopAudioFile();
+                    GamePlay.StopMeditation(false);
+                }
+            }
+            else
+            {
+                result = await Application.Current.MainPage.DisplayAlert("Do you want to stop?", "Do you really want to stop the meditation?", "Yes", "No");
+                if (result)
+                {
+                    _audioService.StopAudioFile();
+                    GamePlay.StopMeditation(true);
+                }
+            }
 
-            _audioService.StopAudioFile();
-            GamePlay.StopMeditation();
             await _database.UpdateItemAsync(GamePlay.Player);
         }
 
