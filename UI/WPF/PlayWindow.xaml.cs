@@ -41,7 +41,7 @@ namespace MedGame.UI.WPF
             {
                 MediaPlayer.Pause();
                 isPlaying = false;
-                GamePlay.StopMeditation();
+                GamePlay.StopMeditation(true);
                 await FileHandler.SavePlayerToFile(GamePlay.Player, GamePlay.Player.Email.MakeFullFileName());
             }
         }

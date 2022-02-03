@@ -50,8 +50,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
             var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
 
-            var result = false;
-
+            bool result;
             if (hasMeditatedEnough)
             {
                 result = await Application.Current.MainPage.DisplayAlert("Not meditated enough", "You have not meditated enough to get any points? \nDo you want to quit?", "Yes", "No", FlowDirection.LeftToRight);

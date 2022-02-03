@@ -19,7 +19,7 @@ namespace MedGame.GameLogicProject
         public void StopMeditationShouldStopTimer()
         {
             GamePlay.StartMeditation();
-            GamePlay.StopMeditation();
+            GamePlay.StopMeditation(true);
             Assert.IsFalse(GamePlay.MeditationTimer.Enabled);
         }
     }
