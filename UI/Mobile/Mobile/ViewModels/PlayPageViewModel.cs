@@ -9,29 +9,32 @@ namespace MedGame.UI.Mobile.ViewModels
     public class PlayPageViewModel : BaseViewModel
     {
         private readonly IAudioService _audioService;
-        public readonly PlayerDatabase _database;
-
-        public bool IsPlaying { get; private set; }
+        private readonly PlayerDatabase _database;
+        private static bool _isPlaying = false;
 
         public PlayPageViewModel()
         {
-            Title = "test";
-
             _audioService = DependencyService.Get<IAudioService>();
             _database = PlayerDatabase.Instance.GetAwaiter().GetResult();
         }
 
-        public async void StartOrStopMeditationAsync()
+        public async void StartOrStopMeditationAsync(ImageButton imageButton)
         {
-            if (IsPlaying == false)
+            if (_isPlaying == false)
             {
-                IsPlaying = true;
+                imageButton.Source = "pausebutton.png";
+                _isPlaying = true;
                 await StartMeditation();
             }
             else
             {
-                StopMeditation();
-                IsPlaying = false;
+                var result = await StopMeditation();
+
+                if (result)
+                {
+                    imageButton.Source = "PlayButtonNew.png";
+                    _isPlaying = false;
+                }
             }
         }
 
@@ -43,7 +46,7 @@ namespace MedGame.UI.Mobile.ViewModels
             GamePlay.StartMeditation();
         }
 
-        public async void StopMeditation()
+        public async Task<bool> StopMeditation()
         {
             var timestamp = _audioService.GetCurrentTimeStamp();
             var filelength = _audioService.GetFileDurationTime();
@@ -51,7 +54,7 @@ namespace MedGame.UI.Mobile.ViewModels
             var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(timestamp, filelength);
 
             bool result;
-            if (hasMeditatedEnough)
+            if (!hasMeditatedEnough)
             {
                 result = await Application.Current.MainPage.DisplayAlert("Not meditated enough", "You have not meditated enough to get any points? \nDo you want to quit?", "Yes", "No", FlowDirection.LeftToRight);
 
@@ -59,7 +62,11 @@ namespace MedGame.UI.Mobile.ViewModels
                 {
                     _audioService.StopAudioFile();
                     GamePlay.StopMeditation(false);
+                    await _database.UpdateItemAsync(GamePlay.Player);
+                    return true;
                 }
+
+                return false;
             }
             else
             {
@@ -68,17 +75,12 @@ namespace MedGame.UI.Mobile.ViewModels
                 {
                     _audioService.StopAudioFile();
                     GamePlay.StopMeditation(true);
+                    await _database.UpdateItemAsync(GamePlay.Player);
+
+                    return true;
                 }
+                return false;
             }
-
-            await _database.UpdateItemAsync(GamePlay.Player);
-        }
-
-
-
-        public void UpdateUI()
-        {
-            GameScoreCounter.CalculateSigninScore(GamePlay.Player);
         }
     }
 }

@@ -17,45 +17,36 @@ namespace MedGame.UI.Mobile.Views
 
         private void ImageButtonPlay_Clicked(object sender, EventArgs e)
         {
-
-            if (vm.IsPlaying)
-            {
-                ImageButtonPlay.Source = "PlayButtonNew.png";
-            }
-            else
-            {
-                ImageButtonPlay.Source = "pausebutton.png";
-            }
-
-            vm.StartOrStopMeditationAsync();
+            vm.StartOrStopMeditationAsync(ImageButtonPlay);
         }
-        private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
+
+        private async void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            await vm.StopMeditation();
             App.Current.MainPage = new MunkPage();
         }
 
-        private void NavButtonPlayPage_ClickedAsync(object sender, EventArgs e)
+        private async void NavButtonPlayPage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            await vm.StopMeditation();
             App.Current.MainPage = new PlayPage();
         }
 
-        private void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
+        private async void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            await vm.StopMeditation();
             App.Current.MainPage = new StatisticPage();
         }
 
-        private void NavButtonSharePage_ClickedAsync(object sender, EventArgs e)
+        private async void NavButtonSharePage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            await vm.StopMeditation();
             App.Current.MainPage = new SharePage();
         }
 
-        private void NavButtonSettingsPage_ClickedAsync(object sender, EventArgs e)
+        private async void NavButtonSettingsPage_ClickedAsync(object sender, EventArgs e)
         {
-            vm.StopMeditation();
+            await vm.StopMeditation();
             App.Current.MainPage = new SettingsPage();
         }
     }
