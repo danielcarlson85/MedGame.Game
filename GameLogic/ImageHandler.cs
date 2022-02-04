@@ -4,6 +4,22 @@ namespace MedGame.GameLogic
 {
     public class ImageHandler
     {
+        public static string GetTamagotchiImage(Player player)
+        {
+            string tamagotchiImage = string.Empty;
+
+            if (player.Level == Levels.Baby)
+            {
+                tamagotchiImage = "buddabig.png";
+            }
+            else
+            {
+                tamagotchiImage = "buddagif.gif";
+            }
+
+            return tamagotchiImage;
+        }
+
         public static string GetHealthMeter(Player player)
         {
             string healthMeterImage = string.Empty;

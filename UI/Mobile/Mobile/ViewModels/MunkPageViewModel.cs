@@ -13,6 +13,13 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             get { return healthMeterImage; }
             set { SetProperty(ref healthMeterImage, value); }
+        } 
+        
+        private string tamagochiImage;
+        public string TamagochiImage
+        {
+            get { return tamagochiImage; }
+            set { SetProperty(ref tamagochiImage, value); }
         }
 
         private string progressMeterImage;
@@ -31,6 +38,8 @@ namespace MedGame.UI.Mobile.ViewModels
         public void UpdateUI()
         {
             GamePlay.Player.Level=LevelCounter.CheckLevel(GamePlay.Player.Points);
+
+            TamagochiImage = ImageHandler.GetTamagotchiImage(GamePlay.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GamePlay.Player);
             ProgressMeterImage = ImageHandler.GetProgressMeter(GamePlay.Player);
         }
