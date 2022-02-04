@@ -32,7 +32,6 @@ namespace MedGame.UI.Mobile.ViewModels
         public MunkPageViewModel()
         {
             Title = "test";
-            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
         public void UpdateUI()
@@ -43,10 +42,5 @@ namespace MedGame.UI.Mobile.ViewModels
             HealthMeterImage = ImageHandler.GetHealthMeter(GamePlay.Player);
             ProgressMeterImage = ImageHandler.GetProgressMeter(GamePlay.Player);
         }
-
-        //public ICommand OpenWebCommand { get; }
-
-
-
     }
 }
