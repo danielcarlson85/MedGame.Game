@@ -341,22 +341,22 @@
     <AndroidResource Include="Resources\drawable\buddagif.gif" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_Annoyed.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Annoyed.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_Crying.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Crying.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_Sad.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Sad.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_Sick.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Sick.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_VerySad.png" />
+    <AndroidResource Include="Resources\drawable\Baby_VerySad.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Child_Zen.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Zen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

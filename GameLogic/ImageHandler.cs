@@ -38,7 +38,7 @@ namespace MedGame.GameLogic
                 tamagotchiImage = player.Level + "_Zen.png";
             }
 
-            if (player.Level != Levels.Child)
+            if (player.Level != Levels.Baby)
             {
                 tamagotchiImage = "buddabig.png";
             }
