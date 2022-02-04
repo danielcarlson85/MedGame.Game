@@ -1,25 +1,16 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
 using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace MedGame.UI.Mobile.Views
 {
     public partial class SharePage : ContentPage
     {
-        private readonly SharePageViewModel vm;
-
         public SharePage()
         {
             InitializeComponent();
 
-            BindingContext = vm = new SharePageViewModel();
-        }
-
-        private void ImageButtonPlay_ClickedAsync(object sender, EventArgs e)
-        {
+            BindingContext = new SharePageViewModel();
         }
 
         private void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)

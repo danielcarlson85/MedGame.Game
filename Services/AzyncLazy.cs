@@ -26,7 +26,7 @@ namespace MedGame.Mobile.Services
 
         public void Start()
         {
-            var unused = instance.Value;
+            _ = instance.Value;
         }
     }
 }

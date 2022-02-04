@@ -1,5 +1,6 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.Views
@@ -22,32 +23,53 @@ namespace MedGame.UI.Mobile.Views
 
         private async void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StopMeditation();
-            App.Current.MainPage = new MunkPage();
+            await CheckIfAudioIsPlaying(new MunkPage());
         }
 
         private async void NavButtonPlayPage_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StopMeditation();
-            App.Current.MainPage = new PlayPage();
+            await CheckIfAudioIsPlaying(new PlayPage());
+
         }
 
         private async void NavButtonStatisticPage_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StopMeditation();
-            App.Current.MainPage = new StatisticPage();
+            await CheckIfAudioIsPlaying(new StatisticPage());
+
         }
 
         private async void NavButtonSharePage_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StopMeditation();
-            App.Current.MainPage = new SharePage();
+            await CheckIfAudioIsPlaying(new SharePage());
+
         }
 
         private async void NavButtonSettingsPage_ClickedAsync(object sender, EventArgs e)
         {
-            await vm.StopMeditation();
-            App.Current.MainPage = new SettingsPage();
+            await CheckIfAudioIsPlaying(new SettingsPage());
+
+        }
+
+        private async Task CheckIfAudioIsPlaying(Page page)
+        {
+            if (vm.IsPlaying)
+            {
+                bool result = await ShowDisplayAlert();
+                if (result)
+                {
+                    await vm.StopMeditation(ImageButtonPlay, false);
+                    App.Current.MainPage = page;
+                }
+            }
+            else
+            {
+                App.Current.MainPage = page;
+            }
+        }
+
+        private async Task<bool> ShowDisplayAlert()
+        {
+            return await Application.Current.MainPage.DisplayAlert("Do you want to stop?", "Do you really want to stop the meditation?", "Yes", "No");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace MedGame.UI.WPF
 
         private async void ButtonPlay_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            RESTClient restClient = new RESTClient();
+            //RESTClient restClient = new RESTClient();
 
             if (isPlaying == false)
             {

@@ -32,7 +32,7 @@
 
             </Grid.RowDefinitions>
 
-            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="shareicon.png" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_ClickedAsync" BackgroundColor="Transparent" />
+            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="shareicon.png" Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent" />
         </Grid>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
