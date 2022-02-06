@@ -6,8 +6,7 @@ namespace MedGame.Models
     public class Player
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
+        public int Id { get; set; }// = new Random().Next(int.MaxValue);
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
 

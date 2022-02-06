@@ -1,6 +1,8 @@
 ﻿using MedGame.UI.Mobile.ViewModels;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using Xamarin.Forms;
 
 namespace MedGame.UI.Mobile.Views
@@ -19,6 +21,21 @@ namespace MedGame.UI.Mobile.Views
         private void ImageButtonPlay_Clicked(object sender, EventArgs e)
         {
             vm.StartOrStopMeditationAsync(ImageButtonPlay);
+            ThreadPool.QueueUserWorkItem(o => CheckIfAudioIsPlayingAndChangeImage());
+        }
+
+        private void CheckIfAudioIsPlayingAndChangeImage()
+        {
+            var isRunning = true;
+            while (isRunning)
+            {
+                if (!vm.IsPlaying)
+                {
+                    ImageButtonPlay.Source = "PlayButtonNew.png";
+                    isRunning = false;
+                }
+                Thread.Sleep(1000);
+            }
         }
 
         private async void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)

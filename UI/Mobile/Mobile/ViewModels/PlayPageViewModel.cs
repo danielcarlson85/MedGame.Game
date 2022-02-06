@@ -43,7 +43,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation(ImageButton imageButton, bool isPlayerGettingPoints)
         {
-            imageButton.Source = "PlayButtonNew.png";
+            //imageButton.Source = "PlayButtonNew.png";
             _audioService.StopAudioFile();
             IsPlaying = false;
 

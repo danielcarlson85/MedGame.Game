@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MedGame.GameLogicProject
 {
-    public class GameClassTests : TestBase
+    public class GamePlayTests : TestBase
     {
         [Fact]
         public void StartMeditationShouldStartTimer()

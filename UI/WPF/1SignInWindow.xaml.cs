@@ -52,7 +52,7 @@ namespace MedGame.UI.WPF
         {
             //Player result = await RestClient.SignUp(TextBoxEmail.Text, TextBoxPassword.Password);
 
-            var newPlayer = CreateNewPlayer();
+            var newPlayer = Player.CreateNewPlayer(TextBoxEmail.Text);
 
             await FileHandler.SavePlayerToFile(newPlayer, TextBoxEmail.Text.MakeFullFileName());
             GamePlay.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text.MakeFullFileName());
@@ -82,26 +82,6 @@ namespace MedGame.UI.WPF
                     MessageBox.Show(GamePlay.Player.PlayerMessage);
                 }
             }
-        }
-
-        private Player CreateNewPlayer()
-        {
-            return new Player()
-            {
-                Email = TextBoxEmail.Text,
-                Health = 72,
-                HttpResult = string.Empty,
-                LastDateMeditated = DateTime.Now,
-                Level = Levels.Baby,
-                Multiplicator = 1,
-                Password = TextBoxPassword.Password,
-                PlayerMessage = string.Empty,
-                Points = 1,
-                TotalDaysMeditatedInRow = 1,
-                TotalMinutesMissed = 0,
-                TotalMinutesMeditated = 0,
-                TotalMinutesMeditatedToday = 0
-            };
         }
 
 
