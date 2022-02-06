@@ -10,7 +10,7 @@ namespace MedGame.GameLogic
 
             if (player.Health < 96)
             {
-                tamagotchiImage = player.Level + "_Sick.png";
+                tamagotchiImage = player.Level + Constants.ImageHandlerConstants.TamagotchiImage_Sick;
             }
 
             if (player.Health < 104 && player.Health >= 96)
