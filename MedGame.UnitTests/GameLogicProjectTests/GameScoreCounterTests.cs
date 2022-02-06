@@ -5,8 +5,16 @@ using Xunit;
 
 namespace MedGame.GameLogicProject
 {
-    public class GameScoreCounterClassTests : TestBase
+    public class GameScoreCounterTests : TestBase
     {
+        [Fact]
+        public void CalculateSignInScore()
+        {
+            var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
+
+            Assert.Equal(DateTime.Now.Date, player.LastDateLoggedIn.Date);
+        }
+
         [Fact]
         public void CalculateSigninScoreShouldUpdatePlayer()
         {
