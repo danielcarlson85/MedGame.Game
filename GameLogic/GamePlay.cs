@@ -8,11 +8,14 @@ namespace MedGame.GameLogic
     {
         public static Player Player = new Player();
         public static int totalMinutesMeditatedNow = 0;
+        public static bool IsPlaying { get; set; } = false;
 
         public static Timer MeditationTimer { get; set; } = new Timer();
 
         public static void StartMeditation()
         {
+            IsPlaying = true;
+
             MeditationTimer = new Timer
             {
                 Interval = 1000
@@ -27,6 +30,7 @@ namespace MedGame.GameLogic
 
         public static void StopMeditation(bool hasMeditatedEnough)
         {
+
             MeditationTimer.Stop();
 
             if (hasMeditatedEnough)
@@ -40,7 +44,6 @@ namespace MedGame.GameLogic
                     Player = GameScoreCounter.CalculateMeditationScore(Player, Player.TotalMinutesMeditatedNow, Player.Multiplicator);
                 }
             }
-            
 
             Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(Player);
             Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(Player);
@@ -56,6 +59,8 @@ namespace MedGame.GameLogic
             Player.PunishDay2 = false;
             Player.PunishDay3 = false;
             Player.PunishDay4 = false;
+
+            IsPlaying = false;
         }
     }
 }

@@ -11,8 +11,7 @@ namespace MedGame.UI.WPF
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        RESTClient RestClient = new RESTClient();
-        LoadingWindow LoadingWindow = new LoadingWindow();
+        //RESTClient RestClient = new RESTClient();
 
         public SettingsWindow()
         {

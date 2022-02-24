@@ -9,6 +9,7 @@ namespace MedGame.UI.Mobile.Interfaces
     {
         int GetCurrentTimeStamp();
         int GetFileDurationTime();
+        bool IsPlaying();
         Task PlayAudioFile(string fileName);
         void StopAudioFile();
     }

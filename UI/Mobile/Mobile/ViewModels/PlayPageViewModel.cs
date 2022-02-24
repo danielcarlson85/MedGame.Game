@@ -20,20 +20,20 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async void StartOrStopMeditationAsync(ImageButton imageButton)
         {
-            if (!IsPlaying)
+            if (!GamePlay.IsPlaying)
             {
-                await StartMeditation(imageButton);
+                imageButton.Source = "pausebutton.png";
+                await StartMeditation();
             }
             else
             {
                 //Change this to false when in production
-                await StopMeditation(imageButton, true);
+                await StopMeditation(true);
             }
         }
 
-        private async Task StartMeditation(ImageButton imageButton)
+        private async Task StartMeditation()
         {
-            imageButton.Source = "pausebutton.png";
             IsPlaying = true;
             var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
             await _audioService.PlayAudioFile(currentAudioFile);
@@ -41,9 +41,8 @@ namespace MedGame.UI.Mobile.ViewModels
             GamePlay.StartMeditation();
         }
 
-        public async Task StopMeditation(ImageButton imageButton, bool isPlayerGettingPoints)
+        public async Task StopMeditation(bool isPlayerGettingPoints)
         {
-            //imageButton.Source = "PlayButtonNew.png";
             _audioService.StopAudioFile();
             IsPlaying = false;
 

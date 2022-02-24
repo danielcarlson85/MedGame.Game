@@ -10,7 +10,7 @@ namespace MedGame.GameLogicProject
         [Fact]
         public void CalculateSignInScore()
         {
-            var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
+            var player = GameScoreCounter.CalculateSigninScore(TestBase.Player);
 
             Assert.Equal(DateTime.Now.Date, player.LastDateLoggedIn.Date);
         }
@@ -19,7 +19,7 @@ namespace MedGame.GameLogicProject
         public void CalculateSigninScoreShouldUpdatePlayer()
         {
             //var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
-            Assert.NotNull(player);
+            Assert.NotNull(Player);
         }
 
         [Fact]

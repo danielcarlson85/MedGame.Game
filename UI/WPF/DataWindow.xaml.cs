@@ -10,7 +10,7 @@ namespace MedGame.UI.WPF
 {
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer = new DispatcherTimer();
+        readonly DispatcherTimer timer = new DispatcherTimer();
 
         public MainWindow()
         {
@@ -51,18 +51,18 @@ namespace MedGame.UI.WPF
             catch (System.Exception) { }
         }
 
-        private void dateback_Click(object sender, RoutedEventArgs e)
+        private void Dateback_Click(object sender, RoutedEventArgs e)
         {
             DateHandler.SetSystemDateTime(DateTime.Now.AddDays(-1));
         }
 
-        private void dateforward_Click(object sender, RoutedEventArgs e)
+        private void Dateforward_Click(object sender, RoutedEventArgs e)
         {
 
             DateHandler.SetSystemDateTime(DateTime.Now.AddDays(1));
         }
 
-        private void calculate_Click(object sender, RoutedEventArgs e)
+        private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             //GameScoreCounter.CalculateSigninScore(GamePlay.Player);
         }

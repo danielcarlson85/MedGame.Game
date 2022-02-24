@@ -36,6 +36,11 @@ namespace WSAudioApp.Droid.Implementations
             _mediaPlayer.Stop();
         }
 
+        public bool IsPlaying()
+        {
+            return _mediaPlayer.IsPlaying;
+        }
+
         public  int GetCurrentTimeStamp()
         {
             return (_mediaPlayer.CurrentPosition / 1000);

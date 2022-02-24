@@ -1,11 +1,7 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Models;
 using MedGame.Services;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
 using System.Windows;
 
 namespace MedGame.UI.WPF
@@ -13,10 +9,11 @@ namespace MedGame.UI.WPF
     /// <summary>
     /// Interaction logic for SignInWindow.xaml
     /// </summary>
+    /// </summary>
     public partial class SignInWindow : Window
     {
-        RESTClient RestClient = new RESTClient();
-        LoadingWindow LoadingWindow = new LoadingWindow();
+        //RESTClient RestClient = new RESTClient();
+        readonly LoadingWindow LoadingWindow = new LoadingWindow();
 
         public SignInWindow()
         {

@@ -11,9 +11,9 @@
     <StackPanel>
 
         <Label x:Name="LabelPlayer" Width="330" Height="296" />
-        <Button x:Name="dateforward" Content="Forward one day" Height="30" Click="dateforward_Click" />
-        <Button x:Name="dateback" Content="Backward one day" Height="30" Click="dateback_Click" />
-        <Button x:Name="calculate" Content="Calculate" Height="30" Click="calculate_Click" />
+        <Button x:Name="dateforward" Content="Forward one day" Height="30" Click="Dateforward_Click" />
+        <Button x:Name="dateback" Content="Backward one day" Height="30" Click="Dateback_Click" />
+        <Button x:Name="calculate" Content="Calculate" Height="30" Click="Calculate_Click" />
 
     </StackPanel>
 

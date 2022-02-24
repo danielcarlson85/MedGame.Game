@@ -20,7 +20,7 @@ namespace MedGame.UnitTests
         [InlineData(Levels.God)]
         public void GetCurrentAudioFile_Test(Levels levels)
         {
-            Player player = new Player() { Level = levels };
+            Player player = new() { Level = levels };
             var result = AudioHandler.GetCurrentAudioFile(player);
 
             Assert.StartsWith("Level", result);

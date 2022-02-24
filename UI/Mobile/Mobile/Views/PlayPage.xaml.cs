@@ -1,4 +1,5 @@
-﻿using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.GameLogic;
+using MedGame.UI.Mobile.ViewModels;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace MedGame.UI.Mobile.Views
             var isRunning = true;
             while (isRunning)
             {
-                if (!vm.IsPlaying)
+                if (!GamePlay.IsPlaying)
                 {
                     ImageButtonPlay.Source = "PlayButtonNew.png";
                     isRunning = false;
@@ -74,7 +75,7 @@ namespace MedGame.UI.Mobile.Views
                 bool result = await ShowDisplayAlert();
                 if (result)
                 {
-                    await vm.StopMeditation(ImageButtonPlay, false);
+                    await vm.StopMeditation(false);
                     App.Current.MainPage = page;
                 }
             }
