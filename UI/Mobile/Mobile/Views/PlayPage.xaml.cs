@@ -18,7 +18,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void ImageButtonPlay_Clicked(object sender, EventArgs e)
         {
-            vm.StartOrStopMeditationAsync(ImageButtonPlay);
+            vm.StartOrStopMeditationAsync();
         }
 
         private async void NavButtonMunkPage_ClickedAsync(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace MedGame.UI.Mobile.Views
                 bool result = await ShowDisplayAlert();
                 if (result)
                 {
-                    await vm.StopMeditation(ImageButtonPlay, false);
+                    await vm.StopMeditation(false);
                     App.Current.MainPage = page;
                 }
             }
