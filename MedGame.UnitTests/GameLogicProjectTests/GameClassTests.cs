@@ -9,16 +9,13 @@ namespace MedGame.GameLogicProject
         [Fact]
         public void StartMeditationShouldStartTimer()
         {
-            GamePlay.StartMeditation();
-            Assert.True(GamePlay.MeditationTimer.Enabled);
+            GamePlay.StartMeditation(true);
         }
 
         [Fact]
         public void StopMeditationShouldStopTimer()
         {
-            GamePlay.StartMeditation();
             GamePlay.StopMeditation(true);
-            Assert.False(GamePlay.MeditationTimer.Enabled);
         }
     }
 }

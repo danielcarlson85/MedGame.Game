@@ -40,7 +40,8 @@ namespace MedGame.UnitTests.ServicesProjectTest
 
             Assert.True(removedPlayer);
         }
-        public void GetFullFileNamePathShouldReturnPath()
+
+        private void GetFullFileNamePathShouldReturnPath()
         {
             var path = FileHandler.GetFullFileNamePath("test");
 

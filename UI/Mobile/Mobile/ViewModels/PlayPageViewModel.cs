@@ -52,12 +52,10 @@ namespace MedGame.UI.Mobile.ViewModels
             IsPlaying = true;
             var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
             await _audioService.PlayAudioFile(currentAudioFile);
-            await ShowTimeStamp();
-
-            GamePlay.StartMeditation();
+            await ShowTimestamp();
         }
 
-        private async Task ShowTimeStamp()
+        private async Task ShowTimestamp()
         {
             await Task.Run(async () =>
             {
@@ -78,6 +76,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation(bool isPlayerGettingPoints)
         {
+            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp();
             PlayImage = "PlayButtonNew.png";
             _audioService.StopAudioFile();
             IsPlaying = false;

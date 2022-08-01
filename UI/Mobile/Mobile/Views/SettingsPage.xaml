@@ -33,6 +33,8 @@
         <Button x:Name="ButtonSave" HeightRequest="40" Text="Update" FontSize="Micro" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
         <Button x:Name="ButtonDeleteAllPlayers" HeightRequest="40" FontSize="Micro" Text="Delete all players" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
         <Button x:Name="ButtonShowAllPlayers" HeightRequest="40" FontSize="Micro" Text="Show all players" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonResetPlayer" HeightRequest="40" FontSize="Micro" Text="Reset player" TabIndex="3" Clicked="ButtonResetPlayer_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonSignOutPlayer" HeightRequest="40" FontSize="Micro" Text="Reset player" TabIndex="3" Clicked="ButtonSignOutPlayer_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
             <Grid>

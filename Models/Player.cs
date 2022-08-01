@@ -67,7 +67,7 @@ namespace MedGame.Models
                 Multiplicator = 1,
                 Password = string.Empty,
                 PlayerMessage = string.Empty,
-                Points = 1,
+                Points = 0,
                 TotalDaysMeditatedInRow = 1,
                 TotalMinutesMissed = 0,
                 TotalMinutesMeditated = 0,
@@ -97,6 +97,10 @@ namespace MedGame.Models
                 LevelTeenagerPoints = 0,
                 LevelYoungAdultPoints = 0
             };
+        }
+        public static Player ResetPlayer(string email)
+        {
+            return CreateNewPlayer(email);
         }
     }
 

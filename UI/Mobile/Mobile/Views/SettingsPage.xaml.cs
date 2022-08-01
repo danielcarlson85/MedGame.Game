@@ -1,4 +1,5 @@
-﻿using MedGame.UI.Mobile.ViewModels;
+﻿using MedGame.GameLogic;
+using MedGame.UI.Mobile.ViewModels;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -73,6 +74,24 @@ namespace MedGame.UI.Mobile.Views
         {
             var players = await vm.GetAllPlayersNameAndId();
             await DisplayAlert("All players!", players, "ok");
+        }
+
+        private async void ButtonResetPlayer_Clicked(object sender, EventArgs e)
+        {
+
+            var result = await DisplayAlert("Warning!", "Do you really want to reset the player? \n\nThe player can not be restored.", "Yes", "No");
+            if (result)
+            {
+                vm.ResetPlayer(GamePlay.Player.Email);
+                await DisplayAlert("The player has been reset!", "All players has been reset.", "ok");
+                Application.Current.MainPage = new StatisticPage();
+            }
+        }
+
+        private void ButtonSignOutPlayer_Clicked(object sender, EventArgs e)
+        {
+            vm.ResetPlayer(GamePlay.Player.Email);
+            Application.Current.MainPage = new SignInPage();
         }
     }
 }

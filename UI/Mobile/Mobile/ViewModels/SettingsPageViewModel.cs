@@ -103,6 +103,12 @@ namespace MedGame.UI.Mobile.ViewModels
             await Database.DeleteAllItemsAsync();
         }
 
+        internal void ResetPlayer(string email)
+        {
+            GamePlay.Player = new Player();
+            GamePlay.Player = Player.ResetPlayer(email);
+        }
+
         internal async Task<string> GetAllPlayersNameAndId()
         {
             var players = await Database.GetItemsAsync();

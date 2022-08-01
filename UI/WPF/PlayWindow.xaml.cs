@@ -35,7 +35,7 @@ namespace MedGame.UI.WPF
                 MediaPlayer.Play();
                 isPlaying = true;
 
-                GamePlay.StartMeditation();
+                //GamePlay.StartMeditation(true);
             }
             else
             {

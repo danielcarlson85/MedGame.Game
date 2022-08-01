@@ -18,7 +18,7 @@ namespace MedGame.GameLogicProject
         [Fact]
         public void CalculateSigninScoreShouldUpdatePlayer()
         {
-            //var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
+            var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
             Assert.NotNull(player);
         }
 
