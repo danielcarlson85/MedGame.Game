@@ -76,7 +76,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation(bool isPlayerGettingPoints)
         {
-            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp();
+            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp() / 60; //Change here to set to minutes
             PlayImage = "PlayButtonNew.png";
             _audioService.StopAudioFile();
             IsPlaying = false;
