@@ -23,22 +23,19 @@
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding MaxTotalDaysMeditatedInRow}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalDaysMeditatedInRow}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditatedToday}"/>
-                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMeditated}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
+                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Password}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Address}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding HttpResult}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding PlayerMessage}"/>
             </StackLayout>
         </ScrollView>
         <Button x:Name="ButtonUpdateUI" HeightRequest="35" Text="Update data" FontSize="Micro" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>

@@ -168,7 +168,6 @@ namespace MedGame.UI.Mobile.ViewModels
             TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
             TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
             TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
-            TotalMinutesMeditated = "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString();
             TotalMinutesMeditatedNow = "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
             TotalMinutesMeditatedToday = "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
             Points = "Points: " + GamePlay.Player.Points.ToString();
