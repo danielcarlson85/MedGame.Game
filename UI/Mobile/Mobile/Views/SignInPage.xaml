@@ -16,37 +16,40 @@
             <Color x:Key="Accent">#96d1ff</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-
-    <StackLayout>
-        <StackLayout Padding="0,50">
-            <Image Source="givebirthtitle.png" HeightRequest="77"/>
-            <Image Source="birdandbabycropped.png" HeightRequest="150"/>
-            <Image Source="buddhainyou.png" HeightRequest="60"/>
-        </StackLayout>
+    <ScrollView>
 
         <StackLayout>
-            <Grid Margin="0,10,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="50"/>
-                </Grid.ColumnDefinitions>
+            <StackLayout Padding="0,50">
+                <Image Source="givebirthtitle.png" HeightRequest="77"/>
+                <Image Source="birdandbabycropped.png" HeightRequest="150"/>
+                <Image Source="buddhainyou.png" HeightRequest="60"/>
+            </StackLayout>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35" />
-                    <RowDefinition Height="35" />
-                </Grid.RowDefinitions>
+            <StackLayout>
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
 
-                <Entry Grid.Column="1" Grid.Row="0" x:Name="EntryEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
-                <Entry Grid.Column="1" Grid.Row="1" x:Name="EntryPassword" IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TabIndex="1"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+
+                    <Entry Grid.Column="1" Grid.Row="0" x:Name="EntryEmail" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="info@danielcarlson.net" FontSize="Small" TabIndex="0"/>
+                    <Entry Grid.Column="1" Grid.Row="1" x:Name="EntryPassword" IsPassword="True" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TabIndex="1"/>
 
 
-                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HeightRequest="15">
-                    <Button x:Name="ButtonSignIn" Text="Sign in" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="2" Clicked="ButtonSignIn_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
-                    <Button x:Name="ButtonSignUp" Text="Sign up" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="3" Clicked="ButtonSignUp_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
-                </StackLayout>
-            </Grid>
+                    <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HeightRequest="15">
+                        <Button x:Name="ButtonSignIn" Text="Sign in" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="2" Clicked="ButtonSignIn_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
+                        <Button x:Name="ButtonSignUp" Text="Sign up" FontSize="Micro" HorizontalOptions="CenterAndExpand" TabIndex="3" Clicked="ButtonSignUp_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ScrollView>
+
 </ContentPage>
