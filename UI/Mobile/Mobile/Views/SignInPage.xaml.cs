@@ -15,7 +15,16 @@ namespace MedGame.UI.Mobile.Views
 
             BindingContext = vm = new SignInViewModel();
             GameLogic.GamePlay.Player = null;
-            EntryEmail.Text = Barrel.Current.Get<string>("userName");
+            var userName = Barrel.Current.Get<string>("userName");
+            if (string.IsNullOrWhiteSpace(userName))
+            {
+                EntryEmail.Text = "info@danielcarlson.net";
+            }
+            else
+            {
+                EntryEmail.Text = userName;
+            }
+
         }
 
         private async void ButtonSignIn_Clicked(object sender, EventArgs e)
@@ -27,7 +36,7 @@ namespace MedGame.UI.Mobile.Views
             else
             {
                 Barrel.Current.Add("userName", EntryEmail.Text, TimeSpan.FromDays(30));
-                
+
                 var player = await vm.SignInPlayerByEmailAsync(EntryEmail.Text);
                 if (player != null)
                 {
