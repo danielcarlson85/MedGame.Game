@@ -29,9 +29,23 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref progressMeterImage, value); }
         }
 
+        private string points;
+        public string Points
+        {
+            get { return points; }
+            set { SetProperty(ref points, value); }
+        }
+        
+        private string pointsText;
+        public string PointsText
+        {
+            get { return pointsText; }
+            set { SetProperty(ref pointsText, value); }
+        }
+
         public MunkPageViewModel()
         {
-            Title = "test";
+            PointsText = "Points";
         }
 
         public void UpdateUI()
@@ -41,6 +55,7 @@ namespace MedGame.UI.Mobile.ViewModels
             TamagochiImage = ImageHandler.GetTamagotchiImage(GamePlay.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GamePlay.Player);
             ProgressMeterImage = ImageHandler.GetProgressMeter(GamePlay.Player);
+            Points = GamePlay.Player.Points.ToString();
         }
     }
 }

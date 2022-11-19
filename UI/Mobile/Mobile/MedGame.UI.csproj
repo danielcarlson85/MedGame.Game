@@ -19,20 +19,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\MunkPage.xaml.cs">
-      <DependentUpon>MunkPage.xaml</DependentUpon>
+    <Compile Update="Views\1MunkPage.xaml.cs">
+      <DependentUpon>1MunkPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\SharePage.xaml.cs">
-      <DependentUpon>SharePage.xaml</DependentUpon>
+    <Compile Update="Views\3SharePage.xaml.cs">
+      <DependentUpon>3SharePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    <Compile Update="Views\5SettingsPage.xaml.cs">
+      <DependentUpon>5SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\StatisticPage.xaml.cs">
-      <DependentUpon>StatisticPage.xaml</DependentUpon>
+    <Compile Update="Views\4StatisticPage.xaml.cs">
+      <DependentUpon>4StatisticPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\PlayPage.xaml.cs">
-      <DependentUpon>PlayPage.xaml</DependentUpon>
+    <Compile Update="Views\2PlayPage.xaml.cs">
+      <DependentUpon>2PlayPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>

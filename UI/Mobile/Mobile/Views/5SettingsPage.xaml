@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MedGame.UI.Mobile.Views.MunkPage"
+             x:Class="MedGame.UI.Mobile.Views.SettingsPage"
              xmlns:vm="clr-namespace:MedGame.UI.Mobile.ViewModels"
              Title="{Binding Title}" BackgroundImageSource="background.png"
              Shell.TabBarIsVisible="True"
              Shell.NavBarIsVisible="False">
     <ContentPage.BindingContext>
-        <vm:MunkPageViewModel />
+        <vm:SettingsPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
@@ -17,29 +17,24 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <Label Text="{Binding Email}" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Placeholder="Name" Text="{Binding Name}" FontSize="Small" HeightRequest="35"/>
+                <Entry Placeholder="Address" Text="{Binding Address}" FontSize="Small" HeightRequest="35"/>
+                <Entry Placeholder="Gender" Text="{Binding Gender}" FontSize="Small" HeightRequest="35"/>
+                <Entry Placeholder="Birthday" Text="{Binding Birthday}" FontSize="Small" HeightRequest="35"/>
+                <Entry Placeholder="Health" Text="{Binding Health, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
+                <Entry Placeholder="Points" Text="{Binding Points, Mode=TwoWay}" FontSize="Small" HeightRequest="35"/>
 
-            <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="6" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
-            <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="4" BackgroundColor="Transparent"/>
-            <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
-        </Grid>
+            </StackLayout>
+        </ScrollView>
 
-        <Grid>
-            <Image  Source="{Binding HealthMeterImage}" />
-        </Grid>
-
+        <Button x:Name="ButtonSave" HeightRequest="40" Text="Update" FontSize="Micro" TabIndex="3" Clicked="ButtonSave_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonDeleteAllPlayers" HeightRequest="40" FontSize="Micro" Text="Delete all players" TabIndex="3" Clicked="ButtonDeleteAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonShowAllPlayers" HeightRequest="40" FontSize="Micro" Text="Show all players" TabIndex="3" Clicked="ButtonShowAllPlayers_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonResetPlayer" HeightRequest="40" FontSize="Micro" Text="Reset player" TabIndex="3" Clicked="ButtonResetPlayer_Clicked"  Background="LightGreen" TextColor="DarkGreen"/>
+        <Button x:Name="ButtonSignOutPlayer" HeightRequest="40" FontSize="Micro" Text="Sign out" TabIndex="3" Clicked="ButtonSignOutPlayer_Clicked" Background="LightGreen" TextColor="DarkGreen"/>
 
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
             <Grid>
