@@ -9,7 +9,6 @@ namespace MedGame.GameLogicProject
         [Fact]
         public void StartMeditationShouldStartTimer()
         {
-            GamePlay.StartMeditation(true);
         }
 
         [Fact]

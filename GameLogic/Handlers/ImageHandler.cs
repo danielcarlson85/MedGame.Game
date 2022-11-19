@@ -8,39 +8,34 @@ namespace MedGame.GameLogic
         {
             string tamagotchiImage = string.Empty;
 
-            if (player.Health < 96)
+            if (player.Health < 24 && player.Health >= 0)
             {
-                tamagotchiImage = player.Level + Constants.ImageHandlerConstants.TamagotchiImage_Sick;
+                tamagotchiImage = player.Level + "_Sick.png";
             }
 
-            if (player.Health < 104 && player.Health >= 96)
+            if (player.Health < 48 && player.Health >= 24)
             {
                 tamagotchiImage = player.Level + "_VerySad.png";
             }
 
-            if (player.Health < 112 && player.Health >= 104)
+            if (player.Health < 72 && player.Health >= 48)
             {
                 tamagotchiImage = player.Level + "_Crying.png";
             }
 
-            if (player.Health < 120 && player.Health >= 112)
+            if (player.Health < 96 && player.Health >= 72)
             {
                 tamagotchiImage = player.Level + "_Sad.png";
             }
 
-            if (player.Health < 136 && player.Health >= 120)
+            if (player.Health < 120 && player.Health >= 96)
             {
                 tamagotchiImage = player.Level + "_Annoyed.png";
             }
 
-            if (player.Health <= 144 && player.Health >= 136)
+            if (player.Health >= 120)
             {
                 tamagotchiImage = player.Level + "_Zen.png";
-            }
-
-            if (player.Level != Levels.Baby)
-            {
-                tamagotchiImage = "Baby_Zen.png";
             }
 
             return tamagotchiImage;

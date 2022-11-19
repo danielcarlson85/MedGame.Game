@@ -18,7 +18,7 @@ namespace MedGame.UI.Mobile.Views
             var userName = Barrel.Current.Get<string>("userName");
             if (string.IsNullOrWhiteSpace(userName))
             {
-                EntryEmail.Text = "info@danielcarlson.net";
+                EntryEmail.Text = "Player Email";
             }
             else
             {

@@ -164,23 +164,21 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             GameScoreCounter.CalculateSigninScore(GamePlay.Player);
 
-            MaxTotalDaysMeditatedInRow = "MaxTotalDaysMeditatedInRow: " + GamePlay.Player.MaxTotalDaysMeditatedInRow.ToString();
-            TotalDaysMeditatedInRow = "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
-            TotalMinutesMissed = "TotalMinutesMissed: " + GamePlay.Player.TotalMinutesMissed.ToString();
-            TotalHoursMissed = "TotalHoursMissed: " + GamePlay.Player.TotalHoursMissed.ToString();
-            TotalMinutesMeditatedNow = "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
-            TotalMinutesMeditatedToday = "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
+            MaxTotalDaysMeditatedInRow = "Max Total Days Meditated In Row: " + GamePlay.Player.MaxTotalDaysMeditatedInRow.ToString();
+            TotalDaysMeditatedInRow = "Total Days Meditated In Row: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
+            TotalMinutesMissed = "Total Minutes Missed: " + GamePlay.Player.TotalMinutesMissed.ToString();
+            TotalHoursMissed = "Total Hours Missed: " + GamePlay.Player.TotalHoursMissed.ToString();
+            TotalMinutesMeditatedNow = "Total Minutes Meditated Now: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
+            TotalMinutesMeditatedToday = "Total Minutes Meditated Today: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
             Points = "Points: " + GamePlay.Player.Points.ToString();
             Health = "Health: " + GamePlay.Player.Health.ToString();
             Email = "Email: " + GamePlay.Player.Email.ToString();
-            HttpResult = "HttpResult: " + GamePlay.Player.HttpResult;
             Gender = "Gender: " + GamePlay.Player.Gender.ToString();
             Birthday = "Birthday: " + GamePlay.Player.Birthday.ToString();
             Address = "Address: " + GamePlay.Player.Address.ToString();
-            PlayerMessage = "PlayerMessage: " + GamePlay.Player.PlayerMessage.ToString();
             Password = "Password: " + GamePlay.Player.Password.ToString();
             Multiplicator = "Multiplicator: " + GamePlay.Player.Multiplicator.ToString();
-            LastDateMeditated = "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString();
+            LastDateMeditated = "Last Date Meditated: " + GamePlay.Player.LastDateMeditated.ToString();
             Level = "Level: " + GamePlay.Player.Level.ToString();
             Name = "Name: " + GamePlay.Player.Name.ToString();
         }
