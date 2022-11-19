@@ -35,8 +35,6 @@
             <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="6" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
             <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="4" BackgroundColor="Transparent"/>
             <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding PointsText}" Grid.Row="1"/>
-            <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}" Grid.Row="1" Grid.Column="1"/>
         </Grid>
 
         <Grid>
@@ -60,9 +58,9 @@
 
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
-                <!--<ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
+                <!--<ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>-->
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
-                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>-->
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
             </Grid>
         </StackLayout>
     </StackLayout>

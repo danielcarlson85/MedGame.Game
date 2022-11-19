@@ -52,9 +52,9 @@
 
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonMunkPage"  Grid.Column="0" Source="buddaicon.png" Clicked="NavButtonMunkPage_ClickedAsync"/>
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonPlayPage" Grid.Column="1"  Source="playicon.png" Clicked="NavButtonPlayPage_ClickedAsync"/>
-                <!--<ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>
+                <!--<ImageButton BackgroundColor="Transparent" x:Name="NavButtonSharePage" Grid.Column="3"  Source="shareicon.png"  Clicked="NavButtonSharePage_ClickedAsync"/>-->
                 <ImageButton BackgroundColor="Transparent" x:Name="NavButtonStatisticPage" Grid.Column="2"  Source="statisticsicon.png"  Clicked="NavButtonStatisticPage_ClickedAsync"/>
-                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>-->
+                <ImageButton BackgroundColor="Transparent" x:Name="NavButtonSettingsPage" Grid.Column="4"  Source="settingsicon.png" Clicked="NavButtonSettingsPage_ClickedAsync"/>
             </Grid>
         </StackLayout>
     </StackLayout>

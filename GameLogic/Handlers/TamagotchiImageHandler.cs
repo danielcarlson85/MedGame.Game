@@ -5,8 +5,11 @@ using System.Text;
 
 namespace MedGame.GameLogic
 {
-    internal class TamagotchiImageHandler
+    public class TamagotchiImageHandler
     {
-      
+      public static string GetTamagotchiImage()
+        {
+            return null;
+        }
     }
 }
