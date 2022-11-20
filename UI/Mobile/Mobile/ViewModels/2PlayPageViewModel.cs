@@ -1,6 +1,7 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Mobile.Services;
 using MedGame.UI.Mobile.Interfaces;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -41,8 +42,9 @@ namespace MedGame.UI.Mobile.ViewModels
             }
             else
             {
-                //Change this to false when in production
-                await StopMeditation(true);
+                int.TryParse(currentTime, out int currentTimeInt);
+                var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStamp(), _audioService.GetFileDurationTime());
+                await StopMeditation(hasMeditatedEnough);
             }
         }
 
@@ -63,9 +65,9 @@ namespace MedGame.UI.Mobile.ViewModels
                 {
                     await Xamarin.Forms.Device.InvokeOnMainThreadAsync(() =>
                     {
-                        var timestamp = _audioService.GetCurrentTimeStamp().ToString();
-                        if (timestamp == "0") timestamp = string.Empty;
-                        CurrentTime = timestamp;
+                        var timestamp = _audioService.GetCurrentTimeStamp();
+                        string time = DateCounters.ConvertToMinutesAndSecondsReadableTime(timestamp);
+                        CurrentTime = time;
                         return Task.CompletedTask;
                     });
 

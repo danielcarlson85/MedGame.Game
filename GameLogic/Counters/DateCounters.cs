@@ -47,6 +47,11 @@ namespace MedGame.GameLogic
             return totalDaysMissed;
         }
 
-
+        public static string ConvertToMinutesAndSecondsReadableTime(int timestamp)
+        {
+            TimeSpan t = TimeSpan.FromSeconds(timestamp);
+            string time = t.ToString(@"mm\:ss");
+            return time;
+        }
     }
 }
