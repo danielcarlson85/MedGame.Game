@@ -42,7 +42,6 @@ namespace MedGame.UI.Mobile.ViewModels
             }
             else
             {
-                int.TryParse(currentTime, out int currentTimeInt);
                 var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStamp(), _audioService.GetFileDurationTime());
                 await StopMeditation(hasMeditatedEnough);
             }
@@ -59,6 +58,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         private async Task ShowTimestamp()
         {
+            var fileDuration = DateCounters.ConvertToMinutesAndSecondsReadableTime(_audioService.GetFileDurationTime());
+
             await Task.Run(async () =>
             {
                 while (IsPlaying)
@@ -67,7 +68,7 @@ namespace MedGame.UI.Mobile.ViewModels
                     {
                         var timestamp = _audioService.GetCurrentTimeStamp();
                         string time = DateCounters.ConvertToMinutesAndSecondsReadableTime(timestamp);
-                        CurrentTime = time;
+                        CurrentTime = $"{time} / {fileDuration}";
                         return Task.CompletedTask;
                     });
 
@@ -78,7 +79,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation(bool isPlayerGettingPoints)
         {
-            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp() / 60; //Change here to set to minutes
+            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp(); //Change here to set to minutes
             PlayImage = "PlayButtonNew.png";
             _audioService.StopAudioFile();
             IsPlaying = false;
