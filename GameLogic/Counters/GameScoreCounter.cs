@@ -32,21 +32,22 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += (totalMinutesMeditatedNow * multiplicator);
             player.Multiplicator += 1;
+            player.Health = 144;
+            player.LastDateMeditated = DateTime.Now;
             LevelCounter.GeLevelPointsWithMultiplicator(player, totalMinutesMeditatedNow, multiplicator);
-
+            
             return player;
         }
-
-      
 
         public static Player CalculateMeditationScoreOnSameDay(Player player, double totalMinutesMeditatedNow)
         {
             player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
             player.TotalMinutesMeditated += totalMinutesMeditatedNow;
             player.Points += totalMinutesMeditatedNow;
+            player.Health = 144;
+            player.LastDateMeditated = DateTime.Now;
 
             LevelCounter.GetLevelPointsWithoutMultiplicator(player, totalMinutesMeditatedNow);
-
             return player;
         }
 
@@ -64,9 +65,6 @@ namespace MedGame.GameLogic
 
             return totalHealth;
         }
-
-  
-      
 
         public static bool CheckIfPunishmentHasBeenMade(Player player)
         {
