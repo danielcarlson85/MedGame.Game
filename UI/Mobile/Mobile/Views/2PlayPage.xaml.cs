@@ -57,7 +57,7 @@ namespace MedGame.UI.Mobile.Views
                 bool result = await ShowDisplayAlert();
                 if (result)
                 {
-                    await vm.StopMeditation(false);
+                    await vm.StopMeditation();
                     App.Current.MainPage = page;
                 }
             }
