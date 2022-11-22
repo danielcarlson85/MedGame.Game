@@ -42,12 +42,12 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             if (playerResult != null)
             {
-                GamePlay.Player = playerResult;
+                GameModels.Player = playerResult;
 
-                if (GamePlay.Player.Email != null)
+                if (GameModels.Player.Email != null)
                 {
-                    GameScoreCounter.CalculateSigninScore(GamePlay.Player);
-                    await Database.UpdateItemAsync(GamePlay.Player);
+                    GameScoreCounter.CalculateSigninScore(GameModels.Player);
+                    await Database.UpdateItemAsync(GameModels.Player);
                 }
             }
         }

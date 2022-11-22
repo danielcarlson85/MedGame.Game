@@ -6,6 +6,7 @@ using MedGame.UI.Mobile.Interfaces;
 using MedGame.GameLogic;
 using MedGame.UI.Mobile;
 using MedGame.UI.Mobile.Views;
+using MedGame.UI.Mobile.ViewModels;
 
 [assembly: Dependency(typeof(AudioServiceImplementation))]
 namespace WSAudioApp.Droid.Implementations
@@ -15,7 +16,7 @@ namespace WSAudioApp.Droid.Implementations
         private MediaPlayer _mediaPlayer;
         public async Task PlayAudioFile(string fileName)
         {
-            //fileName = "short.mp3";
+            fileName = "short.mp3";
             _mediaPlayer = new MediaPlayer();
             var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
             _mediaPlayer.Prepared += (s, e) =>
@@ -31,8 +32,8 @@ namespace WSAudioApp.Droid.Implementations
 
         private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
-            GamePlay.Player.TotalMinutesMeditatedNow = GetCurrentTimeStamp() / 60;
-            GamePlay.StopMeditation(true);
+            GameModels.Player.TotalMinutesMeditatedNow = GetCurrentTimeStamp(); // 60; // Change here to get points per second
+            PlayPageViewModel.StopMeditation(true);
             Application.Current.MainPage = new PlayPage();
         }
 

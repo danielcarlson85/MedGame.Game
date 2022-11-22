@@ -162,25 +162,25 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
-            GameScoreCounter.CalculateSigninScore(GamePlay.Player);
+            GameScoreCounter.CalculateSigninScore(GameModels.Player);
 
-            MaxTotalDaysMeditatedInRow = "Max Total Days Meditated In Row: " + GamePlay.Player.MaxTotalDaysMeditatedInRow.ToString();
-            TotalDaysMeditatedInRow = "Total Days Meditated In Row: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString();
-            TotalMinutesMissed = "Total Minutes Missed: " + GamePlay.Player.TotalMinutesMissed.ToString();
-            TotalHoursMissed = "Total Hours Missed: " + GamePlay.Player.TotalHoursMissed.ToString();
-            TotalMinutesMeditatedNow = "Total Minutes Meditated Now: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString();
-            TotalMinutesMeditatedToday = "Total Minutes Meditated Today: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString();
-            Points = "Points: " + GamePlay.Player.Points.ToString();
-            Health = "Health: " + GamePlay.Player.Health.ToString();
-            Email = "Email: " + GamePlay.Player.Email.ToString();
-            Gender = "Gender: " + GamePlay.Player.Gender.ToString();
-            Birthday = "Birthday: " + GamePlay.Player.Birthday.ToString();
-            Address = "Address: " + GamePlay.Player.Address.ToString();
-            Password = "Password: " + GamePlay.Player.Password.ToString();
-            Multiplicator = "Multiplicator: " + GamePlay.Player.Multiplicator.ToString();
-            LastDateMeditated = "Last Date Meditated: " + GamePlay.Player.LastDateMeditated.ToString();
-            Level = "Level: " + GamePlay.Player.Level.ToString();
-            Name = "Name: " + GamePlay.Player.Name.ToString();
+            MaxTotalDaysMeditatedInRow = "Max Total Days Meditated In Row: " + GameModels.Player.MaxTotalDaysMeditatedInRow.ToString();
+            TotalDaysMeditatedInRow = "Total Days Meditated In Row: " + GameModels.Player.TotalDaysMeditatedInRow.ToString();
+            TotalMinutesMissed = "Total Minutes Missed: " + GameModels.Player.TotalMinutesMissed.ToString();
+            TotalHoursMissed = "Total Hours Missed: " + GameModels.Player.TotalHoursMissed.ToString();
+            TotalMinutesMeditatedNow = "Total Minutes Meditated Now: " + GameModels.Player.TotalMinutesMeditatedNow.ToString();
+            TotalMinutesMeditatedToday = "Total Minutes Meditated Today: " + GameModels.Player.TotalMinutesMeditatedToday.ToString();
+            Points = "Points: " + GameModels.Player.Points.ToString();
+            Health = "Health: " + GameModels.Player.Health.ToString();
+            Email = "Email: " + GameModels.Player.Email.ToString();
+            Gender = "Gender: " + GameModels.Player.Gender.ToString();
+            Birthday = "Birthday: " + GameModels.Player.Birthday.ToString();
+            Address = "Address: " + GameModels.Player.Address.ToString();
+            Password = "Password: " + GameModels.Player.Password.ToString();
+            Multiplicator = "Multiplicator: " + GameModels.Player.Multiplicator.ToString();
+            LastDateMeditated = "Last Date Meditated: " + GameModels.Player.LastDateMeditated.ToString();
+            Level = "Level: " + GameModels.Player.Level.ToString();
+            Name = "Name: " + GameModels.Player.Name.ToString();
         }
     }
 }

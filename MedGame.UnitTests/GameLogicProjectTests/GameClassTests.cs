@@ -14,7 +14,7 @@ namespace MedGame.GameLogicProject
         [Fact]
         public void StopMeditationShouldStopTimer()
         {
-            GamePlay.StopMeditation(true);
+            //GameModels.StopMeditation(true);
         }
     }
 }

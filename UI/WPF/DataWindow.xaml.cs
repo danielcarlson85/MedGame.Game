@@ -25,28 +25,28 @@ namespace MedGame.UI.WPF
             try
             {
                 LabelPlayer.Content =
-                "TotalMinutesMeditatedNow: " + GamePlay.Player.TotalMinutesMeditatedNow.ToString() + "\n" +
-                "TotalMinutesMeditatedToday: " + GamePlay.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
-                "TotalDaysMeditatedInRow: " + GamePlay.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
-                "TotalMinutesMeditated: " + GamePlay.Player.TotalMinutesMeditated.ToString() + "\n" +
-                "TotalHoursMissed: " + GamePlay.Player.TotalMinutesMissed + "\n" +
+                "TotalMinutesMeditatedNow: " + GameModels.Player.TotalMinutesMeditatedNow.ToString() + "\n" +
+                "TotalMinutesMeditatedToday: " + GameModels.Player.TotalMinutesMeditatedToday.ToString() + "\n" +
+                "TotalDaysMeditatedInRow: " + GameModels.Player.TotalDaysMeditatedInRow.ToString() + "\n" +
+                "TotalMinutesMeditated: " + GameModels.Player.TotalMinutesMeditated.ToString() + "\n" +
+                "TotalHoursMissed: " + GameModels.Player.TotalMinutesMissed + "\n" +
                  "\n" +
-                "Health: " + GamePlay.Player.Health.ToString() + "\n" +
-                "Points: " + GamePlay.Player.Points.ToString() + "\n" +
-                "Level: " + GamePlay.Player.Level.ToString() + "\n" +
-                "LastDateMeditated: " + GamePlay.Player.LastDateMeditated.ToString() + "\n" +
-                "Multiplicator: " + GamePlay.Player.Multiplicator.ToString() + "\n" +
-                "Password: " + GamePlay.Player.Password.ToString() + "\n" +
+                "Health: " + GameModels.Player.Health.ToString() + "\n" +
+                "Points: " + GameModels.Player.Points.ToString() + "\n" +
+                "Level: " + GameModels.Player.Level.ToString() + "\n" +
+                "LastDateMeditated: " + GameModels.Player.LastDateMeditated.ToString() + "\n" +
+                "Multiplicator: " + GameModels.Player.Multiplicator.ToString() + "\n" +
+                "Password: " + GameModels.Player.Password.ToString() + "\n" +
                  "\n" +
-                "Name: " + GamePlay.Player.Name + "\n" +
-                "Password: " + GamePlay.Player.Password + "\n" +
-                "PlayerMessage: " + GamePlay.Player.PlayerMessage + "\n" +
-                "Address: " + GamePlay.Player.Address + "\n" +
-                "Birthday: " + GamePlay.Player.Birthday + "\n" +
-                "Gender: " + GamePlay.Player.Gender + "\n" +
-                "HttpResult: " + GamePlay.Player.HttpResult + "\n" +
+                "Name: " + GameModels.Player.Name + "\n" +
+                "Password: " + GameModels.Player.Password + "\n" +
+                "PlayerMessage: " + GameModels.Player.PlayerMessage + "\n" +
+                "Address: " + GameModels.Player.Address + "\n" +
+                "Birthday: " + GameModels.Player.Birthday + "\n" +
+                "Gender: " + GameModels.Player.Gender + "\n" +
+                "HttpResult: " + GameModels.Player.HttpResult + "\n" +
                  "\n" +
-                "Email: " + GamePlay.Player.Email.ToString();
+                "Email: " + GameModels.Player.Email.ToString();
             }
             catch (System.Exception) { }
         }

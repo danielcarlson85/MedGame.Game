@@ -82,7 +82,7 @@ namespace MedGame.UI.Mobile.Views
             var result = await DisplayAlert("Warning!", "Do you really want to reset the player? \n\nThe player can not be restored.", "Yes", "No");
             if (result)
             {
-                vm.ResetPlayer(GamePlay.Player.Email);
+                vm.ResetPlayer(GameModels.Player.Email);
                 await DisplayAlert("The player has been reset!", "All players has been reset.", "ok");
                 Application.Current.MainPage = new StatisticPage();
             }
@@ -90,7 +90,7 @@ namespace MedGame.UI.Mobile.Views
 
         private void ButtonSignOutPlayer_Clicked(object sender, EventArgs e)
         {
-            vm.ResetPlayer(GamePlay.Player.Email);
+            vm.ResetPlayer(GameModels.Player.Email);
             Application.Current.MainPage = new SignInPage();
         }
     }

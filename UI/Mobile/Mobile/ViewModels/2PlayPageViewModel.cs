@@ -11,6 +11,7 @@ namespace MedGame.UI.Mobile.ViewModels
     {
         private readonly IAudioService _audioService;
         private readonly PlayerDatabase _database;
+        public static int totalMinutesMeditatedNow = 0;
         public bool IsPlaying = false;
 
         private string playImage;
@@ -50,7 +51,7 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             PlayImage = "pausebutton.png";
             IsPlaying = true;
-            var currentAudioFile = AudioHandler.GetCurrentAudioFile(GamePlay.Player);
+            var currentAudioFile = AudioHandler.GetCurrentAudioFile(GameModels.Player);
             await _audioService.PlayAudioFile(currentAudioFile);
             await ShowTimestamp();
         }
@@ -58,12 +59,12 @@ namespace MedGame.UI.Mobile.ViewModels
         public async Task StopMeditation()
         {
             var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStamp(), _audioService.GetFileDurationTime());
-            GamePlay.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp() / 60; //Change here to set to minutes (/60)
+            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp() / 60; //Change here to set to minutes (/60)
             _audioService.StopAudioFile();
             IsPlaying = false;
 
-            GamePlay.StopMeditation(hasMeditatedEnough);
-            await _database.UpdateItemAsync(GamePlay.Player);
+            StopMeditation(hasMeditatedEnough);
+            await _database.UpdateItemAsync(GameModels.Player);
         }
 
 
@@ -86,6 +87,35 @@ namespace MedGame.UI.Mobile.ViewModels
                     await Task.Delay(100);
                 }
             });
+        }
+
+
+        public static void StopMeditation(bool hasMeditatedEnough)
+        {
+            if (hasMeditatedEnough)
+            {
+                if (DateCounters.CheckSameDate(GameModels.Player))
+                {
+                    GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player, GameModels.Player.TotalMinutesMeditatedNow);
+                }
+                else
+                {
+                    GameModels.Player = GameScoreCounter.CalculateMeditationScore(GameModels.Player, GameModels.Player.TotalMinutesMeditatedNow, GameModels.Player.Multiplicator);
+                }
+            }
+
+
+            GameModels.Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(GameModels.Player);
+            GameModels.Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(GameModels.Player);
+            GameModels.Player.TotalMinutesMissed = 0;
+            GameModels.Player.TotalHoursMissed = 0;
+            GameModels.Player.TotalMinutesMeditatedNow = 0;
+            GameModels.Player.TotalMinutesMeditated = 0;
+            GameModels.Player.Level = LevelCounter.CheckLevel(GameModels.Player.Points);
+            GameModels.Player.PunishDay1 = false;
+            GameModels.Player.PunishDay2 = false;
+            GameModels.Player.PunishDay3 = false;
+            GameModels.Player.PunishDay4 = false;
         }
     }
 }

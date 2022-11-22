@@ -43,8 +43,8 @@ namespace MedGame.UI.WPF
             else
             {
                 LoadingWindow.Show();
-                GamePlay.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text.MakeFullFileName());
-                CheckLogin(GamePlay.Player);
+                GameModels.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text.MakeFullFileName());
+                CheckLogin(GameModels.Player);
             }
         }
 
@@ -55,17 +55,17 @@ namespace MedGame.UI.WPF
             var newPlayer = CreateNewPlayer();
 
             await FileHandler.SavePlayerToFile(newPlayer, TextBoxEmail.Text.MakeFullFileName());
-            GamePlay.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text.MakeFullFileName());
-            CheckLogin(GamePlay.Player);
+            GameModels.Player = await FileHandler.LoadPlayerFromFile(TextBoxEmail.Text.MakeFullFileName());
+            CheckLogin(GameModels.Player);
         }
 
         public void CheckLogin(Player playerResult)
         {
             if (playerResult.Email != null)
             {
-                GamePlay.Player = playerResult;
+                GameModels.Player = playerResult;
 
-                if (GamePlay.Player.Email != null)
+                if (GameModels.Player.Email != null)
                 {
                     MunkWindow MunkWindow = new MunkWindow();
                     MunkWindow.Show();
@@ -79,7 +79,7 @@ namespace MedGame.UI.WPF
                 }
                 else
                 {
-                    MessageBox.Show(GamePlay.Player.PlayerMessage);
+                    MessageBox.Show(GameModels.Player.PlayerMessage);
                 }
             }
         }

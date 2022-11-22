@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedGame.UI", "MedGame.UI", "{70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UI.WPF", "UI\WPF\MedGame.UI.WPF.csproj", "{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedGame.Models", "Models\MedGame.Models.csproj", "{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedGame.Services", "Services\MedGame.Services.csproj", "{A1FC7FC3-2223-4B21-9A0F-E1C51F183758}"
@@ -19,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UI.Mobile.Android",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UI.Mobile.iOS", "UI\Mobile\Mobile.iOS\MedGame.UI.Mobile.iOS.csproj", "{112013FF-DE0A-4D4D-BF25-8E1DB5FDD87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedGame.UnitTests", "MedGame.UnitTests\MedGame.UnitTests.csproj", "{279EEA5F-6A1D-4022-B584-B1A05B125D0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedGame.UnitTests", "MedGame.UnitTests\MedGame.UnitTests.csproj", "{279EEA5F-6A1D-4022-B584-B1A05B125D0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,18 +29,6 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|iPhone.Build.0 = Release|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -136,7 +122,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F4F9E60E-7839-42BD-96AE-69E4A56B46F7} = {70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}
 		{E62B83C5-FE5D-4B5D-876C-6CB04FE9DC9F} = {70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}
 		{6195BB60-9340-488C-81BA-692CE0BECEE0} = {70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}
 		{112013FF-DE0A-4D4D-BF25-8E1DB5FDD87D} = {70E420A3-1C5A-4AE0-85FE-BD3E5F5BB9F4}

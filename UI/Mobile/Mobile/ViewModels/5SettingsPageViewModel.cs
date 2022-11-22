@@ -88,14 +88,14 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
 
-            Id = GamePlay.Player.Id.ToString();
-            Name = GamePlay.Player.Name;
-            Email = GamePlay.Player.Email;
-            Address = GamePlay.Player.Address;
-            Gender = GamePlay.Player.Gender;
-            Birthday = GamePlay.Player.Birthday;
-            Health = GamePlay.Player.Health.ToString();
-            Points = GamePlay.Player.Points.ToString();
+            Id = GameModels.Player.Id.ToString();
+            Name = GameModels.Player.Name;
+            Email = GameModels.Player.Email;
+            Address = GameModels.Player.Address;
+            Gender = GameModels.Player.Gender;
+            Birthday = GameModels.Player.Birthday;
+            Health = GameModels.Player.Health.ToString();
+            Points = GameModels.Player.Points.ToString();
         }
 
         internal async Task DeleteAllPlayers()
@@ -105,8 +105,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         internal void ResetPlayer(string email)
         {
-            GamePlay.Player = new Player();
-            GamePlay.Player = Player.ResetPlayer(email);
+            GameModels.Player = new Player();
+            GameModels.Player = Player.ResetPlayer(email);
         }
 
         internal async Task<string> GetAllPlayersNameAndId()
@@ -127,7 +127,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task UpdatePlayer()
         {
-            var playerToUpdate = await Database.GetPlayerByEmailAsync(GamePlay.Player.Email);
+            var playerToUpdate = await Database.GetPlayerByEmailAsync(GameModels.Player.Email);
 
             playerToUpdate.Name = Name;
             playerToUpdate.Address = Address;
@@ -136,7 +136,7 @@ namespace MedGame.UI.Mobile.ViewModels
             playerToUpdate.Health = double.Parse(Health);
             playerToUpdate.Points = double.Parse(Points);
             await Database.UpdateItemAsync(playerToUpdate);
-            GamePlay.Player = playerToUpdate;
+            GameModels.Player = playerToUpdate;
         }
     }
 }

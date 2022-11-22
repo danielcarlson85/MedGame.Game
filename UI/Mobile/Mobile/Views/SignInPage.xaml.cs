@@ -14,7 +14,7 @@ namespace MedGame.UI.Mobile.Views
             InitializeComponent();
 
             BindingContext = vm = new SignInViewModel();
-            GameLogic.GamePlay.Player = null;
+            GameLogic.GameModels.Player = null;
             var userName = Barrel.Current.Get<string>("userName");
             if (string.IsNullOrWhiteSpace(userName))
             {
