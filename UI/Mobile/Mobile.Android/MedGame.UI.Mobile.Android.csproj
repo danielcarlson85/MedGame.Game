@@ -114,6 +114,10 @@
       <Project>{DFF7B781-3792-4F70-B7E7-51EE7256B6FB}</Project>
       <Name>MedGame.GameLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Models\MedGame.Models.csproj">
+      <Project>{A937ADFC-E8C8-4AB1-A112-F264AB907A4E}</Project>
+      <Name>MedGame.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mobile\MedGame.UI.csproj">
       <Project>{e62b83c5-fe5d-4b5d-876c-6cb04fe9dc9f}</Project>
       <Name>MedGame.UI</Name>

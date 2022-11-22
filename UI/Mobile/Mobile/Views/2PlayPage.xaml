@@ -32,7 +32,7 @@
 
             </Grid.RowDefinitions>
 
-            <ImageButton x:Name="ImageButtonPlay" HeightRequest="200" Source="{Binding PlayImage}" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_Clicked" BackgroundColor="Transparent" />
+            <ImageButton x:Name="ImageButtonPlay" x:FieldModifier="public" HeightRequest="200" Source="{Binding PlayImage}" Grid.Row="1" Grid.Column="1" Clicked="ImageButtonPlay_Clicked" BackgroundColor="Transparent" />
             <Label Text="{Binding CurrentTime}" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"/>        
         </Grid>
 
