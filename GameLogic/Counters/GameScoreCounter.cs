@@ -11,7 +11,7 @@ namespace MedGame.GameLogic
             player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
             player.TotalHoursMissed = TimeCounters.CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
             player.Health = CalculateHealth(player);
-            player.Level = LevelCounter.CheckLevel(player.Points);
+            player.Level = LevelCounter.CheckLevel(player);
 
             player.Multiplicator = MultiplicatorCounter.CalculateMultiplicatorFromDates(player);      //Check punishment int/double
 
@@ -26,28 +26,28 @@ namespace MedGame.GameLogic
             return player;
         }
 
-        public static Player CalculateMeditationScore(Player player, double totalMinutesMeditatedNow, double multiplicator)
+        public static Player CalculateMeditationScore(Player player)
         {
-            player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
-            player.TotalMinutesMeditated += totalMinutesMeditatedNow;
-            player.Points += (totalMinutesMeditatedNow * multiplicator);
+            player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
+            player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
+            player.Points += (player.TotalMinutesMeditatedNow * player.Multiplicator);
             player.Multiplicator += 1;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
-            LevelCounter.GeLevelPointsWithMultiplicator(player, totalMinutesMeditatedNow, multiplicator);
+            LevelCounter.GeLevelPointsWithMultiplicator(player);
             
             return player;
         }
 
-        public static Player CalculateMeditationScoreOnSameDay(Player player, double totalMinutesMeditatedNow)
+        public static Player CalculateMeditationScoreOnSameDay(Player player)
         {
-            player.TotalMinutesMeditatedToday += totalMinutesMeditatedNow;
-            player.TotalMinutesMeditated += totalMinutesMeditatedNow;
-            player.Points += totalMinutesMeditatedNow;
+            player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
+            player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
+            player.Points += player.TotalMinutesMeditatedNow;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
 
-            LevelCounter.GetLevelPointsWithoutMultiplicator(player, totalMinutesMeditatedNow);
+            LevelCounter.GetLevelPointsWithoutMultiplicator(player);
             return player;
         }
 

@@ -6,12 +6,17 @@ namespace MedGame.GameLogicProject
 {
     public class LevelCounterClassTests
     {
+
+        Player player = new();
+
         [Theory]
         [InlineData(0)]
         [InlineData(28)]
         public void CheckLevelShouldReturnBaby(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Baby, Level);
         }
 
@@ -20,7 +25,9 @@ namespace MedGame.GameLogicProject
         [InlineData(115)]
         public void CheckLevelShouldReturnChild(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Child, Level);
         }
 
@@ -29,7 +36,9 @@ namespace MedGame.GameLogicProject
         [InlineData(252)]
         public void CheckLevelShouldReturnTeenager(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Teenager, Level);
         }
 
@@ -38,7 +47,9 @@ namespace MedGame.GameLogicProject
         [InlineData(437)]
         public void CheckLevelShouldReturnPupil(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Pupil, Level);
         }
 
@@ -47,8 +58,10 @@ namespace MedGame.GameLogicProject
         [InlineData(672)]
         public void CheckLevelShouldReturnYoungAdult(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
-            Assert.Equal(Levels.YoungAdult, Level);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
+            Assert.Equal(Levels.YoungAdult, Level); 
         }
 
         [Theory]
@@ -56,7 +69,9 @@ namespace MedGame.GameLogicProject
         [InlineData(955)]
         public void CheckLevelShouldReturnAdult(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Adult, Level);
         }
 
@@ -65,7 +80,9 @@ namespace MedGame.GameLogicProject
         [InlineData(1288)]
         public void CheckLevelShouldReturnOldAdult(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.OldAdult, Level);
         }
 
@@ -74,7 +91,9 @@ namespace MedGame.GameLogicProject
         [InlineData(1669)]
         public void CheckLevelShouldReturnOld(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Old, Level);
         }
 
@@ -83,7 +102,9 @@ namespace MedGame.GameLogicProject
         [InlineData(2100)]
         public void CheckLevelShouldReturnMaster(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Master, Level);
         }
 
@@ -92,7 +113,9 @@ namespace MedGame.GameLogicProject
         [InlineData(2579)]
         public void CheckLevelShouldReturnMunk(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.Munk, Level);
         }
 
@@ -102,7 +125,9 @@ namespace MedGame.GameLogicProject
         [InlineData(3108)]
         public void CheckLevelShouldReturnGod(int point)
         {
-            Levels Level = LevelCounter.CheckLevel(point);
+            player.Points = point;
+
+            Levels Level = LevelCounter.CheckLevel(player);
             Assert.Equal(Levels.God, Level);
         }
     }

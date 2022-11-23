@@ -32,8 +32,8 @@ namespace WSAudioApp.Droid.Implementations
 
         private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
-            GameModels.Player.TotalMinutesMeditatedNow = GetCurrentTimeStampInMinutes() / 60; // Change here to get points per second
-            PlayPageViewModel.StopMeditation(true);
+            var playPageViewModel = new PlayPageViewModel();
+            playPageViewModel.SetMeditationPoints(true);
             Application.Current.MainPage = new PlayPage();
         }
 

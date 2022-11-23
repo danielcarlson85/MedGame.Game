@@ -50,7 +50,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
-            GameModels.Player.Level=LevelCounter.CheckLevel(GameModels.Player.Points);
+            GameModels.Player.Level=LevelCounter.CheckLevel(GameModels.Player);
 
             TamagochiImage = ImageHandler.GetTamagotchiImage(GameModels.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GameModels.Player);

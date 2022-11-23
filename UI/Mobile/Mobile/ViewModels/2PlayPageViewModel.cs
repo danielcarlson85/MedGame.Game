@@ -59,11 +59,10 @@ namespace MedGame.UI.Mobile.ViewModels
         public async Task StopMeditation()
         {
             var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStampInMinutes(), _audioService.GetFileDurationTimeInMinutes());
-            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStampInMinutes() / 60; //Change here to set to minutes (/60)
             _audioService.StopAudioFile();
             IsPlaying = false;
 
-            StopMeditation(hasMeditatedEnough);
+            SetMeditationPoints(hasMeditatedEnough);
             await _database.UpdateItemAsync(GameModels.Player);
         }
 
@@ -92,17 +91,19 @@ namespace MedGame.UI.Mobile.ViewModels
         }
 
 
-        public static void StopMeditation(bool hasMeditatedEnough)
+        public void SetMeditationPoints(bool hasMeditatedEnough)
         {
+            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStampInMinutes() / 60; //Change here to set to minutes (/60)
+
             if (hasMeditatedEnough)
             {
                 if (DateCounters.CheckSameDate(GameModels.Player))
                 {
-                    GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player, GameModels.Player.TotalMinutesMeditatedNow);
+                    GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player);
                 }
                 else
                 {
-                    GameModels.Player = GameScoreCounter.CalculateMeditationScore(GameModels.Player, GameModels.Player.TotalMinutesMeditatedNow, GameModels.Player.Multiplicator);
+                    GameModels.Player = GameScoreCounter.CalculateMeditationScore(GameModels.Player);
                 }
             }
 
@@ -113,7 +114,7 @@ namespace MedGame.UI.Mobile.ViewModels
             GameModels.Player.TotalHoursMissed = 0;
             GameModels.Player.TotalMinutesMeditatedNow = 0;
             GameModels.Player.TotalMinutesMeditated = 0;
-            GameModels.Player.Level = LevelCounter.CheckLevel(GameModels.Player.Points);
+            GameModels.Player.Level = LevelCounter.CheckLevel(GameModels.Player);
             GameModels.Player.PunishDay1 = false;
             GameModels.Player.PunishDay2 = false;
             GameModels.Player.PunishDay3 = false;
