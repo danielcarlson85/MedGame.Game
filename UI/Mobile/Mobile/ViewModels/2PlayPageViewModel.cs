@@ -100,6 +100,8 @@ namespace MedGame.UI.Mobile.ViewModels
                 if (DateCounters.CheckSameDate(GameModels.Player))
                 {
                     GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player);
+                    GameModels.Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(GameModels.Player);
+                    GameModels.Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(GameModels.Player);
                 }
                 else
                 {
@@ -107,9 +109,6 @@ namespace MedGame.UI.Mobile.ViewModels
                 }
             }
 
-
-            GameModels.Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(GameModels.Player);
-            GameModels.Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(GameModels.Player);
             GameModels.Player.TotalMinutesMissed = 0;
             GameModels.Player.TotalHoursMissed = 0;
             GameModels.Player.TotalMinutesMeditatedNow = 0;
