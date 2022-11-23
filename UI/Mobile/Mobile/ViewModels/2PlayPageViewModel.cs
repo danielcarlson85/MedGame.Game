@@ -58,8 +58,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation()
         {
-            var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStamp(), _audioService.GetFileDurationTime());
-            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStamp() / 60; //Change here to set to minutes (/60)
+            var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStampInMinutes(), _audioService.GetFileDurationTimeInMinutes());
+            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStampInMinutes() / 60; //Change here to set to minutes (/60)
             _audioService.StopAudioFile();
             IsPlaying = false;
 
@@ -70,7 +70,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         private async Task ShowTimestamp()
         {
-            var fileDuration = DateCounters.ConvertToMinutesAndSecondsReadableTime(_audioService.GetFileDurationTime());
+            var fileDuration = DateCounters.ConvertToMinutesAndSecondsReadableTime(_audioService.GetFileDurationTimeInMinutes());
 
             await Task.Run(async () =>
             {
@@ -78,7 +78,7 @@ namespace MedGame.UI.Mobile.ViewModels
                 {
                     await Xamarin.Forms.Device.InvokeOnMainThreadAsync(() =>
                     {
-                        var timestamp = _audioService.GetCurrentTimeStamp();
+                        var timestamp = _audioService.GetCurrentTimeStampInMinutes();
                         string time = DateCounters.ConvertToMinutesAndSecondsReadableTime(timestamp);
                         CurrentTime = $"{time} / {fileDuration}";
                         return Task.CompletedTask;
@@ -86,6 +86,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
                     await Task.Delay(100);
                 }
+
+                PlayImage = "PlayButtonNew.png";
             });
         }
 

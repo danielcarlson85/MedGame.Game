@@ -16,7 +16,7 @@ namespace WSAudioApp.Droid.Implementations
         private MediaPlayer _mediaPlayer;
         public async Task PlayAudioFile(string fileName)
         {
-            fileName = "short.mp3";
+            //fileName = "short.mp3";
             _mediaPlayer = new MediaPlayer();
             var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
             _mediaPlayer.Prepared += (s, e) =>
@@ -32,7 +32,7 @@ namespace WSAudioApp.Droid.Implementations
 
         private void MediaPlayer_Completion(object sender, System.EventArgs e)
         {
-            GameModels.Player.TotalMinutesMeditatedNow = GetCurrentTimeStamp(); // 60; // Change here to get points per second
+            GameModels.Player.TotalMinutesMeditatedNow = GetCurrentTimeStampInMinutes() / 60; // Change here to get points per second
             PlayPageViewModel.StopMeditation(true);
             Application.Current.MainPage = new PlayPage();
         }
@@ -42,12 +42,12 @@ namespace WSAudioApp.Droid.Implementations
             _mediaPlayer.Stop();
         }
 
-        public  int GetCurrentTimeStamp()
+        public  int GetCurrentTimeStampInMinutes()
         {
             return (_mediaPlayer.CurrentPosition / 1000);
         }
 
-        public int GetFileDurationTime()
+        public int GetFileDurationTimeInMinutes()
         {
             return (_mediaPlayer.Duration / 1000);
         }
