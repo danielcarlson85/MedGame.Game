@@ -30,11 +30,10 @@ namespace MedGame.GameLogic
         {
             player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
-            player.Points += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+            player.Points += player.TotalMinutesMeditatedNow * player.Multiplicator;
             player.Multiplicator += 1;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
-            LevelCounter.GeLevelPointsWithMultiplicator(player);
             
             return player;
         }
@@ -46,8 +45,6 @@ namespace MedGame.GameLogic
             player.Points += player.TotalMinutesMeditatedNow;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
-
-            LevelCounter.GetLevelPointsWithoutMultiplicator(player);
             return player;
         }
 

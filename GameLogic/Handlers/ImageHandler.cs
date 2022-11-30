@@ -82,68 +82,8 @@ namespace MedGame.GameLogic
 
         public static string GetProgressMeter(Player player)
         {
-            var progressMeterImage = string.Empty;
-
-            switch (player.Level)
-            {
-                case Levels.Baby:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelBabyPoints);
-                    break;
-
-                case Levels.Child:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelChildPoints);
-                    break;
-
-                case Levels.Teenager:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelTeenagerPoints);
-                    break;
-
-                case Levels.Pupil:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelPupilPoints);
-                    break;
-
-                case Levels.YoungAdult:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelYoungAdultPoints);
-                    break;
-
-                case Levels.Adult:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelAdultPoints);
-                    break;
-
-                case Levels.OldAdult:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldAdultPoints);
-                    break;
-
-                case Levels.Old:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldPoints);
-                    break;
-
-                case Levels.Master:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMasterPoints);
-                    break;
-
-                case Levels.Munk:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMunkPoints);
-                    break;
-
-                case Levels.God:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelGodPoints);
-                    break;
-            }
-
+            string progressMeterImage = ProgressBarHandler.GetProgressBarImage(player);
             return progressMeterImage;
-
         }
     }
 }

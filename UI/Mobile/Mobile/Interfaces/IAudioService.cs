@@ -7,7 +7,7 @@ namespace MedGame.UI.Mobile.Interfaces
 {
     public interface IAudioService
     {
-        int GetCurrentTimeStampInMinutes();
+        int GetCurrentTimeStampInSeconds();
         int GetFileDurationTimeInMinutes();
         Task PlayAudioFile(string fileName);
         void StopAudioFile();

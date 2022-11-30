@@ -6,8 +6,7 @@ namespace MedGame.GameLogicProject
 {
     public class LevelCounterClassTests
     {
-
-        Player player = new();
+        readonly Player player = new();
 
         [Theory]
         [InlineData(0)]

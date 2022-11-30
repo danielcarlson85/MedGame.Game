@@ -58,7 +58,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public async Task StopMeditation()
         {
-            var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStampInMinutes(), _audioService.GetFileDurationTimeInMinutes());
+            var hasMeditatedEnough = TimeCounters.HasMeditatedEnoughTime(_audioService.GetCurrentTimeStampInSeconds(), _audioService.GetFileDurationTimeInMinutes());
             _audioService.StopAudioFile();
             IsPlaying = false;
 
@@ -75,15 +75,15 @@ namespace MedGame.UI.Mobile.ViewModels
             {
                 while (IsPlaying)
                 {
-                    await Xamarin.Forms.Device.InvokeOnMainThreadAsync(() =>
+                    await Device.InvokeOnMainThreadAsync(() =>
                     {
-                        var timestamp = _audioService.GetCurrentTimeStampInMinutes();
-                        string time = DateCounters.ConvertToMinutesAndSecondsReadableTime(timestamp);
+                        var timestamp = _audioService.GetCurrentTimeStampInSeconds();
+                        string time = DateCounters.ConvertToMinutesAndSecondsReadableTime((int)timestamp);
                         CurrentTime = $"{time} / {fileDuration}";
                         return Task.CompletedTask;
                     });
 
-                    await Task.Delay(100);
+                    await Task.Delay(1000);
                 }
 
                 PlayImage = "PlayButtonNew.png";
@@ -93,22 +93,20 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void SetMeditationPoints(bool hasMeditatedEnough)
         {
-            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStampInMinutes() / 60; //Change here to set to minutes (/60)
+            GameModels.Player.TotalMinutesMeditatedNow = _audioService.GetCurrentTimeStampInSeconds();
 
-            if (hasMeditatedEnough)
+            if (hasMeditatedEnough && DateCounters.CheckSameDate(GameModels.Player))
             {
-                if (DateCounters.CheckSameDate(GameModels.Player))
-                {
-                    GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player);
-                    GameModels.Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(GameModels.Player);
-                    GameModels.Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(GameModels.Player);
-                }
-                else
-                {
-                    GameModels.Player = GameScoreCounter.CalculateMeditationScore(GameModels.Player);
-                }
+                GameModels.Player = GameScoreCounter.CalculateMeditationScore(GameModels.Player);
+            }
+            else
+            {
+                GameModels.Player = GameScoreCounter.CalculateMeditationScoreOnSameDay(GameModels.Player);
             }
 
+
+            GameModels.Player.TotalDaysMeditatedInRow = DateCounters.GetTotalDaysInRow(GameModels.Player);
+            GameModels.Player.MaxTotalDaysMeditatedInRow = DateCounters.GetMaxTotalDaysMeditatedInRow(GameModels.Player);
             GameModels.Player.TotalMinutesMissed = 0;
             GameModels.Player.TotalHoursMissed = 0;
             GameModels.Player.TotalMinutesMeditatedNow = 0;

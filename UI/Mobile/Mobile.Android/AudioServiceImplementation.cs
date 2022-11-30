@@ -16,7 +16,7 @@ namespace WSAudioApp.Droid.Implementations
         private MediaPlayer _mediaPlayer;
         public async Task PlayAudioFile(string fileName)
         {
-            //fileName = "short.mp3";
+            fileName = "short.mp3";
             _mediaPlayer = new MediaPlayer();
             var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
             _mediaPlayer.Prepared += (s, e) =>
@@ -42,7 +42,7 @@ namespace WSAudioApp.Droid.Implementations
             _mediaPlayer.Stop();
         }
 
-        public  int GetCurrentTimeStampInMinutes()
+        public  int GetCurrentTimeStampInSeconds()
         {
             return (_mediaPlayer.CurrentPosition / 1000);
         }
