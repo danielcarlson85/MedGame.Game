@@ -1,4 +1,7 @@
 ﻿using MedGame.GameLogic;
+using MedGame.GameLogic.Handlers;
+using MedGame.Models;
+using MedGame.UI.Interfaces;
 using System;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -13,8 +16,8 @@ namespace MedGame.UI.Mobile.ViewModels
         {
             get { return healthMeterImage; }
             set { SetProperty(ref healthMeterImage, value); }
-        } 
-        
+        }
+
         private string tamagochiImage;
         public string TamagochiImage
         {
@@ -35,7 +38,7 @@ namespace MedGame.UI.Mobile.ViewModels
             get { return points; }
             set { SetProperty(ref points, value); }
         }
-        
+
         private string pointsText;
         public string PointsText
         {
@@ -50,12 +53,20 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
-            GameModels.Player.Level=LevelCounter.CheckLevel(GameModels.Player);
+            GameModels.Player.Level = LevelCounter.CheckLevel(GameModels.Player);
 
             TamagochiImage = ImageHandler.GetTamagotchiImage(GameModels.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GameModels.Player);
             ProgressMeterImage = ImageHandler.GetProgressBarMeter(GameModels.Player);
             Points = GameModels.Player.Points.ToString();
+            SendNotificationDependingOnHealth(GameModels.Player);
+        }
+
+        public static void SendNotificationDependingOnHealth(Player player)
+        {
+            var notificationTexts = NotificationHandler.GetHealthNotification(player);
+
+            DependencyService.Get<INotification>().Send($"{notificationTexts.title}", $"{notificationTexts.text}");
         }
     }
 }
