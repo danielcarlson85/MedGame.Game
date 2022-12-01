@@ -49,7 +49,7 @@ namespace WSAudioApp.Droid.Implementations
 
         public int GetFileDurationTimeInMinutes()
         {
-            return (_mediaPlayer.Duration / 1000);
+            return (_mediaPlayer.Duration / 1000) * 60;
         }
     }
 }
