@@ -47,8 +47,9 @@ namespace MedGame.UI.Mobile.Views
             App.Current.MainPage = new SettingsPage();
         }
 
-        private void ButtonUpdateUI_Clicked(object sender, EventArgs e)
+        private async void ButtonUpdateUI_Clicked(object sender, EventArgs e)
         {
+            await vm.UpdatePlayer();
             vm.UpdateUI();
         }
     }

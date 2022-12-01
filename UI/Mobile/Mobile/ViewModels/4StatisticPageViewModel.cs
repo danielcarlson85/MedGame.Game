@@ -1,5 +1,7 @@
 ﻿using MedGame.GameLogic;
+using MedGame.Mobile.Services;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -153,9 +155,13 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref name, value); }
         }
 
+        public PlayerDatabase Database { get; }
+
+
         public StatisticPageViewModel()
         {
             Title = "test";
+            Database = PlayerDatabase.Instance.GetAwaiter().GetResult();
 
             UpdateUI();
         }
@@ -170,7 +176,7 @@ namespace MedGame.UI.Mobile.ViewModels
             TotalHoursMissed = "Total Hours Missed: " + GameModels.Player.TotalHoursMissed.ToString();
             TotalMinutesMeditatedNow = "Total Minutes Meditated Now: " + GameModels.Player.TotalMinutesMeditatedNow.ToString();
             TotalMinutesMeditatedToday = "Total Minutes Meditated Today: " + GameModels.Player.TotalMinutesMeditatedToday.ToString();
-            Points = "Points: " + GameModels.Player.Points.ToString();
+            Points = GameModels.Player.Points.ToString();
             Health = "Health: " + GameModels.Player.Health.ToString();
             Email = "Email: " + GameModels.Player.Email.ToString();
             Gender = "Gender: " + GameModels.Player.Gender.ToString();
@@ -181,6 +187,14 @@ namespace MedGame.UI.Mobile.ViewModels
             LastDateMeditated = "Last Date Meditated: " + GameModels.Player.LastDateMeditated.ToString();
             Level = "Level: " + GameModels.Player.Level.ToString();
             Name = "Name: " + GameModels.Player.Name.ToString();
+        }
+
+        public async Task UpdatePlayer()
+        {
+            var playerToUpdate = await Database.GetPlayerByEmailAsync(GameModels.Player.Email);
+            playerToUpdate.Points = double.Parse(Points);
+            await Database.UpdateItemAsync(playerToUpdate);
+            GameModels.Player = playerToUpdate;
         }
     }
 }

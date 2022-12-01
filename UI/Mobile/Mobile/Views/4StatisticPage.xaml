@@ -26,7 +26,8 @@
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
-                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Points}"/>
+                <Label Text="Points:" FontAttributes="Bold"/>
+                <Entry FontSize="Small" FontAttributes="Bold" Text="{Binding Points , Mode=TwoWay}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
