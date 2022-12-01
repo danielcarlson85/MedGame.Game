@@ -30,11 +30,11 @@ namespace MedGame.GameLogic
         {
             player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
-            player.Points += player.TotalMinutesMeditatedNow * player.Multiplicator;
             player.Multiplicator += 1;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
-            
+            SetPoints(player, true);
+
             return player;
         }
 
@@ -42,9 +42,10 @@ namespace MedGame.GameLogic
         {
             player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
-            player.Points += player.TotalMinutesMeditatedNow;
             player.Health = 144;
             player.LastDateMeditated = DateTime.Now;
+            SetPoints(player, false);
+
             return player;
         }
 
@@ -71,6 +72,40 @@ namespace MedGame.GameLogic
             }
 
             return false;
+        }
+
+        private static void SetPoints(Player player, bool isMultiplicatorEnabled)
+        {
+            if (isMultiplicatorEnabled)
+            {
+                if (player.Level == Levels.Baby) player.LevelBabyPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Child) player.LevelChildPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Teenager) player.LevelTeenagerPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Pupil) player.LevelPupilPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.YoungAdult) player.LevelYoungAdultPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Adult) player.LevelAdultPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.OldAdult) player.LevelOldAdultPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Old) player.LevelOldPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Master) player.LevelMasterPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.Munk) player.LevelMunkPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                if (player.Level == Levels.God) player.LevelGodPoints += (player.TotalMinutesMeditatedNow * player.Multiplicator);
+                player.Points += player.TotalMinutesMeditatedNow * player.Multiplicator;
+            }
+            else
+            {
+                if (player.Level == Levels.Baby) player.LevelBabyPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Child) player.LevelChildPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Teenager) player.LevelTeenagerPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Pupil) player.LevelPupilPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.YoungAdult) player.LevelYoungAdultPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Adult) player.LevelAdultPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.OldAdult) player.LevelOldAdultPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Old) player.LevelOldPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Master) player.LevelMasterPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.Munk) player.LevelMunkPoints += (player.TotalMinutesMeditatedNow);
+                if (player.Level == Levels.God) player.LevelGodPoints += (player.TotalMinutesMeditatedNow);
+                player.Points += player.TotalMinutesMeditatedNow;
+            }
         }
     }
 }

@@ -57,7 +57,7 @@ namespace MedGame.UI.Mobile.ViewModels
 
             TamagochiImage = ImageHandler.GetTamagotchiImage(GameModels.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GameModels.Player);
-            ProgressMeterImage = ImageHandler.GetProgressBarMeter(GameModels.Player);
+            ProgressMeterImage = ImageHandler.GetProgressMeter(GameModels.Player);
             Points = GameModels.Player.Points.ToString();
             SendNotificationDependingOnHealth(GameModels.Player);
         }

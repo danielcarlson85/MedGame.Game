@@ -192,7 +192,19 @@ namespace MedGame.UI.Mobile.ViewModels
         public async Task UpdatePlayer()
         {
             var playerToUpdate = await Database.GetPlayerByEmailAsync(GameModels.Player.Email);
+            playerToUpdate.LevelAdultPoints = double.Parse(Points);
+            playerToUpdate.LevelBabyPoints = double.Parse(Points);
+            playerToUpdate.LevelChildPoints = double.Parse(Points);
+            playerToUpdate.LevelGodPoints = double.Parse(Points);
+            playerToUpdate.LevelMasterPoints = double.Parse(Points);
+            playerToUpdate.LevelMunkPoints = double.Parse(Points);
+            playerToUpdate.LevelOldAdultPoints = double.Parse(Points);
+            playerToUpdate.LevelOldPoints = double.Parse(Points);
+            playerToUpdate.LevelPupilPoints = double.Parse(Points);
+            playerToUpdate.LevelTeenagerPoints = double.Parse(Points);
+            playerToUpdate.LevelYoungAdultPoints = double.Parse(Points);
             playerToUpdate.Points = double.Parse(Points);
+
             await Database.UpdateItemAsync(playerToUpdate);
             GameModels.Player = playerToUpdate;
         }

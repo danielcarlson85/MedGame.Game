@@ -39,6 +39,23 @@ namespace MedGame.Models
         public double TotalHoursMissed { get; set; } = 0;
         public int MaxTotalDaysMeditatedInRow { get; set; } = 1;
 
+        public double LevelBabyPoints { get; set; } = 0;
+        public double LevelChildPoints { get; set; } = 0;
+
+        public double LevelTeenagerPoints { get; set; } = 0;
+        public double LevelPupilPoints { get; set; } = 0;
+
+
+        public double LevelYoungAdultPoints { get; set; } = 0;
+        public double LevelAdultPoints { get; set; } = 0;
+
+        public double LevelOldAdultPoints { get; set; } = 0;
+        public double LevelOldPoints { get; set; } = 0;
+
+        public double LevelMasterPoints { get; set; } = 0;
+        public double LevelMunkPoints { get; set; } = 0;
+        public double LevelGodPoints { get; set; } = 0;
+
         public static Player CreateNewPlayer(string email)
         {
             return new Player()

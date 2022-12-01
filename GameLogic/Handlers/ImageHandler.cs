@@ -80,36 +80,71 @@ namespace MedGame.GameLogic
             return healthMeterImage;
         }
 
-
-        public static string GetProgressBarMeter(Player player)
+        public static string GetProgressMeter(Player player)
         {
-            string progressMeterImage;
+            var progressMeterImage = string.Empty;
 
-            var points10Procent = (int)player.Level * 0.1;
-            var points20Procent = (int)player.Level * 0.2;
-            var points30Procent = (int)player.Level * 0.3;
-            var points40Procent = (int)player.Level * 0.4;
-            var points50Procent = (int)player.Level * 0.5;
-            var points60Procent = (int)player.Level * 0.6;
-            var points70Procent = (int)player.Level * 0.7;
-            var points80Procent = (int)player.Level * 0.8;
-            var points90Procent = (int)player.Level * 0.9;
-            var points100Procent = (int)player.Level * 1;
+            switch (player.Level)
+            {
+                case Levels.Baby:
 
-            if (player.Points <= points10Procent) progressMeterImage = "progressMeter0.png";
-            else if (player.Points > points10Procent && player.Points <= points20Procent) progressMeterImage = "progressMeter10.png";
-            else if (player.Points > points20Procent && player.Points <= points30Procent) progressMeterImage = "progressMeter20.png";
-            else if (player.Points > points30Procent && player.Points <= points40Procent) progressMeterImage = "progressMeter30.png";
-            else if (player.Points > points40Procent && player.Points <= points50Procent) progressMeterImage = "progressMeter40.png";
-            else if (player.Points > points50Procent && player.Points <= points60Procent) progressMeterImage = "progressMeter50.png";
-            else if (player.Points > points60Procent && player.Points <= points70Procent) progressMeterImage = "progressMeter60.png";
-            else if (player.Points > points70Procent && player.Points <= points80Procent) progressMeterImage = "progressMeter70.png";
-            else if (player.Points > points80Procent && player.Points <= points90Procent) progressMeterImage = "progressMeter80.png";
-            else if (player.Points > points90Procent && player.Points < points100Procent) progressMeterImage = "progressMeter90.png";
-            else progressMeterImage = "progressMeter100.png";
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelBabyPoints);
+                    break;
+
+                case Levels.Child:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelChildPoints);
+                    break;
+
+                case Levels.Teenager:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelTeenagerPoints);
+                    break;
+
+                case Levels.Pupil:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelPupilPoints);
+                    break;
+
+                case Levels.YoungAdult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelYoungAdultPoints);
+                    break;
+
+                case Levels.Adult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelAdultPoints);
+                    break;
+
+                case Levels.OldAdult:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldAdultPoints);
+                    break;
+
+                case Levels.Old:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldPoints);
+                    break;
+
+                case Levels.Master:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMasterPoints);
+                    break;
+
+                case Levels.Munk:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMunkPoints);
+                    break;
+
+                case Levels.God:
+
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelGodPoints);
+                    break;
+            }
 
             return progressMeterImage;
 
         }
+
     }
 }
