@@ -19,17 +19,17 @@
     public enum Levels
     {
         Zero = 0,
-        Baby = 28,
-        Child = 115,
-        Teenager = 252,
-        Pupil = 437,
-        YoungAdult = 672,
-        Adult = 955,
-        OldAdult = 1288,
-        Old = 1669,
-        Master = 2100,
-        Munk = 2579,
-        God = 3108
+        Baby = 280,
+        Child = 1150,
+        Teenager = 2520,
+        Pupil = 4370,
+        YoungAdult = 6720,
+        Adult = 9550,
+        OldAdult = 12880,
+        Old = 16690,
+        Master = 21000,
+        Munk = 25790,
+        God = 31080
     }
 }
 
