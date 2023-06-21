@@ -26,17 +26,37 @@
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalMinutesMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding TotalHoursMissed}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Health}"/>
-                <Label Text="Points:" FontAttributes="Bold"/>
-                <Entry FontSize="Small" FontAttributes="Bold" Text="{Binding Points , Mode=TwoWay}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding Level}"/>
                 <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LastDateMeditated}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
+                
+                <Label Text="Points:" FontAttributes="Bold"/>
+                <Entry FontSize="Small" FontAttributes="Bold" Text="{Binding Points , Mode=TwoWay}"/>
+
+                <Label FontSize="Small" FontAttributes="Bold" Text="Multiplicator:"/>
+                <Entry FontSize="Small" FontAttributes="Bold"  Text="{Binding Multiplicator,  Mode=TwoWay}"/>
+
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelGodPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelMunkPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelMasterPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelOldPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelOldAdultPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelAdultPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelYoungAdultPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelPupilPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelTeenagerPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelChildPoints}"/>
+                <Label FontSize="Small" FontAttributes="Bold" Text="{Binding LevelBabyPoints}"/>
+                
+                
+                
+
+
+                <!--<Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Password}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Name}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Address}"/>
                 <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Birthday}"/>
-                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>
+                <Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Gender}"/>-->
             </StackLayout>
         </ScrollView>
         <Button x:Name="ButtonUpdateUI" HeightRequest="35" Text="Update data" FontSize="Micro" Clicked="ButtonUpdateUI_Clicked" Background="LightGreen" TextColor="DarkGreen"/>

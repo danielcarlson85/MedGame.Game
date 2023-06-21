@@ -62,7 +62,8 @@ namespace MedGame.UI.Mobile.ViewModels
             _audioService.StopAudioFile();
             IsPlaying = false;
 
-            SetMeditationPoints(hasMeditatedEnough);
+            //SetMeditationPoints(hasMeditatedEnough);
+            SetMeditationPoints(true);
             await _database.UpdateItemAsync(GameModels.Player);
         }
 

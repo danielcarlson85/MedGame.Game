@@ -150,7 +150,7 @@ namespace MedGame.GameLogic
             else if (player.LastDateMeditated.Date == fiveDayMiss && (player.PunishDay5 == false))
             {
                 player.Multiplicator *= 0.1;
-                player.PunishDay4 = true;
+                player.PunishDay5 = true;
             }
 
             if (player.Multiplicator < 1)
@@ -161,5 +161,4 @@ namespace MedGame.GameLogic
             return player.Multiplicator;
         }
     }
-
 }

@@ -155,6 +155,83 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref name, value); }
         }
 
+        string levelBabyPoints = string.Empty;
+        public string LevelBabyPoints
+        {
+            get { return levelBabyPoints; }
+            set { SetProperty(ref levelBabyPoints, value); }
+        }
+        
+        string levelChildPoints = string.Empty;
+        public string LevelChildPoints
+        {
+            get { return levelChildPoints; }
+            set { SetProperty(ref levelChildPoints, value); }
+        }
+        
+        string levelTeenagerPoints = string.Empty;
+        public string LevelTeenagerPoints
+        {
+            get { return levelTeenagerPoints; }
+            set { SetProperty(ref levelTeenagerPoints, value); }
+        }
+        
+        string levelPupilPoints = string.Empty;
+        public string LevelPupilPoints
+        {
+            get { return levelPupilPoints; }
+            set { SetProperty(ref levelPupilPoints, value); }
+        }
+        
+        string levelYoungAdultPoints = string.Empty;
+        public string LevelYoungAdultPoints
+        {
+            get { return levelYoungAdultPoints; }
+            set { SetProperty(ref levelYoungAdultPoints, value); }
+        }
+        
+        string levelAdultPoints = string.Empty;
+        public string LevelAdultPoints
+        {
+            get { return levelAdultPoints; }
+            set { SetProperty(ref levelAdultPoints, value); }
+        }
+        
+        string levelOldAdultPoints = string.Empty;
+        public string LevelOldAdultPoints
+        {
+            get { return levelOldAdultPoints; }
+            set { SetProperty(ref levelOldAdultPoints, value); }
+        }
+        
+        string levelOldPoints = string.Empty;
+        public string LevelOldPoints
+        {
+            get { return levelOldPoints; }
+            set { SetProperty(ref levelOldPoints, value); }
+        }
+        
+        string levelMasterPoints = string.Empty;
+        public string LevelMasterPoints
+        {
+            get { return levelMasterPoints; }
+            set { SetProperty(ref levelMasterPoints, value); }
+        }
+        
+        string levelMunkPoints = string.Empty;
+        public string LevelMunkPoints
+        {
+            get { return levelMunkPoints; }
+            set { SetProperty(ref levelMunkPoints, value); }
+        }
+        
+        string levelGodPoints = string.Empty;
+        public string LevelGodPoints
+        {
+            get { return levelGodPoints; }
+            set { SetProperty(ref levelGodPoints, value); }
+        }
+
         public PlayerDatabase Database { get; }
 
 
@@ -177,33 +254,46 @@ namespace MedGame.UI.Mobile.ViewModels
             TotalMinutesMeditatedNow = "Total Minutes Meditated Now: " + GameModels.Player.TotalMinutesMeditatedNow.ToString();
             TotalMinutesMeditatedToday = "Total Minutes Meditated Today: " + GameModels.Player.TotalMinutesMeditatedToday.ToString();
             Points = GameModels.Player.Points.ToString();
-            Health = "Health: " + GameModels.Player.Health.ToString();
+            Health = "Health: "+GameModels.Player.Health.ToString();
             Email = "Email: " + GameModels.Player.Email.ToString();
             Gender = "Gender: " + GameModels.Player.Gender.ToString();
             Birthday = "Birthday: " + GameModels.Player.Birthday.ToString();
             Address = "Address: " + GameModels.Player.Address.ToString();
             Password = "Password: " + GameModels.Player.Password.ToString();
-            Multiplicator = "Multiplicator: " + GameModels.Player.Multiplicator.ToString();
+            Multiplicator = GameModels.Player.Multiplicator.ToString();
             LastDateMeditated = "Last Date Meditated: " + GameModels.Player.LastDateMeditated.ToString();
             Level = "Level: " + GameModels.Player.Level.ToString();
             Name = "Name: " + GameModels.Player.Name.ToString();
+
+            LevelBabyPoints = GameModels.Player.LevelBabyPoints.ToString();
+            LevelChildPoints = GameModels.Player.LevelChildPoints.ToString();
+            LevelTeenagerPoints = GameModels.Player.LevelTeenagerPoints.ToString();
+            LevelPupilPoints = GameModels.Player.LevelPupilPoints.ToString();
+            LevelYoungAdultPoints = GameModels.Player.LevelYoungAdultPoints.ToString();
+            LevelAdultPoints = GameModels.Player.LevelAdultPoints.ToString();
+            LevelOldAdultPoints = GameModels.Player.LevelOldAdultPoints.ToString();
+            LevelOldPoints = GameModels.Player.LevelOldPoints.ToString();
+            LevelMasterPoints = GameModels.Player.LevelMasterPoints.ToString();
+            LevelMunkPoints = GameModels.Player.LevelMunkPoints.ToString();
+            LevelGodPoints = GameModels.Player.LevelGodPoints.ToString();
         }
 
         public async Task UpdatePlayer()
         {
             var playerToUpdate = await Database.GetPlayerByEmailAsync(GameModels.Player.Email);
-            playerToUpdate.LevelAdultPoints = double.Parse(Points);
-            playerToUpdate.LevelBabyPoints = double.Parse(Points);
-            playerToUpdate.LevelChildPoints = double.Parse(Points);
-            playerToUpdate.LevelGodPoints = double.Parse(Points);
-            playerToUpdate.LevelMasterPoints = double.Parse(Points);
-            playerToUpdate.LevelMunkPoints = double.Parse(Points);
-            playerToUpdate.LevelOldAdultPoints = double.Parse(Points);
-            playerToUpdate.LevelOldPoints = double.Parse(Points);
-            playerToUpdate.LevelPupilPoints = double.Parse(Points);
-            playerToUpdate.LevelTeenagerPoints = double.Parse(Points);
-            playerToUpdate.LevelYoungAdultPoints = double.Parse(Points);
+            playerToUpdate.LevelAdultPoints = double.Parse(LevelAdultPoints);
+            playerToUpdate.LevelBabyPoints = double.Parse(LevelBabyPoints);
+            playerToUpdate.LevelChildPoints = double.Parse(LevelChildPoints);
+            playerToUpdate.LevelGodPoints = double.Parse(LevelGodPoints);
+            playerToUpdate.LevelMasterPoints = double.Parse(LevelMasterPoints);
+            playerToUpdate.LevelMunkPoints = double.Parse(LevelMunkPoints);
+            playerToUpdate.LevelOldAdultPoints = double.Parse(LevelOldAdultPoints);
+            playerToUpdate.LevelOldPoints = double.Parse(LevelOldPoints);
+            playerToUpdate.LevelPupilPoints = double.Parse(LevelPupilPoints);
+            playerToUpdate.LevelTeenagerPoints = double.Parse(LevelTeenagerPoints);
+            playerToUpdate.LevelYoungAdultPoints = double.Parse(LevelYoungAdultPoints);
             playerToUpdate.Points = double.Parse(Points);
+            playerToUpdate.Multiplicator = double.Parse(Multiplicator);
 
             await Database.UpdateItemAsync(playerToUpdate);
             GameModels.Player = playerToUpdate;
