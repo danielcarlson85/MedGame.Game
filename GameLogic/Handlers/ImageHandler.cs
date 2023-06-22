@@ -88,57 +88,56 @@ namespace MedGame.GameLogic
             {
                 case Levels.Baby:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelBabyPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Zero);
                     break;
 
                 case Levels.Child:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelChildPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Baby);
                     break;
 
                 case Levels.Teenager:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelTeenagerPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player,Levels.Child);
                     break;
 
                 case Levels.Pupil:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelPupilPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Teenager);
                     break;
 
                 case Levels.YoungAdult:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelYoungAdultPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Pupil);
                     break;
 
                 case Levels.Adult:
-
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelAdultPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.YoungAdult);
                     break;
 
                 case Levels.OldAdult:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldAdultPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Adult);
                     break;
 
                 case Levels.Old:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelOldPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.OldAdult);
                     break;
 
                 case Levels.Master:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMasterPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Old);
                     break;
 
                 case Levels.Munk:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelMunkPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Master);
                     break;
 
                 case Levels.God:
 
-                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, player.LevelGodPoints);
+                    progressMeterImage = ProgressBarHandler.GetProgressBarImage(player, Levels.Munk);
                     break;
             }
 
