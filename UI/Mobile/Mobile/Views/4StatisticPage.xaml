@@ -35,42 +35,6 @@
                 <Label FontSize="Small" FontAttributes="Bold" Text="Multiplicator:"/>
                 <Entry FontSize="Small" Text="{Binding Multiplicator,  Mode=TwoWay}"/>
 
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelGodPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelGodPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelMunkPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelMunkPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelMasterPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelMasterPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelOldPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelOldPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelOldAdultPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelOldAdultPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelAdultPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelAdultPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelYoungAdultPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelYoungAdultPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelPupilPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelPupilPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelTeenagerPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelTeenagerPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelChildPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelChildPoints,  Mode=TwoWay}"/>
-                
-                <Label FontSize="Small" FontAttributes="Bold" Text="LevelBabyPoints"/>
-                <Entry FontSize="Small" Text="{Binding LevelBabyPoints,  Mode=TwoWay}"/>
-                
-                
-                
-                
 
 
                 <!--<Label FontSize="Small" FontAttributes="Bold"  Text="{Binding Email}"/>
