@@ -108,6 +108,11 @@ namespace MedGame.GameLogic
             else if (pointsInkLevelPoints >= points90Procent && pointsInkLevelPoints < points100Procent) progressMeterImage = "progressMeter90.png";
             else if (pointsInkLevelPoints >= points100Procent) progressMeterImage = "progressMeter100.png";
 
+            if (pointsInkLevelPoints == (int)player.Level)
+            {
+                progressMeterImage = "progressMeter0.png";
+            }
+
             return progressMeterImage;
         }
     }

@@ -55,6 +55,7 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
+        [InlineData(0, Levels.Baby, "progressMeter0.png")]
         [InlineData(1, Levels.Baby, "progressMeter0.png")]
         [InlineData(27, Levels.Baby, "progressMeter0.png")]
         [InlineData(28, Levels.Baby, "progressMeter10.png")]
