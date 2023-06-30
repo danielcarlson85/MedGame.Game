@@ -8,5 +8,6 @@ namespace MedGame.GameLogic
     public class GameModels
     {
         public static Player Player = new Player();
+
     }
 }
