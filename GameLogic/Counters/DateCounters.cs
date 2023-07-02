@@ -7,7 +7,7 @@ namespace MedGame.GameLogic
     {
         public static int GetTotalDaysInRow(Player player)
         {
-            if (player.LastDateMeditated.Date == DateTime.Now.Date.AddDays(-1))
+            if (player.LastDateMeditated.Date == OnlineDateTime.Now.Date.AddDays(-1))
             {
                 player.TotalDaysMeditatedInRow++;
             }
@@ -21,7 +21,7 @@ namespace MedGame.GameLogic
 
         public static bool CheckSameDate(Player player)
         {
-            if (player.LastDateMeditated.Date == DateTime.Now.Date)
+            if (player.LastDateMeditated.Date == OnlineDateTime.Now.Date)
             {
                 return true;
             }

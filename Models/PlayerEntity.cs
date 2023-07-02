@@ -21,7 +21,7 @@ namespace MedGame.Models
         public int TotalMinutesMeditated { get; set; } = 0;
         public int TotalMinutesMeditatedToday { get; set; } = 0;
         public int Health { get; set; } = 72;
-        public DateTime LastDateMeditated { get; set; } = DateTime.Now;
+        public DateTime LastDateMeditated { get; set; } = OnlineDateTime.Now;
         public int TotalDaysMeditatedInRow { get; set; } = 1;
         public int TotalDaysMissed { get; set; } = 0;
         public int TotalHoursMissed { get; set; } = 0;

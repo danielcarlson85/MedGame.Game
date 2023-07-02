@@ -7,9 +7,9 @@ namespace MedGame.GameLogic
     {
         public static Player CalculateSigninScore(Player player)
         {
-            player.LastDateLoggedIn = DateTime.Now;
-            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
-            player.TotalHoursMissed = TimeCounters.CalculateMissedHours(player.LastDateMeditated, DateTime.Now);
+            player.LastDateLoggedIn = OnlineDateTime.Now;
+            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, OnlineDateTime.Now);
+            player.TotalHoursMissed = TimeCounters.CalculateMissedHours(player.LastDateMeditated, OnlineDateTime.Now);
             player.Health = CalculateHealth(player);
             player.Level = LevelCounter.CheckLevel(player);
 
@@ -20,8 +20,8 @@ namespace MedGame.GameLogic
 
         public static Player CalculateSigninScoreWithoutPunishment(Player player)
         {
-            player.LastDateLoggedIn = DateTime.Now;
-            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, DateTime.Now);
+            player.LastDateLoggedIn = OnlineDateTime.Now;
+            player.TotalMinutesMissed = TimeCounters.CalculateMissedMinutes(player.LastDateMeditated, OnlineDateTime.Now);
 
             return player;
         }
@@ -31,7 +31,7 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
             player.Health = 144;
-            player.LastDateMeditated = DateTime.Now;
+            player.LastDateMeditated = OnlineDateTime.Now;
             SetPoints(player, true);
             player.Multiplicator += 1;
 
@@ -43,7 +43,7 @@ namespace MedGame.GameLogic
             player.TotalMinutesMeditatedToday += player.TotalMinutesMeditatedNow;
             player.TotalMinutesMeditated += player.TotalMinutesMeditatedNow;
             player.Health = 144;
-            player.LastDateMeditated = DateTime.Now;
+            player.LastDateMeditated = OnlineDateTime.Now;
             SetPoints(player, false);
 
             return player;
@@ -52,7 +52,7 @@ namespace MedGame.GameLogic
 
         public static double CalculateHealth(Player player)
         {
-            var totalHoursSinceLastMeditation = (DateTime.Now - player.LastDateMeditated).TotalHours;
+            var totalHoursSinceLastMeditation = (OnlineDateTime.Now - player.LastDateMeditated).TotalHours;
 
             var totalHealth = (144 - totalHoursSinceLastMeditation);
 
@@ -66,7 +66,7 @@ namespace MedGame.GameLogic
 
         public static bool CheckIfPunishmentHasBeenMade(Player player)
         {
-            if (player.LastDateLoggedIn.Date == DateTime.Now.Date)
+            if (player.LastDateLoggedIn.Date == OnlineDateTime.Now.Date)
             {
                 return true;
             }

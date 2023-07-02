@@ -1,4 +1,5 @@
 ﻿using MedGame.GameLogic;
+using MedGame.Models;
 using MedGame.UnitTests;
 using System;
 using Xunit;
@@ -12,7 +13,7 @@ namespace MedGame.GameLogicProject
         {
             var player = GameScoreCounter.CalculateSigninScore(TestBase.player);
 
-            Assert.Equal(DateTime.Now.Date, player.LastDateLoggedIn.Date);
+            Assert.Equal(OnlineDateTime.Now.Date, player.LastDateLoggedIn.Date);
         }
 
         [Fact]

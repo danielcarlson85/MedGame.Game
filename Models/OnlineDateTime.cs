@@ -3,13 +3,12 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace MedGame.Services
+namespace MedGame.Models
 {
-    public class OnlineDateTimeService
+    public class OnlineDateTime
     {
         private static async Task<OnlineDateResult> GetCurrentDateAsync()
         {
-
             HttpClient httpClient = new HttpClient();
 
             string result = await httpClient.GetStringAsync("http://worldtimeapi.org/api/timezone/Europe/Stockholm");
@@ -25,7 +24,8 @@ namespace MedGame.Services
         {
             get
             {
-                now = GetCurrentDateAsync().GetAwaiter().GetResult().datetime;
+                //now = GetCurrentDateAsync().GetAwaiter().GetResult().datetime;
+                now = DateTime.Now;
                 return now;
             }
         }
@@ -37,7 +37,8 @@ namespace MedGame.Services
         {
             get
             {
-                utcNow = GetCurrentDateAsync().GetAwaiter().GetResult().utc_datetime.ToUniversalTime();
+                //utcNow = GetCurrentDateAsync().GetAwaiter().GetResult().utc_datetime.ToUniversalTime();
+                utcNow = DateTime.Now;
                 return utcNow;
             }
         }
@@ -49,7 +50,7 @@ namespace MedGame.Services
         public string abbreviation { get; set; }
         public string client_ip { get; set; }
         public DateTime datetime { get; set; }
-        
+
         public int day_of_week { get; set; }
         public int day_of_year { get; set; }
         public bool dst { get; set; }

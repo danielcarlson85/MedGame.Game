@@ -10,6 +10,12 @@ namespace MedGame.UnitTests.ServicesProjectTest
         [Fact]
         public void GetCurrentDateAsync()
         {
+            var onlineDateTime = OnlineDateTime.Now;
+        }
+        
+        [Fact]
+        public void GetCurrentUtcDateAsync()
+        {
             var onlineDateTime = OnlineDateTime.UtcNow;
         }
     }

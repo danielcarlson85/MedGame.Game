@@ -21,7 +21,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -36,7 +36,7 @@
             </Grid.RowDefinitions>
 
             <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="7" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
-            <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="3" BackgroundColor="Transparent"/>
+            <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="5" BackgroundColor="Transparent"/>
             <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
         </Grid>
 

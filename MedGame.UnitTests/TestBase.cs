@@ -11,7 +11,7 @@ namespace MedGame.UnitTests
             Health = 100,
             Level = Levels.Baby,
             Points = 100,
-            LastDateMeditated = DateTime.Now.AddDays(-1),
+            LastDateMeditated = OnlineDateTime.Now.AddDays(-1),
             Multiplicator = 1,
             TotalDaysMeditatedInRow = 1,
             TotalMinutesMissed = 0,

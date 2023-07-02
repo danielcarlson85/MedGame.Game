@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\MedGame.Models.csproj" />
+    <ProjectReference Include="..\Services\MedGame.Services.csproj" />
   </ItemGroup>
 
 </Project>

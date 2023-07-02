@@ -20,8 +20,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(29)]
-        [InlineData(115)]
+        [InlineData(281)]
+        [InlineData(1150)]
         public void CheckLevelShouldReturnChild(int point)
         {
             player.Points = point;
@@ -31,8 +31,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(116)]
-        [InlineData(252)]
+        [InlineData(1151)]
+        [InlineData(2520)]
         public void CheckLevelShouldReturnTeenager(int point)
         {
             player.Points = point;
@@ -42,8 +42,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(253)]
-        [InlineData(437)]
+        [InlineData(2521)]
+        [InlineData(4370)]
         public void CheckLevelShouldReturnPupil(int point)
         {
             player.Points = point;
@@ -53,8 +53,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(438)]
-        [InlineData(672)]
+        [InlineData(4371)]
+        [InlineData(6720)]
         public void CheckLevelShouldReturnYoungAdult(int point)
         {
             player.Points = point;
@@ -64,8 +64,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(673)]
-        [InlineData(955)]
+        [InlineData(6721)]
+        [InlineData(9550)]
         public void CheckLevelShouldReturnAdult(int point)
         {
             player.Points = point;
@@ -75,8 +75,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(956)]
-        [InlineData(1288)]
+        [InlineData(9551)]
+        [InlineData(12880)]
         public void CheckLevelShouldReturnOldAdult(int point)
         {
             player.Points = point;
@@ -86,8 +86,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(1289)]
-        [InlineData(1669)]
+        [InlineData(12881)]
+        [InlineData(16690)]
         public void CheckLevelShouldReturnOld(int point)
         {
             player.Points = point;
@@ -97,8 +97,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(1670)]
-        [InlineData(2100)]
+        [InlineData(16691)]
+        [InlineData(21000)]
         public void CheckLevelShouldReturnMaster(int point)
         {
             player.Points = point;
@@ -108,8 +108,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(2101)]
-        [InlineData(2579)]
+        [InlineData(21001)]
+        [InlineData(25790)]
         public void CheckLevelShouldReturnMunk(int point)
         {
             player.Points = point;
@@ -120,8 +120,8 @@ namespace MedGame.GameLogicProject
 
 
         [Theory]
-        [InlineData(2580)]
-        [InlineData(3108)]
+        [InlineData(25791)]
+        [InlineData(31080)]
         public void CheckLevelShouldReturnGod(int point)
         {
             player.Points = point;

@@ -1,8 +1,6 @@
-﻿using MedGame.GameLogic;
-using MedGame.Models;
+﻿using MedGame.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -70,7 +68,7 @@ namespace MedGame.Services
             return appRoot + fileName;
         }
 
-      
+
     }
 
     public static class MyExtensions
