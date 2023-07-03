@@ -1,4 +1,6 @@
 ﻿using MedGame.Models;
+using System;
+using System.Collections.Generic;
 
 namespace MedGame.GameLogic
 {
@@ -10,31 +12,33 @@ namespace MedGame.GameLogic
 
             if (player.Health < 24 && player.Health >= 0)
             {
-                tamagotchiImage = player.Level + "_Sick.png";
+                tamagotchiImage = player.Level + "_Dead.png";
             }
 
             else if (player.Health < 48 && player.Health >= 24)
             {
-                tamagotchiImage = player.Level + "_VerySad.png";
+                tamagotchiImage = player.Level + "_Angry.png";
             }
 
             else if (player.Health < 72 && player.Health >= 48)
             {
-                tamagotchiImage = player.Level + "_Crying.png";
+                tamagotchiImage = player.Level + "_Annoyed.png";
             }
 
             else if (player.Health < 96 && player.Health >= 72)
             {
-                tamagotchiImage = player.Level + "_Sad.png";
+                tamagotchiImage = player.Level + "_VerySad.png";
             }
 
             else if (player.Health < 120 && player.Health >= 96)
             {
-                tamagotchiImage = player.Level + "_Annoyed.png";
+                tamagotchiImage = player.Level + "_Sad.png";
             }
 
             else
-                tamagotchiImage = player.Level + "_Zen.png";
+            {
+                tamagotchiImage = player.Level + "_Happy.png";
+            }
 
             return tamagotchiImage;
         }
@@ -80,40 +84,53 @@ namespace MedGame.GameLogic
 
         public static string GetProgressBarImage(Player player)
         {
-            string progressMeterImage = string.Empty;
-
-            var points0Procent = (int)player.Level * 1;
-            var points10Procent = (int)player.Level * 1.1;
-            var points20Procent = (int)player.Level * 1.2;
-            var points30Procent = (int)player.Level * 1.3;
-            var points40Procent = (int)player.Level * 1.4;
-            var points50Procent = (int)player.Level * 1.5;
-            var points60Procent = (int)player.Level * 1.6;
-            var points70Procent = (int)player.Level * 1.7;
-            var points80Procent = (int)player.Level * 1.8;
-            var points90Procent = (int)player.Level * 1.9;
-            var points100Procent = (int)player.Level * 2;
-
-            var pointsInkLevelPoints = player.Points + (int)player.Level;
-
-            if (pointsInkLevelPoints > points0Procent && pointsInkLevelPoints < points10Procent) progressMeterImage = "progressMeter0.png";
-            else if (pointsInkLevelPoints >= points10Procent && pointsInkLevelPoints < points20Procent) progressMeterImage = "progressMeter10.png";
-            else if (pointsInkLevelPoints >= points20Procent && pointsInkLevelPoints < points30Procent) progressMeterImage = "progressMeter20.png";
-            else if (pointsInkLevelPoints >= points30Procent && pointsInkLevelPoints < points40Procent) progressMeterImage = "progressMeter30.png";
-            else if (pointsInkLevelPoints >= points40Procent && pointsInkLevelPoints < points50Procent) progressMeterImage = "progressMeter40.png";
-            else if (pointsInkLevelPoints >= points50Procent && pointsInkLevelPoints < points60Procent) progressMeterImage = "progressMeter50.png";
-            else if (pointsInkLevelPoints >= points60Procent && pointsInkLevelPoints < points70Procent) progressMeterImage = "progressMeter60.png";
-            else if (pointsInkLevelPoints >= points70Procent && pointsInkLevelPoints < points80Procent) progressMeterImage = "progressMeter70.png";
-            else if (pointsInkLevelPoints >= points80Procent && pointsInkLevelPoints < points90Procent) progressMeterImage = "progressMeter80.png";
-            else if (pointsInkLevelPoints >= points90Procent && pointsInkLevelPoints < points100Procent) progressMeterImage = "progressMeter90.png";
-            else if (pointsInkLevelPoints >= points100Procent) progressMeterImage = "progressMeter100.png";
-
-            if (pointsInkLevelPoints == (int)player.Level)
+            var levelPictures = new Dictionary<Levels, Dictionary<(int min, int max), string>>
             {
-                progressMeterImage = "progressMeter0.png";
+                [Levels.Baby] = new Dictionary<(int min, int max), string>
+            {
+                { (0, 27), "progressMeter0.png" },
+                { (28, 55), "progressMeter10.png" },
+                { (56, 83), "progressMeter20.png" },
+                { (84, 111), "progressMeter30.png" },
+                { (112, 139), "progressMeter40.png" },
+                { (140, 167), "progressMeter50.png" },
+                { (168, 195), "progressMeter60.png" },
+                { (196, 223), "progressMeter70.png" },
+                { (224, 251), "progressMeter80.png" },
+                { (252, 279), "progressMeter90.png" },
+                { (280, 300), "progressMeter100.png" }
+            
+        },
+                [Levels.Child] = new Dictionary<(int min, int max), string>
+            {
+                { ((int)Levels.Baby +0,   (int)Levels.Baby+115), "progressMeter0.png" },        // upp till 0- 10 % av child enum value + baby enum value = 280         1150 * 0,1 = 115
+                { ((int)Levels.Baby +116, (int)Levels.Baby+230), "progressMeter10.png" },       //  upp till 10- 20 % av child enum value + baby enum value = 230       1150 * 0,2 = 230
+                { ((int)Levels.Baby +231, (int)Levels.Baby+345), "progressMeter20.png" },       // etc
+                { ((int)Levels.Baby +346, (int)Levels.Baby+460), "progressMeter30.png" },
+                { ((int)Levels.Baby +461, (int)Levels.Baby+575), "progressMeter40.png" },
+                { ((int)Levels.Baby +576, (int)Levels.Baby+690), "progressMeter50.png" },
+                { ((int)Levels.Baby +691, (int)Levels.Baby+805), "progressMeter60.png" },
+                { ((int)Levels.Baby +806, (int)Levels.Baby+920), "progressMeter70.png" },
+                { ((int)Levels.Baby +921, (int)Levels.Baby+1135), "progressMeter80.png" },
+                { ((int)Levels.Baby +1136,(int)Levels.Baby+ 1150), "progressMeter90.png" },
+                    }
+            };
+
+            if (levelPictures.TryGetValue(player.Level, out var rangePictureMap))
+            {
+                foreach (var kvp in rangePictureMap)
+                {
+                    var range = kvp.Key;
+                    var picture = kvp.Value;
+
+                    if (player.Points >= range.min && player.Points <= range.max)
+                    {
+                        return picture;
+                    }
+                }
             }
 
-            return progressMeterImage;
+            return "progressMeter100.png";
         }
     }
 }

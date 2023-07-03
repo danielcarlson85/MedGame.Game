@@ -53,6 +53,8 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public void UpdateUI()
         {
+            GameScoreCounter.CalculateSigninScore(GameModels.Player);
+
             GameModels.Player.Level = LevelCounter.CheckLevel(GameModels.Player);
 
             TamagochiImage = ImageHandler.GetTamagotchiImage(GameModels.Player);

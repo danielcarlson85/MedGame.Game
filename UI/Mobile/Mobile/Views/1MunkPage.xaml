@@ -21,7 +21,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
@@ -33,15 +36,20 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="7" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
-            <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="5" BackgroundColor="Transparent"/>
-            <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
+            <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="10" Grid.RowSpan="2" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
+            <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="3" Aspect="Fill" Grid.RowSpan="7" Grid.Column="1" Grid.ColumnSpan="8" BackgroundColor="Transparent"/>
+            <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="3"  Grid.Column="6" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
         </Grid>
 
         <Grid>
-            <Image Source="{Binding HealthMeterImage}" />
+            <Image Source="{Binding HealthMeterImage}" HeightRequest="400" />
         </Grid>
 
 

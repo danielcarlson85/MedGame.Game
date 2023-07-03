@@ -7,12 +7,15 @@ namespace MedGame.GameLogic
         public static double CalculateMissedMinutes(DateTime lastDateMeditated, DateTime currentHour)
         {
             var totalMinutesMissed = (currentHour - lastDateMeditated).TotalMinutes;
+            if (totalMinutesMissed < 0) totalMinutesMissed = 0;
+
             return totalMinutesMissed;
         }
 
         public static double CalculateMissedHours(DateTime lastDateMeditated, DateTime currentHour)
         {
             var totalHoursMissed = (currentHour - lastDateMeditated).TotalHours;
+            if (totalHoursMissed < 0) { totalHoursMissed = 0; }
             return totalHoursMissed;
         }
 

@@ -8,7 +8,7 @@ namespace MedGame.UnitTests
     public class ImageHandlerTests
     {
         [Theory]
-        [InlineData(23, Levels.Baby, "Sick.png")]
+        [InlineData(23, Levels.Baby, "Dead.png")]
         [InlineData(47, Levels.Baby, "VerySad.png")]
         [InlineData(71, Levels.Baby, "Crying.png")]
         [InlineData(95, Levels.Baby, "Sad.png")]
@@ -21,15 +21,15 @@ namespace MedGame.UnitTests
         [InlineData(119, Levels.Child, "Annoyed.png")]
         [InlineData(121, Levels.Child, "Zen.png")]
         [InlineData(23, Levels.Teenager, "Sick.png")]
-        [InlineData(47, Levels.Teenager,"VerySad.png")]
-        [InlineData(71, Levels.Teenager,"Crying.png")]
-        [InlineData(95, Levels.Teenager,"Sad.png")]
+        [InlineData(47, Levels.Teenager, "VerySad.png")]
+        [InlineData(71, Levels.Teenager, "Crying.png")]
+        [InlineData(95, Levels.Teenager, "Sad.png")]
         [InlineData(119, Levels.Teenager, "Annoyed.png")]
         [InlineData(121, Levels.Teenager, "Zen.png")]
         [InlineData(23, Levels.Adult, "Sick.png")]
-        [InlineData(47, Levels.Adult,"VerySad.png")]
-        [InlineData(71, Levels.Adult,"Crying.png")]
-        [InlineData(95, Levels.Adult,"Sad.png")]
+        [InlineData(47, Levels.Adult, "VerySad.png")]
+        [InlineData(71, Levels.Adult, "Crying.png")]
+        [InlineData(95, Levels.Adult, "Sad.png")]
         [InlineData(119, Levels.Adult, "Annoyed.png")]
         [InlineData(121, Levels.Adult, "Zen.png")]
         public void GetTamagotchiImage_Dependent_on_health_and_level_Baby(int health, Levels level, string imageName)
@@ -81,7 +81,36 @@ namespace MedGame.UnitTests
 
         public void GetProgressBarImage(int points, Levels level, string imageName)
         {
-            Player player = new() { Points = points , Level = level };
+            Player player = new() { Points = points, Level = level };
+            var result = ImageHandler.GetProgressBarImage(player);
+
+            Assert.Equal(imageName, result);
+        }
+
+        [Theory]
+        [InlineData((int)Levels.Baby + 0, Levels.Child, "progressMeter0.png")]
+        [InlineData((int)Levels.Baby + 115, Levels.Child, "progressMeter0.png")]
+        [InlineData((int)Levels.Baby + 116, Levels.Child, "progressMeter10.png")]
+        [InlineData((int)Levels.Baby + 230, Levels.Child, "progressMeter10.png")]
+        [InlineData((int)Levels.Baby + 231, Levels.Child, "progressMeter20.png")]
+        [InlineData((int)Levels.Baby + 345, Levels.Child, "progressMeter20.png")]
+        [InlineData((int)Levels.Baby + 346, Levels.Child, "progressMeter30.png")]
+        [InlineData((int)Levels.Baby + 460, Levels.Child, "progressMeter30.png")]
+        [InlineData((int)Levels.Baby + 461, Levels.Child, "progressMeter40.png")]
+        [InlineData((int)Levels.Baby + 575, Levels.Child, "progressMeter40.png")]
+        [InlineData((int)Levels.Baby + 576, Levels.Child, "progressMeter50.png")]
+        [InlineData((int)Levels.Baby + 690, Levels.Child, "progressMeter50.png")]
+        [InlineData((int)Levels.Baby + 691, Levels.Child, "progressMeter60.png")]
+        [InlineData((int)Levels.Baby + 805, Levels.Child, "progressMeter60.png")]
+        [InlineData((int)Levels.Baby + 806, Levels.Child, "progressMeter70.png")]
+        [InlineData((int)Levels.Baby + 920, Levels.Child, "progressMeter70.png")]
+        [InlineData((int)Levels.Baby + 921, Levels.Child, "progressMeter80.png")]
+        [InlineData((int)Levels.Baby + 1135, Levels.Child, "progressMeter80.png")]
+        [InlineData((int)Levels.Baby + 1136, Levels.Child, "progressMeter90.png")]
+
+        public void GetProgressBarImageForChild_Test(int points, Levels level, string imageName)
+        {
+            Player player = new() { Points = points, Level = level };
             var result = ImageHandler.GetProgressBarImage(player);
 
             Assert.Equal(imageName, result);
