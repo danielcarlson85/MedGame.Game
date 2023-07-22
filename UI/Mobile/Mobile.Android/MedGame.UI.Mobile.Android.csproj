@@ -351,13 +351,10 @@
     <AndroidResource Include="Resources\drawable\Baby_Annoyed.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Baby_Crying.png" />
+    <AndroidResource Include="Resources\drawable\Baby_Irritated.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Baby_Sad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Baby_Sick.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Baby_VerySad.png" />

@@ -6,35 +6,34 @@ namespace MedGame.GameLogic
     {
         public static string GetTamagotchiImage(Player player)
         {
-            string tamagotchiImage = string.Empty;
-
+            string tamagotchiImage;
             if (player.Health < 24 && player.Health >= 0)
             {
-                tamagotchiImage = player.Level + "_Sick.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.Angry;
             }
 
             else if (player.Health < 48 && player.Health >= 24)
             {
-                tamagotchiImage = player.Level + "_VerySad.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.VerySad;
             }
 
             else if (player.Health < 72 && player.Health >= 48)
             {
-                tamagotchiImage = player.Level + "_Crying.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.Irritated;
             }
 
             else if (player.Health < 96 && player.Health >= 72)
             {
-                tamagotchiImage = player.Level + "_Sad.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.Sad;
             }
 
             else if (player.Health < 120 && player.Health >= 96)
             {
-                tamagotchiImage = player.Level + "_Annoyed.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.Annoyed;
             }
 
             else
-                tamagotchiImage = player.Level + "_Zen.png";
+                tamagotchiImage = player.Level + EmotionImagesConstants.Zen;
 
             return tamagotchiImage;
         }
@@ -45,34 +44,34 @@ namespace MedGame.GameLogic
 
             if (player.Health < 24 && player.Health >= 0)
             {
-                healthMeterImage = "healthmeterdead.png";
+                healthMeterImage = HealthMeterConstants.Dead;
             }
 
             if (player.Health < 48 && player.Health >= 24)
             {
-                healthMeterImage = "healthmeterterminallyill.png";
+                healthMeterImage = HealthMeterConstants.TerminallyIll;
             }
 
             if (player.Health < 72 && player.Health >= 48)
             {
-                healthMeterImage = "healthmetersick.png";
+                healthMeterImage = HealthMeterConstants.Sick;
             }
 
             if (player.Health < 96 && player.Health >= 72)
             {
-                healthMeterImage = "healthmeterangry.png";
+                healthMeterImage = HealthMeterConstants.Angry;
 
             }
 
             if (player.Health < 120 && player.Health >= 96)
             {
-                healthMeterImage = "healthmeterirritated.png";
+                healthMeterImage = HealthMeterConstants.Irritated;
 
             }
 
             if (player.Health >= 120)
             {
-                healthMeterImage = "healthmeterzen.png";
+                healthMeterImage = HealthMeterConstants.Zen;
             }
 
             return healthMeterImage;
@@ -96,21 +95,21 @@ namespace MedGame.GameLogic
 
             var pointsInkLevelPoints = player.Points + (int)player.Level;
 
-            if (pointsInkLevelPoints > points0Procent && pointsInkLevelPoints < points10Procent) progressMeterImage = "progressMeter0.png";
-            else if (pointsInkLevelPoints >= points10Procent && pointsInkLevelPoints < points20Procent) progressMeterImage = "progressMeter10.png";
-            else if (pointsInkLevelPoints >= points20Procent && pointsInkLevelPoints < points30Procent) progressMeterImage = "progressMeter20.png";
-            else if (pointsInkLevelPoints >= points30Procent && pointsInkLevelPoints < points40Procent) progressMeterImage = "progressMeter30.png";
-            else if (pointsInkLevelPoints >= points40Procent && pointsInkLevelPoints < points50Procent) progressMeterImage = "progressMeter40.png";
-            else if (pointsInkLevelPoints >= points50Procent && pointsInkLevelPoints < points60Procent) progressMeterImage = "progressMeter50.png";
-            else if (pointsInkLevelPoints >= points60Procent && pointsInkLevelPoints < points70Procent) progressMeterImage = "progressMeter60.png";
-            else if (pointsInkLevelPoints >= points70Procent && pointsInkLevelPoints < points80Procent) progressMeterImage = "progressMeter70.png";
-            else if (pointsInkLevelPoints >= points80Procent && pointsInkLevelPoints < points90Procent) progressMeterImage = "progressMeter80.png";
-            else if (pointsInkLevelPoints >= points90Procent && pointsInkLevelPoints < points100Procent) progressMeterImage = "progressMeter90.png";
-            else if (pointsInkLevelPoints >= points100Procent) progressMeterImage = "progressMeter100.png";
+            if (pointsInkLevelPoints > points0Procent && pointsInkLevelPoints < points10Procent) progressMeterImage = ProgressMeterConstants.Zero;
+            else if (pointsInkLevelPoints >= points10Procent && pointsInkLevelPoints < points20Procent) progressMeterImage = ProgressMeterConstants.Ten;
+            else if (pointsInkLevelPoints >= points20Procent && pointsInkLevelPoints < points30Procent) progressMeterImage = ProgressMeterConstants.Twenty;
+            else if (pointsInkLevelPoints >= points30Procent && pointsInkLevelPoints < points40Procent) progressMeterImage = ProgressMeterConstants.Thirty;
+            else if (pointsInkLevelPoints >= points40Procent && pointsInkLevelPoints < points50Procent) progressMeterImage = ProgressMeterConstants.Forty;
+            else if (pointsInkLevelPoints >= points50Procent && pointsInkLevelPoints < points60Procent) progressMeterImage = ProgressMeterConstants.Fifty;
+            else if (pointsInkLevelPoints >= points60Procent && pointsInkLevelPoints < points70Procent) progressMeterImage = ProgressMeterConstants.Sixty;
+            else if (pointsInkLevelPoints >= points70Procent && pointsInkLevelPoints < points80Procent) progressMeterImage = ProgressMeterConstants.Seventy;
+            else if (pointsInkLevelPoints >= points80Procent && pointsInkLevelPoints < points90Procent) progressMeterImage = ProgressMeterConstants.Eighty;
+            else if (pointsInkLevelPoints >= points90Procent && pointsInkLevelPoints < points100Procent) progressMeterImage = ProgressMeterConstants.Nighty;
+            else if (pointsInkLevelPoints >= points100Procent) progressMeterImage = ProgressMeterConstants.OneHundred;
 
             if (pointsInkLevelPoints == (int)player.Level)
             {
-                progressMeterImage = "progressMeter0.png";
+                progressMeterImage = ProgressMeterConstants.Zero;
             }
 
             return progressMeterImage;

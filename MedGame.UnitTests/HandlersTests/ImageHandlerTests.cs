@@ -8,35 +8,35 @@ namespace MedGame.UnitTests
     public class ImageHandlerTests
     {
         [Theory]
-        [InlineData(23, Levels.Baby, "Sick.png")]
-        [InlineData(47, Levels.Baby, "VerySad.png")]
-        [InlineData(71, Levels.Baby, "Crying.png")]
-        [InlineData(95, Levels.Baby, "Sad.png")]
-        [InlineData(119, Levels.Baby, "Annoyed.png")]
-        [InlineData(121, Levels.Baby, "Zen.png")]
-        [InlineData(23, Levels.Child, "Sick.png")]
-        [InlineData(47, Levels.Child, "VerySad.png")]
-        [InlineData(71, Levels.Child, "Crying.png")]
-        [InlineData(95, Levels.Child, "Sad.png")]
-        [InlineData(119, Levels.Child, "Annoyed.png")]
-        [InlineData(121, Levels.Child, "Zen.png")]
-        [InlineData(23, Levels.Teenager, "Sick.png")]
-        [InlineData(47, Levels.Teenager,"VerySad.png")]
-        [InlineData(71, Levels.Teenager,"Crying.png")]
-        [InlineData(95, Levels.Teenager,"Sad.png")]
-        [InlineData(119, Levels.Teenager, "Annoyed.png")]
-        [InlineData(121, Levels.Teenager, "Zen.png")]
-        [InlineData(23, Levels.Adult, "Sick.png")]
-        [InlineData(47, Levels.Adult,"VerySad.png")]
-        [InlineData(71, Levels.Adult,"Crying.png")]
-        [InlineData(95, Levels.Adult,"Sad.png")]
-        [InlineData(119, Levels.Adult, "Annoyed.png")]
-        [InlineData(121, Levels.Adult, "Zen.png")]
+        [InlineData(23, Levels.Baby, EmotionImagesConstants.Angry)]
+        [InlineData(47, Levels.Baby, EmotionImagesConstants.VerySad)]
+        [InlineData(71, Levels.Baby, EmotionImagesConstants.Irritated)]
+        [InlineData(95, Levels.Baby, EmotionImagesConstants.Sad)]
+        [InlineData(119, Levels.Baby, EmotionImagesConstants.Annoyed)]
+        [InlineData(121, Levels.Baby, EmotionImagesConstants.Zen)]
+        [InlineData(23, Levels.Child, EmotionImagesConstants.Angry)]
+        [InlineData(47, Levels.Child, EmotionImagesConstants.VerySad)]
+        [InlineData(71, Levels.Child, EmotionImagesConstants.Irritated)]
+        [InlineData(95, Levels.Child, EmotionImagesConstants.Sad)]
+        [InlineData(119, Levels.Child, EmotionImagesConstants.Annoyed)]
+        [InlineData(121, Levels.Child, EmotionImagesConstants.Zen)]
+        [InlineData(23, Levels.Teenager, EmotionImagesConstants.Angry)]
+        [InlineData(47, Levels.Teenager, EmotionImagesConstants.VerySad)]
+        [InlineData(71, Levels.Teenager, EmotionImagesConstants.Irritated)]
+        [InlineData(95, Levels.Teenager, EmotionImagesConstants.Sad)]
+        [InlineData(119, Levels.Teenager, EmotionImagesConstants.Annoyed)]
+        [InlineData(121, Levels.Teenager, EmotionImagesConstants.Zen)]
+        [InlineData(23, Levels.Adult, EmotionImagesConstants.Angry)]
+        [InlineData(47, Levels.Adult, EmotionImagesConstants.VerySad)]
+        [InlineData(71, Levels.Adult, EmotionImagesConstants.Irritated)]
+        [InlineData(95, Levels.Adult, EmotionImagesConstants.Sad)]
+        [InlineData(119, Levels.Adult, EmotionImagesConstants.Annoyed)]
+        [InlineData(121, Levels.Adult, EmotionImagesConstants.Zen)]
         public void GetTamagotchiImage_Dependent_on_health_and_level_Baby(int health, Levels level, string imageName)
         {
             Player player = new() { Health = health, Level = level };
             var result = ImageHandler.GetTamagotchiImage(player);
-            var fullImageName = level + "_" + imageName;
+            var fullImageName = level + imageName;
             Assert.Equal(fullImageName, result);
         }
 
@@ -81,7 +81,7 @@ namespace MedGame.UnitTests
 
         public void GetProgressBarImage(int points, Levels level, string imageName)
         {
-            Player player = new() { Points = points , Level = level };
+            Player player = new() { Points = points, Level = level };
             var result = ImageHandler.GetProgressBarImage(player);
 
             Assert.Equal(imageName, result);
