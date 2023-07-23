@@ -1,6 +1,5 @@
 ﻿using MedGame.GameLogic;
 using MedGame.Models;
-using System.Reflection.Emit;
 using Xunit;
 
 namespace MedGame.UnitTests
@@ -55,31 +54,45 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(0, Levels.Baby, "progressMeter0.png")]
-        [InlineData(1, Levels.Baby, "progressMeter0.png")]
-        [InlineData(27, Levels.Baby, "progressMeter0.png")]
-        [InlineData(28, Levels.Baby, "progressMeter10.png")]
-        [InlineData(55, Levels.Baby, "progressMeter10.png")]
-        [InlineData(56, Levels.Baby, "progressMeter20.png")]
-        [InlineData(83, Levels.Baby, "progressMeter20.png")]
-        [InlineData(84, Levels.Baby, "progressMeter30.png")]
-        [InlineData(111, Levels.Baby, "progressMeter30.png")]
-        [InlineData(112, Levels.Baby, "progressMeter40.png")]
-        [InlineData(139, Levels.Baby, "progressMeter40.png")]
-        [InlineData(140, Levels.Baby, "progressMeter50.png")]
-        [InlineData(167, Levels.Baby, "progressMeter50.png")]
-        [InlineData(168, Levels.Baby, "progressMeter60.png")]
-        [InlineData(195, Levels.Baby, "progressMeter60.png")]
-        [InlineData(196, Levels.Baby, "progressMeter70.png")]
-        [InlineData(223, Levels.Baby, "progressMeter70.png")]
-        [InlineData(224, Levels.Baby, "progressMeter80.png")]
-        [InlineData(251, Levels.Baby, "progressMeter80.png")]
-        [InlineData(252, Levels.Baby, "progressMeter90.png")]
-        [InlineData(279, Levels.Baby, "progressMeter90.png")]
-        [InlineData(280, Levels.Baby, "progressMeter100.png")]
-        [InlineData(281, Levels.Baby, "progressMeter100.png")]
+        [InlineData(1, Levels.Baby, ProgressMeterConstants.Zero)]
+        [InlineData(28, Levels.Baby, ProgressMeterConstants.Ten)]
+        [InlineData(56, Levels.Baby, ProgressMeterConstants.Twenty)]
+        [InlineData(84, Levels.Baby, ProgressMeterConstants.Thirty)]
+        [InlineData(112, Levels.Baby, ProgressMeterConstants.Forty)]
+        [InlineData(140, Levels.Baby, ProgressMeterConstants.Fifty)]
+        [InlineData(168, Levels.Baby, ProgressMeterConstants.Sixty)]
+        [InlineData(196, Levels.Baby, ProgressMeterConstants.Seventy)]
+        [InlineData(224, Levels.Baby, ProgressMeterConstants.Eighty)]
+        [InlineData(280, Levels.Baby, ProgressMeterConstants.Ninety)]
 
-        public void GetProgressBarImage(int points, Levels level, string imageName)
+        public void GetProgressBarImageForBaby(int points, Levels level, string imageName)
+        {
+            Player player = new() { Points = points, Level = level };
+            var result = ImageHandler.GetProgressBarImage(player);
+
+            Assert.Equal(imageName, result);
+        }
+
+        [Theory]
+        [InlineData(281, Levels.Child, ProgressMeterConstants.Zero)]
+        [InlineData(715, Levels.Child, ProgressMeterConstants.Fifty)]
+        [InlineData(367, Levels.Child, ProgressMeterConstants.Ten)]
+        [InlineData(1063, Levels.Child, ProgressMeterConstants.Ninety)]
+        [InlineData(454, Levels.Child, ProgressMeterConstants.Twenty)]
+
+        public void GetProgressBarImageForChild(int points, Levels level, string imageName)
+        {
+            Player player = new() { Points = points, Level = level };
+            var result = ImageHandler.GetProgressBarImage(player);
+
+            Assert.Equal(imageName, result);
+        }
+
+        [Theory]
+        [InlineData(1151, Levels.Teenager, ProgressMeterConstants.Zero)]
+        [InlineData(2519, Levels.Teenager, ProgressMeterConstants.Ninety)]
+
+        public void GetProgressBarImageForTeenager(int points, Levels level, string imageName)
         {
             Player player = new() { Points = points, Level = level };
             var result = ImageHandler.GetProgressBarImage(player);

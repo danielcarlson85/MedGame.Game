@@ -1,4 +1,6 @@
 ﻿using MedGame.Models;
+using System;
+using System.Collections.Generic;
 
 namespace MedGame.GameLogic
 {
@@ -77,42 +79,68 @@ namespace MedGame.GameLogic
             return healthMeterImage;
         }
 
+        static Levels GetPreviousEnumValue(Levels value)
+        {
+            Levels[] enumValues = (Levels[])Enum.GetValues(typeof(Levels));
+            int currentIndex = Array.IndexOf(enumValues, value);
+            if (currentIndex == 0)
+                return value;
+            return enumValues[currentIndex - 1];
+        }
+
+
         public static string GetProgressBarImage(Player player)
         {
-            string progressMeterImage = string.Empty;
+            var prevLevel = GetPreviousEnumValue(player.Level);
+            var currentLevel = player.Level;
 
-            var points0Procent = (int)player.Level * 1;
-            var points10Procent = (int)player.Level * 1.1;
-            var points20Procent = (int)player.Level * 1.2;
-            var points30Procent = (int)player.Level * 1.3;
-            var points40Procent = (int)player.Level * 1.4;
-            var points50Procent = (int)player.Level * 1.5;
-            var points60Procent = (int)player.Level * 1.6;
-            var points70Procent = (int)player.Level * 1.7;
-            var points80Procent = (int)player.Level * 1.8;
-            var points90Procent = (int)player.Level * 1.9;
-            var points100Procent = (int)player.Level * 2;
+            var min = (int)prevLevel;
+            var max = (int)currentLevel;
 
-            var pointsInkLevelPoints = player.Points + (int)player.Level;
+            double tenPercentValue = min + 0.1 * (max - min);
+            double twentyPercentValue = min + 0.2 * (max - min);
+            double thirtyPercentValue = min + 0.3 * (max - min);
+            double fortyPercentValue = min + 0.4 * (max - min);
+            double fiftyPercentValue = min + 0.5 * (max - min);
+            double sixtyPercentValue = min + 0.6 * (max - min);
+            double seventyPercentValue = min + 0.7 * (max - min);
+            double eightyPercentValue = min + 0.8 * (max - min);
+            double ninetyPercentValue = min + 0.9 * (max - min);
+            double oneHundredPercentValue = min + 1 * (max - min);
 
-            if (pointsInkLevelPoints > points0Procent && pointsInkLevelPoints < points10Procent) progressMeterImage = ProgressMeterConstants.Zero;
-            else if (pointsInkLevelPoints >= points10Procent && pointsInkLevelPoints < points20Procent) progressMeterImage = ProgressMeterConstants.Ten;
-            else if (pointsInkLevelPoints >= points20Procent && pointsInkLevelPoints < points30Procent) progressMeterImage = ProgressMeterConstants.Twenty;
-            else if (pointsInkLevelPoints >= points30Procent && pointsInkLevelPoints < points40Procent) progressMeterImage = ProgressMeterConstants.Thirty;
-            else if (pointsInkLevelPoints >= points40Procent && pointsInkLevelPoints < points50Procent) progressMeterImage = ProgressMeterConstants.Forty;
-            else if (pointsInkLevelPoints >= points50Procent && pointsInkLevelPoints < points60Procent) progressMeterImage = ProgressMeterConstants.Fifty;
-            else if (pointsInkLevelPoints >= points60Procent && pointsInkLevelPoints < points70Procent) progressMeterImage = ProgressMeterConstants.Sixty;
-            else if (pointsInkLevelPoints >= points70Procent && pointsInkLevelPoints < points80Procent) progressMeterImage = ProgressMeterConstants.Seventy;
-            else if (pointsInkLevelPoints >= points80Procent && pointsInkLevelPoints < points90Procent) progressMeterImage = ProgressMeterConstants.Eighty;
-            else if (pointsInkLevelPoints >= points90Procent && pointsInkLevelPoints < points100Procent) progressMeterImage = ProgressMeterConstants.Nighty;
-            else if (pointsInkLevelPoints >= points100Procent) progressMeterImage = ProgressMeterConstants.OneHundred;
-
-            if (pointsInkLevelPoints == (int)player.Level)
+            Dictionary<Levels, Dictionary<(double min, double max), string>> levelPictures = new Dictionary<Levels, Dictionary<(double min, double max), string>>
             {
-                progressMeterImage = ProgressMeterConstants.Zero;
+                [player.Level] = new Dictionary<(double min, double max), string>
+        {
+            { (min+1, tenPercentValue - 1), ProgressMeterConstants.Zero },
+            { (tenPercentValue, twentyPercentValue -1), ProgressMeterConstants.Ten },
+            { (twentyPercentValue, thirtyPercentValue-1), ProgressMeterConstants.Twenty },
+            { (thirtyPercentValue, fortyPercentValue-1), ProgressMeterConstants.Thirty},
+            { (fortyPercentValue, fiftyPercentValue-1), ProgressMeterConstants.Forty },
+            { (fiftyPercentValue, sixtyPercentValue-1), ProgressMeterConstants.Fifty },
+            { (sixtyPercentValue, seventyPercentValue-1), ProgressMeterConstants.Sixty },
+            { (seventyPercentValue, eightyPercentValue-1),ProgressMeterConstants.Seventy },
+            { (eightyPercentValue, ninetyPercentValue-1), ProgressMeterConstants.Eighty },
+            { (ninetyPercentValue, oneHundredPercentValue), ProgressMeterConstants.Ninety },
+
+        }
+            };
+
+            if (levelPictures.TryGetValue(player.Level, out var rangePictureMap))
+            {
+                foreach (var kvp in rangePictureMap)
+                {
+                    var range = kvp.Key;
+                    var picture = kvp.Value;
+
+                    if (player.Points >= range.min && player.Points <= range.max)
+                    {
+                        return picture;
+                    }
+                }
             }
 
-            return progressMeterImage;
+            return "default_picture.jpg";
         }
     }
 }
