@@ -10,11 +10,6 @@ namespace MedGame.GameLogic
         {
             string tamagotchiImage;
 
-            if (player.Health < 0)
-            {
-                player.Health = 0;
-            }
-
             if (player.Health >= 0 && player.Health < 24)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.Angry;
