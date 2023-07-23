@@ -19595,43 +19595,49 @@ namespace MedGame.UI.Mobile.Droid
 			public const int statisticsicon = 2131165453;
 			
 			// aapt resource value: 0x7F07010E
-			public const int Teenager_Annoyed = 2131165454;
+			public const int Teenager_Angry = 2131165454;
 			
 			// aapt resource value: 0x7F07010F
-			public const int Teenager_Sad = 2131165455;
+			public const int Teenager_Annoyed = 2131165455;
 			
 			// aapt resource value: 0x7F070110
-			public const int Teenager_VerySad = 2131165456;
+			public const int Teenager_Irritated = 2131165456;
 			
 			// aapt resource value: 0x7F070111
-			public const int Teenager_Zen = 2131165457;
+			public const int Teenager_Sad = 2131165457;
 			
 			// aapt resource value: 0x7F070112
-			public const int test_custom_background = 2131165458;
+			public const int Teenager_VerySad = 2131165458;
 			
 			// aapt resource value: 0x7F070113
-			public const int thinkingbubble = 2131165459;
+			public const int Teenager_Zen = 2131165459;
 			
 			// aapt resource value: 0x7F070114
-			public const int tooltip_frame_dark = 2131165460;
+			public const int test_custom_background = 2131165460;
 			
 			// aapt resource value: 0x7F070115
-			public const int tooltip_frame_light = 2131165461;
+			public const int thinkingbubble = 2131165461;
 			
 			// aapt resource value: 0x7F070116
-			public const int YoungAdult_Annoyed = 2131165462;
+			public const int tooltip_frame_dark = 2131165462;
 			
 			// aapt resource value: 0x7F070117
-			public const int YoungAdult_Sad = 2131165463;
+			public const int tooltip_frame_light = 2131165463;
 			
 			// aapt resource value: 0x7F070118
-			public const int YoungAdult_VerySad = 2131165464;
+			public const int YoungAdult_Annoyed = 2131165464;
 			
 			// aapt resource value: 0x7F070119
-			public const int YoungAdult_Zen = 2131165465;
+			public const int YoungAdult_Sad = 2131165465;
 			
 			// aapt resource value: 0x7F07011A
-			public const int yourpathtobecomebuddah = 2131165466;
+			public const int YoungAdult_VerySad = 2131165466;
+			
+			// aapt resource value: 0x7F07011B
+			public const int YoungAdult_Zen = 2131165467;
+			
+			// aapt resource value: 0x7F07011C
+			public const int yourpathtobecomebuddah = 2131165468;
 			
 			static Drawable()
 			{
