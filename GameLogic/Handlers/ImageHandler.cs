@@ -94,14 +94,23 @@ namespace MedGame.GameLogic
             return enumValues[currentIndex - 1];
         }
 
+        static Levels GetNextEnumValue(Levels value)
+        {
+            Levels[] enumValues = (Levels[])Enum.GetValues(typeof(Levels));
+            int currentIndex = Array.IndexOf(enumValues, value);
+            return enumValues[currentIndex + 1];
+        }
+
 
         public static string GetProgressBarImage(Player player)
         {
-            var prevLevel = GetPreviousEnumValue(player.Level);
             var currentLevel = player.Level;
+            var nextLevel = GetNextEnumValue(player.Level);
 
-            var min = (int)prevLevel;
-            var max = (int)currentLevel;
+            var min = (int)currentLevel;
+            var max = (int)nextLevel;
+
+
 
             double tenPercentValue = min + 0.1 * (max - min);
             double twentyPercentValue = min + 0.2 * (max - min);
@@ -118,7 +127,7 @@ namespace MedGame.GameLogic
             {
                 [player.Level] = new Dictionary<(double min, double max), string>
         {
-            { (min+1, tenPercentValue - 1), ProgressMeterConstants.Zero },
+            { (min, tenPercentValue - 1), ProgressMeterConstants.Zero },
             { (tenPercentValue, twentyPercentValue -1), ProgressMeterConstants.Ten },
             { (twentyPercentValue, thirtyPercentValue-1), ProgressMeterConstants.Twenty },
             { (thirtyPercentValue, fortyPercentValue-1), ProgressMeterConstants.Thirty},
@@ -127,7 +136,7 @@ namespace MedGame.GameLogic
             { (sixtyPercentValue, seventyPercentValue-1), ProgressMeterConstants.Sixty },
             { (seventyPercentValue, eightyPercentValue-1),ProgressMeterConstants.Seventy },
             { (eightyPercentValue, ninetyPercentValue-1), ProgressMeterConstants.Eighty },
-            { (ninetyPercentValue, oneHundredPercentValue), ProgressMeterConstants.Ninety },
+            { (ninetyPercentValue, oneHundredPercentValue-1), ProgressMeterConstants.Ninety },
 
         }
             };
