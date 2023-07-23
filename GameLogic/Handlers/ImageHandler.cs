@@ -9,27 +9,33 @@ namespace MedGame.GameLogic
         public static string GetTamagotchiImage(Player player)
         {
             string tamagotchiImage;
-            if (player.Health < 24 && player.Health >= 0)
+
+            if (player.Health < 0)
+            {
+                player.Health = 0;
+            }
+
+            if (player.Health >= 0 && player.Health < 24)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.Angry;
             }
 
-            else if (player.Health < 48 && player.Health >= 24)
+            else if (player.Health >= 24 && player.Health < 48)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.VerySad;
             }
 
-            else if (player.Health < 72 && player.Health >= 48)
+            else if (player.Health >= 48 && player.Health < 72)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.Irritated;
             }
 
-            else if (player.Health < 96 && player.Health >= 72)
+            else if (player.Health >= 72 && player.Health < 96)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.Sad;
             }
 
-            else if (player.Health < 120 && player.Health >= 96)
+            else if (player.Health >= 96 && player.Health < 120)
             {
                 tamagotchiImage = player.Level + EmotionImagesConstants.Annoyed;
             }
@@ -44,28 +50,33 @@ namespace MedGame.GameLogic
         {
             string healthMeterImage = string.Empty;
 
-            if (player.Health < 24 && player.Health >= 0)
+            if (player.Health < 0)
+            {
+                player.Health = 0;
+            }
+
+            if (player.Health >= 0 && player.Health < 24)
             {
                 healthMeterImage = HealthMeterConstants.Dead;
             }
 
-            if (player.Health < 48 && player.Health >= 24)
+            if (player.Health >= 24 && player.Health < 48)
             {
                 healthMeterImage = HealthMeterConstants.TerminallyIll;
             }
 
-            if (player.Health < 72 && player.Health >= 48)
+            if (player.Health >= 48 && player.Health < 72)
             {
                 healthMeterImage = HealthMeterConstants.Sick;
             }
 
-            if (player.Health < 96 && player.Health >= 72)
+            if (player.Health >= 72 && player.Health < 96)
             {
                 healthMeterImage = HealthMeterConstants.Angry;
 
             }
 
-            if (player.Health < 120 && player.Health >= 96)
+            if (player.Health >= 96 && player.Health < 120)
             {
                 healthMeterImage = HealthMeterConstants.Irritated;
 
