@@ -1,5 +1,4 @@
-﻿using MedGame.Mobile.Services;
-using MedGame.Models;
+﻿using MedGame.Models;
 using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
