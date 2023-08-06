@@ -29,6 +29,13 @@ namespace MedGame.UI.Mobile.ViewModels
             set { SetProperty(ref progressMeterImage, value); }
         }
 
+        private string txtProgressBarProcentText;
+        public string ProgressBarProcentText
+        {
+            get { return txtProgressBarProcentText; }
+            set { SetProperty(ref txtProgressBarProcentText, value); }
+        }
+
         private string points;
         public string Points
         {
@@ -55,6 +62,7 @@ namespace MedGame.UI.Mobile.ViewModels
             TamagochiImage = ImageHandler.GetTamagotchiImage(GameModels.Player);
             HealthMeterImage = ImageHandler.GetHealthMeter(GameModels.Player);
             ProgressMeterImage = ImageHandler.GetProgressBarImage(GameModels.Player);
+            ProgressBarProcentText = "Test";
 
             Points = GameModels.Player.Points.ToString();
             SendNotificationDependingOnHealth(GameModels.Player);

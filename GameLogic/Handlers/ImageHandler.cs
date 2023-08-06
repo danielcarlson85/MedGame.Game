@@ -101,15 +101,19 @@ namespace MedGame.GameLogic
             return enumValues[currentIndex + 1];
         }
 
+        public static string GetProgressBarProcentForLevel()
+        {
+            return "10";
+        }
+
 
         public static string GetProgressBarImage(Player player)
         {
+            var previousLevel = GetPreviousEnumValue(player.Level);
             var currentLevel = player.Level;
-            var nextLevel = GetNextEnumValue(player.Level);
 
-            var min = (int)currentLevel;
-            var max = (int)nextLevel;
-
+            var min = (int)previousLevel;
+            var max = (int)currentLevel;
 
 
             double tenPercentValue = min + 0.1 * (max - min);
@@ -127,16 +131,16 @@ namespace MedGame.GameLogic
             {
                 [player.Level] = new Dictionary<(double min, double max), string>
         {
-            { (min, tenPercentValue - 1), ProgressMeterConstants.Zero },
-            { (tenPercentValue, twentyPercentValue -1), ProgressMeterConstants.Ten },
-            { (twentyPercentValue, thirtyPercentValue-1), ProgressMeterConstants.Twenty },
-            { (thirtyPercentValue, fortyPercentValue-1), ProgressMeterConstants.Thirty},
-            { (fortyPercentValue, fiftyPercentValue-1), ProgressMeterConstants.Forty },
-            { (fiftyPercentValue, sixtyPercentValue-1), ProgressMeterConstants.Fifty },
-            { (sixtyPercentValue, seventyPercentValue-1), ProgressMeterConstants.Sixty },
-            { (seventyPercentValue, eightyPercentValue-1),ProgressMeterConstants.Seventy },
-            { (eightyPercentValue, ninetyPercentValue-1), ProgressMeterConstants.Eighty },
-            { (ninetyPercentValue, oneHundredPercentValue-1), ProgressMeterConstants.Ninety },
+            { (min, tenPercentValue), ProgressMeterConstants.Zero },
+            { (tenPercentValue, twentyPercentValue), ProgressMeterConstants.Ten },
+            { (twentyPercentValue, thirtyPercentValue), ProgressMeterConstants.Twenty },
+            { (thirtyPercentValue, fortyPercentValue), ProgressMeterConstants.Thirty},
+            { (fortyPercentValue, fiftyPercentValue), ProgressMeterConstants.Forty },
+            { (fiftyPercentValue, sixtyPercentValue), ProgressMeterConstants.Fifty },
+            { (sixtyPercentValue, seventyPercentValue), ProgressMeterConstants.Sixty },
+            { (seventyPercentValue, eightyPercentValue),ProgressMeterConstants.Seventy },
+            { (eightyPercentValue, ninetyPercentValue), ProgressMeterConstants.Eighty },
+            { (ninetyPercentValue, oneHundredPercentValue), ProgressMeterConstants.Ninety },
 
         }
             };
@@ -155,7 +159,7 @@ namespace MedGame.GameLogic
                 }
             }
 
-            return "default_picture.jpg";
+            return null;
         }
     }
 }

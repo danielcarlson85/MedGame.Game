@@ -54,8 +54,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(1, Levels.Zero, ProgressMeterConstants.Zero)]
-        [InlineData(279, Levels.Zero, ProgressMeterConstants.Ninety)]
+        [InlineData(1, Levels.Baby, ProgressMeterConstants.Zero)]
+        [InlineData(280, Levels.Baby, ProgressMeterConstants.Ninety)]
 
         public void GetProgressBarImageForBaby(int points, Levels level, string imageName)
         {
@@ -66,11 +66,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(280, Levels.Baby, ProgressMeterConstants.Zero)]
-        [InlineData(715, Levels.Baby, ProgressMeterConstants.Fifty)]
-        [InlineData(367, Levels.Baby, ProgressMeterConstants.Ten)]
-        [InlineData(1063, Levels.Baby, ProgressMeterConstants.Ninety)]
-        [InlineData(454, Levels.Baby, ProgressMeterConstants.Twenty)]
+        [InlineData(281, Levels.Child, ProgressMeterConstants.Zero)]
+        [InlineData(1150, Levels.Child, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Baby_Test(int points, Levels level, string imageName)
         {
@@ -81,8 +78,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(1151, Levels.Child, ProgressMeterConstants.Zero)]
-        [InlineData(2519, Levels.Child, ProgressMeterConstants.Ninety)]
+        [InlineData(1151, Levels.Teenager, ProgressMeterConstants.Zero)]
+        [InlineData(2520, Levels.Teenager, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Child_Test(int points, Levels level, string imageName)
         {
@@ -93,8 +90,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(2520, Levels.Teenager, ProgressMeterConstants.Zero)]
-        [InlineData(4369, Levels.Teenager, ProgressMeterConstants.Ninety)]
+        [InlineData(2521, Levels.Pupil, ProgressMeterConstants.Zero)]
+        [InlineData(4370, Levels.Pupil, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Teenager_Test(int points, Levels level, string imageName)
         {
@@ -105,8 +102,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(4370, Levels.Pupil, ProgressMeterConstants.Zero)]
-        [InlineData(6719, Levels.Pupil, ProgressMeterConstants.Ninety)]
+        [InlineData(4371, Levels.YoungAdult, ProgressMeterConstants.Zero)]
+        [InlineData(6720, Levels.YoungAdult, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Pupil_Test(int points, Levels level, string imageName)
         {
@@ -117,8 +114,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(6720, Levels.YoungAdult, ProgressMeterConstants.Zero)]
-        [InlineData(9549, Levels.YoungAdult, ProgressMeterConstants.Ninety)]
+        [InlineData(6721, Levels.Adult, ProgressMeterConstants.Zero)]
+        [InlineData(9550, Levels.Adult, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_YoungAdult_Test(int points, Levels level, string imageName)
         {
@@ -129,8 +126,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(9550, Levels.Adult, ProgressMeterConstants.Zero)]
-        [InlineData(12879, Levels.Adult, ProgressMeterConstants.Ninety)]
+        [InlineData(9551, Levels.OldAdult, ProgressMeterConstants.Zero)]
+        [InlineData(12880, Levels.OldAdult, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Adult_Test(int points, Levels level, string imageName)
         {
@@ -141,8 +138,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(12880, Levels.OldAdult, ProgressMeterConstants.Zero)]
-        [InlineData(16689, Levels.OldAdult, ProgressMeterConstants.Ninety)]
+        [InlineData(12881, Levels.Old, ProgressMeterConstants.Zero)]
+        [InlineData(16690, Levels.Old, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_OldAdult_Test(int points, Levels level, string imageName)
         {
@@ -154,8 +151,8 @@ namespace MedGame.UnitTests
 
 
         [Theory]
-        [InlineData(16690, Levels.Old, ProgressMeterConstants.Zero)]
-        [InlineData(20999, Levels.Old, ProgressMeterConstants.Ninety)]
+        [InlineData(16691, Levels.Master, ProgressMeterConstants.Zero)]
+        [InlineData(21000, Levels.Master, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Old_Test(int points, Levels level, string imageName)
         {
@@ -166,8 +163,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(21000, Levels.Master, ProgressMeterConstants.Zero)]
-        [InlineData(25789, Levels.Master, ProgressMeterConstants.Ninety)]
+        [InlineData(21001, Levels.Munk, ProgressMeterConstants.Zero)]
+        [InlineData(25790, Levels.Munk, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Master_Test(int points, Levels level, string imageName)
         {
@@ -178,8 +175,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(25790, Levels.Munk, ProgressMeterConstants.Zero)]
-        [InlineData(30999, Levels.Munk, ProgressMeterConstants.Ninety)]
+        [InlineData(25791, Levels.God, ProgressMeterConstants.Zero)]
+        [InlineData(31080, Levels.God, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Munk_Test(int points, Levels level, string imageName)
         {
@@ -190,8 +187,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(31080, Levels.God, ProgressMeterConstants.Zero)]
-        [InlineData(32999, Levels.God, ProgressMeterConstants.Ninety)]
+        [InlineData(31081, Levels.Max, ProgressMeterConstants.Zero)]
+        [InlineData(330000, Levels.Max, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_God_Test(int points, Levels level, string imageName)
         {

@@ -51,7 +51,7 @@ namespace MedGame.Models
                 Multiplicator = 1,
                 Password = string.Empty,
                 PlayerMessage = string.Empty,
-                Points = 0,
+                Points = 1,
                 TotalDaysMeditatedInRow = 1,
                 TotalMinutesMissed = 0,
                 TotalMinutesMeditated = 0,
