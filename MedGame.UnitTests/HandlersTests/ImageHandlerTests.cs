@@ -90,32 +90,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(2521, Levels.Pupil, ProgressMeterConstants.Zero)]
-        [InlineData(4370, Levels.Pupil, ProgressMeterConstants.Ninety)]
-
-        public void Get_ProgressBarImage_For_Teenager_Test(int points, Levels level, string imageName)
-        {
-            Player player = new() { Points = points, Level = level };
-            var result = ImageHandler.GetProgressBarImage(player);
-
-            Assert.Equal(imageName, result);
-        }
-
-        [Theory]
-        [InlineData(4371, Levels.YoungAdult, ProgressMeterConstants.Zero)]
-        [InlineData(6720, Levels.YoungAdult, ProgressMeterConstants.Ninety)]
-
-        public void Get_ProgressBarImage_For_Pupil_Test(int points, Levels level, string imageName)
-        {
-            Player player = new() { Points = points, Level = level };
-            var result = ImageHandler.GetProgressBarImage(player);
-
-            Assert.Equal(imageName, result);
-        }
-
-        [Theory]
-        [InlineData(6721, Levels.Adult, ProgressMeterConstants.Zero)]
-        [InlineData(9550, Levels.Adult, ProgressMeterConstants.Ninety)]
+        [InlineData(2521, Levels.Adult, ProgressMeterConstants.Zero)]
+        [InlineData(4370, Levels.Adult, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_YoungAdult_Test(int points, Levels level, string imageName)
         {
@@ -125,34 +101,10 @@ namespace MedGame.UnitTests
             Assert.Equal(imageName, result);
         }
 
-        [Theory]
-        [InlineData(9551, Levels.OldAdult, ProgressMeterConstants.Zero)]
-        [InlineData(12880, Levels.OldAdult, ProgressMeterConstants.Ninety)]
-
-        public void Get_ProgressBarImage_For_Adult_Test(int points, Levels level, string imageName)
-        {
-            Player player = new() { Points = points, Level = level };
-            var result = ImageHandler.GetProgressBarImage(player);
-
-            Assert.Equal(imageName, result);
-        }
 
         [Theory]
-        [InlineData(12881, Levels.Old, ProgressMeterConstants.Zero)]
-        [InlineData(16690, Levels.Old, ProgressMeterConstants.Ninety)]
-
-        public void Get_ProgressBarImage_For_OldAdult_Test(int points, Levels level, string imageName)
-        {
-            Player player = new() { Points = points, Level = level };
-            var result = ImageHandler.GetProgressBarImage(player);
-
-            Assert.Equal(imageName, result);
-        }
-
-
-        [Theory]
-        [InlineData(16691, Levels.Master, ProgressMeterConstants.Zero)]
-        [InlineData(21000, Levels.Master, ProgressMeterConstants.Ninety)]
+        [InlineData(4371, Levels.Master, ProgressMeterConstants.Zero)]
+        [InlineData(6720, Levels.Master, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Old_Test(int points, Levels level, string imageName)
         {
@@ -163,8 +115,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(21001, Levels.Munk, ProgressMeterConstants.Zero)]
-        [InlineData(25790, Levels.Munk, ProgressMeterConstants.Ninety)]
+        [InlineData(6721, Levels.Munk, ProgressMeterConstants.Zero)]
+        [InlineData(9500, Levels.Munk, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Master_Test(int points, Levels level, string imageName)
         {
@@ -175,8 +127,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(25791, Levels.God, ProgressMeterConstants.Zero)]
-        [InlineData(31080, Levels.God, ProgressMeterConstants.Ninety)]
+        [InlineData(9501, Levels.God, ProgressMeterConstants.Zero)]
+        [InlineData(12880, Levels.God, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_Munk_Test(int points, Levels level, string imageName)
         {
@@ -187,8 +139,8 @@ namespace MedGame.UnitTests
         }
 
         [Theory]
-        [InlineData(31081, Levels.Max, ProgressMeterConstants.Zero)]
-        [InlineData(330000, Levels.Max, ProgressMeterConstants.Ninety)]
+        [InlineData(12881, Levels.Max, ProgressMeterConstants.Zero)]
+        [InlineData(16690, Levels.Max, ProgressMeterConstants.Ninety)]
 
         public void Get_ProgressBarImage_For_God_Test(int points, Levels level, string imageName)
         {

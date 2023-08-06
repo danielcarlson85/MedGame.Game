@@ -44,28 +44,6 @@ namespace MedGame.GameLogicProject
         [Theory]
         [InlineData(2521)]
         [InlineData(4370)]
-        public void CheckLevelShouldReturnPupil(int point)
-        {
-            player.Points = point;
-
-            Levels Level = LevelCounter.CheckLevel(player);
-            Assert.Equal(Levels.Pupil, Level);
-        }
-
-        [Theory]
-        [InlineData(4371)]
-        [InlineData(6720)]
-        public void CheckLevelShouldReturnYoungAdult(int point)
-        {
-            player.Points = point;
-
-            Levels Level = LevelCounter.CheckLevel(player);
-            Assert.Equal(Levels.YoungAdult, Level); 
-        }
-
-        [Theory]
-        [InlineData(6721)]
-        [InlineData(9550)]
         public void CheckLevelShouldReturnAdult(int point)
         {
             player.Points = point;
@@ -75,30 +53,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(9551)]
-        [InlineData(12880)]
-        public void CheckLevelShouldReturnOldAdult(int point)
-        {
-            player.Points = point;
-
-            Levels Level = LevelCounter.CheckLevel(player);
-            Assert.Equal(Levels.OldAdult, Level);
-        }
-
-        [Theory]
-        [InlineData(12881)]
-        [InlineData(16690)]
-        public void CheckLevelShouldReturnOld(int point)
-        {
-            player.Points = point;
-
-            Levels Level = LevelCounter.CheckLevel(player);
-            Assert.Equal(Levels.Old, Level);
-        }
-
-        [Theory]
-        [InlineData(16691)]
-        [InlineData(21000)]
+        [InlineData(4371)]
+        [InlineData(6720)]
         public void CheckLevelShouldReturnMaster(int point)
         {
             player.Points = point;
@@ -108,8 +64,8 @@ namespace MedGame.GameLogicProject
         }
 
         [Theory]
-        [InlineData(21001)]
-        [InlineData(25790)]
+        [InlineData(6721)]
+        [InlineData(9500)]
         public void CheckLevelShouldReturnMunk(int point)
         {
             player.Points = point;

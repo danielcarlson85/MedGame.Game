@@ -37,7 +37,11 @@ namespace MedGame.UI.Mobile.ViewModels
             {
                 if (value.Length == 1)
                 {
-                    value = "0" + value;
+                    value = " " + value;
+                }
+                else if (value == "0")
+                {
+                    value = "0";
                 }
 
                 SetProperty(ref txtProgressBarProcentText, value);

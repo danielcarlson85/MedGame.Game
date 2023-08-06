@@ -6,14 +6,27 @@
         Baby = 280,
         Child = 1150,
         Teenager = 2520,
-        Pupil = 4370,
-        YoungAdult = 6720,
-        Adult = 9550,
-        OldAdult = 12880,
-        Old = 16690,
-        Master = 21000,
-        Munk = 25790,
-        God = 31080,
-        Max = 330000
+        Adult = 4370,
+        Master = 6720,
+        Munk = 9500,
+        God = 12880,
+        Max = 16690
     }
+
+    //public enum Levels
+    //{
+    //    Zero = 1,
+    //    Baby = 280,
+    //    Child = 1150,
+    //    Teenager = 2520,
+    //    Pupil = 4370,
+    //    YoungAdult = 6720,
+    //    Adult = 9550,
+    //    OldAdult = 12880,
+    //    Old = 16690,
+    //    Master = 21000,
+    //    Munk = 25790,
+    //    God = 31080,
+    //    Max = 330000
+    //}
 }
