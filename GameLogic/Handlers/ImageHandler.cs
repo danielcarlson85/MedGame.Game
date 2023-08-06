@@ -101,9 +101,10 @@ namespace MedGame.GameLogic
             return enumValues[currentIndex + 1];
         }
 
-        public static string GetProgressBarProcentForLevel()
+        public static string GetProgressBarProcentForLevel(Player player)
         {
-            return "10";
+            var precentage = (int)(player.Points / (int)player.Level * 100);
+            return precentage.ToString();
         }
 
 

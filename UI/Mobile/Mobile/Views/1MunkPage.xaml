@@ -38,6 +38,7 @@
             <ImageButton x:Name="ImgProgressBar" Source="{Binding ProgressMeterImage}" Aspect="Fill" Grid.ColumnSpan="7" BackgroundColor="Transparent" Clicked="ImgProgressBar_Clicked"/>
             <Image x:Name="ImgTamagochi" Source="{Binding TamagochiImage}" IsAnimationPlaying="True" Grid.Row="1" Aspect="Fill" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="5" BackgroundColor="Transparent"/>
             <ImageButton x:Name="ImgDailyEnergy" Source="thinkingbubble.png" Grid.ColumnSpan="2" Aspect="Fill" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="ImgDailyEnergy_Clicked"/>
+            <Label Text="{Binding ProgressBarProcentText}" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent" Margin="8,28,9,0" FontAttributes="Bold"/>
         </Grid>
 
         <Grid>
