@@ -17,8 +17,6 @@ namespace MedGame.UI.Mobile.ViewModels
 
         public PlayerDatabase Database { get; }
 
-
-
         public async Task<Player> SignUpPlayerAsync(string playerName)
         {
             var foundPlayer = await Database.GetPlayerByEmailAsync(playerName);

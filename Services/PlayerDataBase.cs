@@ -16,7 +16,7 @@ namespace MedGame.Mobile.Services
 
     public class PlayerDatabase : IPlayerDatabase
     {
-        static SQLiteAsyncConnection Database;
+        public static SQLiteAsyncConnection Database;
 
         public static readonly AsyncLazy<PlayerDatabase> Instance = new AsyncLazy<PlayerDatabase>(async () =>
         {
